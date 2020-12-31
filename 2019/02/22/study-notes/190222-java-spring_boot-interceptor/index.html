@@ -1,4 +1,212 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="自娱自乐"><title>SpringBoot 拦截器学习 | ha0zi的个人博客</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/normalize.css/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/purecss/build/pure-min.min.css"><link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/purecss/build/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script><link rel="icon" mask="" sizes="any" href="/favicon.ico"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><script type="text/javascript" src="//cdn.jsdelivr.net/npm/clipboard/dist/clipboard.min.js"></script><script type="text/javascript" src="//cdn.jsdelivr.net/gh/codeseven/toastr/build/toastr.min.js"></script><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/codeseven/toastr/build/toastr.min.css"><meta name="generator" content="Hexo 5.3.0"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">SpringBoot 拦截器学习</h1><a id="logo" href="/.">ha0zi的个人博客</a><p class="description">终究还是自己懦弱了</p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">SpringBoot 拦截器学习</h1><div class="post-meta">2019-02-22<span> | </span><span class="category"><a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></span></div><div class="post-content"><p>阅读《Java EE 开发的颠覆者 Spring Boot 实战》时，在 第二部分-&gt;第四章 SpringMVC 基础 中介绍到拦截器的使用，这里介绍拦截器的配置可让普通Bean 实现<code>HandlerInterceptor</code> 接口或者继承<code>HandlerInterceptorAdapter</code> 类来实现自定义拦截器.</p>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.ha0zi.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="阅读《Java EE 开发的颠覆者 Spring Boot 实战》时，在 第二部分-&gt;第四章 SpringMVC 基础 中介绍到拦截器的使用，这里介绍拦截器的配置可让普通Bean 实现HandlerInterceptor 接口或者继承HandlerInterceptorAdapter 类来实现自定义拦截器. 因为抽象类HandlerInterceptorAdapter 会多提供一个after">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SpringBoot 拦截器学习">
+<meta property="og:url" content="http://www.ha0zi.com/2019/02/22/study-notes/190222-java-spring_boot-interceptor/index.html">
+<meta property="og:site_name" content="ha0zi的个人博客">
+<meta property="og:description" content="阅读《Java EE 开发的颠覆者 Spring Boot 实战》时，在 第二部分-&gt;第四章 SpringMVC 基础 中介绍到拦截器的使用，这里介绍拦截器的配置可让普通Bean 实现HandlerInterceptor 接口或者继承HandlerInterceptorAdapter 类来实现自定义拦截器. 因为抽象类HandlerInterceptorAdapter 会多提供一个after">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-02-22T06:11:00.000Z">
+<meta property="article:modified_time" content="2020-12-31T05:54:58.407Z">
+<meta property="article:author" content="ha0zi">
+<meta property="article:tag" content="JAVA">
+<meta property="article:tag" content="SpringBoot">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://www.ha0zi.com/2019/02/22/study-notes/190222-java-spring_boot-interceptor/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>SpringBoot 拦截器学习 | ha0zi的个人博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">ha0zi的个人博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">终究还是自己懦弱了</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://www.ha0zi.com/2019/02/22/study-notes/190222-java-spring_boot-interceptor/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ha0zi">
+      <meta itemprop="description" content="自娱自乐">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ha0zi的个人博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          SpringBoot 拦截器学习
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-02-22 14:11:00" itemprop="dateCreated datePublished" datetime="2019-02-22T14:11:00+08:00">2019-02-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-12-31 13:54:58" itemprop="dateModified" datetime="2020-12-31T13:54:58+08:00">2020-12-31</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>阅读《Java EE 开发的颠覆者 Spring Boot 实战》时，在 第二部分-&gt;第四章 SpringMVC 基础 中介绍到拦截器的使用，这里介绍拦截器的配置可让普通Bean 实现<code>HandlerInterceptor</code> 接口或者继承<code>HandlerInterceptorAdapter</code> 类来实现自定义拦截器.</p>
 <p>因为抽象类<code>HandlerInterceptorAdapter</code> 会多提供一个<code>afterConcurrentHandlingStarted</code> 方法,所以我们先根据继承<code>HandlerInterceptorAdapter</code> 的自定义拦截器类进行深入研究.这里我们先将相关的源码看一看.</p>
 <blockquote>
 <p>HandlerInterceptorAdapter</p>
@@ -28,10 +236,195 @@
 <p>下面我依次访问 <code>localhost:8080/test</code> <code>localhost:8080</code> <code>localhost:8080/ceshi</code></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">\---------------------------</span><br><span class="line">TestHandlerInterceptorAdapter::preHandle</span><br><span class="line">当前访问uri : &#x2F;test</span><br><span class="line">TestController:test</span><br><span class="line">TestHandlerInterceptorAdapter::postHandle</span><br><span class="line">TestHandlerInterceptorAdapter::afterCompletion</span><br><span class="line">---------------------------</span><br><span class="line">TestHandlerInterceptorAdapter::preHandle</span><br><span class="line">当前访问uri : &#x2F;error</span><br><span class="line">TestHandlerInterceptorAdapter::postHandle</span><br><span class="line">TestHandlerInterceptorAdapter::afterCompletion</span><br><span class="line">---------------------------</span><br><span class="line">TestHandlerInterceptorAdapter::preHandle</span><br><span class="line">当前访问uri : &#x2F;ceshi</span><br><span class="line">拦截器执行拦截</span><br></pre></td></tr></table></figure>
 <p>我们可以清楚的看到它们运行了那些方法以及运行这些方法的顺序,以此来根据自己的需求进行拦截器的编写.<br>具体代码<a target="_blank" rel="noopener" href="https://github.com/ha0zi/demo/tree/master/interceptor">这里</a></p>
-</div><div class="tags"><a href="/tags/JAVA/"><i class="fa fa-tag"></i>JAVA</a><a href="/tags/SpringBoot/"><i class="fa fa-tag"></i>SpringBoot</a></div><div class="post-nav"><a class="pre" href="/2019/02/22/study-notes/190222-java-this-concept-demo/">Java中关于'this' 的概念测试</a></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><div class="search-form"><input id="local-search-input" placeholder="Search" type="text" name="q" results="0"/><div id="local-search-result"></div></div></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E7%BB%B4/">运维</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%97%B2%E8%B0%88/">闲谈</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/%E6%9D%82%E8%AE%B0/" style="font-size: 15px;">杂记</a> <a href="/tags/%E4%BE%BF%E6%8D%B7%E7%AC%94%E8%AE%B0/" style="font-size: 15px;">便捷笔记</a> <a href="/tags/%E5%BE%85%E5%AE%8C%E5%96%84/" style="font-size: 15px;">待完善</a> <a href="/tags/JAVA/" style="font-size: 15px;">JAVA</a> <a href="/tags/SpringBoot/" style="font-size: 15px;">SpringBoot</a> <a href="/tags/Linux/" style="font-size: 15px;">Linux</a> <a href="/tags/%E5%9F%BA%E7%A1%80/" style="font-size: 15px;">基础</a> <a href="/tags/Docker/" style="font-size: 15px;">Docker</a> <a href="/tags/%E5%B0%8F%E8%AF%B4/" style="font-size: 15px;">小说</a> <a href="/tags/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/" style="font-size: 15px;">信息安全</a> <a href="/tags/%E6%8A%80%E6%9C%AF%E4%B9%A6%E7%B1%8D/" style="font-size: 15px;">技术书籍</a> <a href="/tags/Shell/" style="font-size: 15px;">Shell</a> <a href="/tags/%E8%BF%90%E7%BB%B4/" style="font-size: 15px;">运维</a> <a href="/tags/%E5%BE%85%E5%88%86%E7%B1%BB/" style="font-size: 15px;">待分类</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2020/12/23/study-notes/linux/20201223-linux-apt-reinstall-app/">apt 中断后重装软件</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/12/11/study-notes/linux/utils/20201211-linux-util-metasploit-base-use-hanler-win7-rightEscalation/">Metasploit 基础使用 handler 连接 win7 并提权清除日志</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/07/22/study-notes/linux/200722-system-linux-u-disk-boot-create-to-dd/">Linux 环境下使用 dd 创建 U盘 启动盘---小白使用指南</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/05/28/study-notes/200601-system-install-for-UEFI/">UEFI引导-物理机安装CentOS8.1</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/17/other/200317-notes-IDEA-skills-list/">[待完善] IDEA 使用 [水]</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/17/other/200317-other-interesting-recording/">记录下各种奇怪的东西[水]</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/17/study-notes/200317-Docker-Dockerfile-base/">[待完善,不定期更新] Dockerfile 基础语法 [水]</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/01/30/study-notes/linux/utils/202001-Recon_NG-use/">安全_信息收集_'Recon-NG'的使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/24/study-notes/linux/191229-system-debian-reload-problem/">重装 Debian9 系统之后的坑</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/05/study-notes/linux/191205-shell-get_MD5-customize/">Shell(md5sum\sha1sum\sha256sum) 编程杂记</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="http://www.ruanyifeng.com/blog/" title="阮一峰的网络日志" target="_blank">阮一峰的网络日志</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2020 <a href="/." rel="nofollow">ha0zi的个人博客.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.css"><link rel="stylesheet" type="text/css" href="/css/search.css?v=0.0.0"><script type="text/javascript" src="/js/search.js?v=0.0.0"></script><script>var search_path = 'search.xml';
-if (search_path.length == 0) {
-   search_path = 'search.xml';
-}
-var path = '/' + search_path;
-searchFunc(path, 'local-search-input', 'local-search-result');
-</script><script type="text/javascript" src="/js/copycode.js" successtext="复制成功!"></script><link rel="stylesheet" type="text/css" href="/css/copycode.css"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/JAVA/" rel="tag"># JAVA</a>
+              <a href="/tags/SpringBoot/" rel="tag"># SpringBoot</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2019/02/22/study-notes/190222-java-this-concept-demo/" rel="next" title="Java中关于'this' 的概念测试">
+      Java中关于'this' 的概念测试 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B7%E4%BD%93%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8B%A6%E6%88%AA%E5%99%A8%E4%BB%A3%E7%A0%81"><span class="nav-number">1.</span> <span class="nav-text">具体自定义拦截器代码</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ha0zi</p>
+  <div class="site-description" itemprop="description">自娱自乐</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ha0zi</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
