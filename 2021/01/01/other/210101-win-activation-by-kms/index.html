@@ -20,21 +20,20 @@
     var CONFIG = {"hostname":"www.ha0zi.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="环境 Debian 10 [amd64]  具体操作查询具体的中断操作中断了 apt 操作之后假设你并不清楚具体在哪里中断的,可以先在 &#x2F;var&#x2F;log&#x2F;apt&#x2F;term.log 中进行查询之前具体的操作.例如:">
+  <meta name="description" content="步骤 修改激活服务器地址 添加&#x2F;修改激活密钥 执行激活操作  PS: 该教程需要使用的 Windows 系统需要是 VL 版本的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="apt 中断后重装软件">
-<meta property="og:url" content="http://www.ha0zi.com/2020/12/23/study-notes/linux/20201223-linux-apt-reinstall-app/index.html">
+<meta property="og:title" content="部分 Windows 利用 KMS 激活[水]">
+<meta property="og:url" content="http://www.ha0zi.com/2021/01/01/other/210101-win-activation-by-kms/index.html">
 <meta property="og:site_name" content="ha0zi的个人博客">
-<meta property="og:description" content="环境 Debian 10 [amd64]  具体操作查询具体的中断操作中断了 apt 操作之后假设你并不清楚具体在哪里中断的,可以先在 &#x2F;var&#x2F;log&#x2F;apt&#x2F;term.log 中进行查询之前具体的操作.例如:">
+<meta property="og:description" content="步骤 修改激活服务器地址 添加&#x2F;修改激活密钥 执行激活操作  PS: 该教程需要使用的 Windows 系统需要是 VL 版本的">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-12-23T05:56:41.000Z">
-<meta property="article:modified_time" content="2020-12-31T08:36:05.394Z">
+<meta property="article:published_time" content="2021-01-01T10:53:54.000Z">
+<meta property="article:modified_time" content="2021-01-01T11:45:55.802Z">
 <meta property="article:author" content="ha0zi">
-<meta property="article:tag" content="Linux">
-<meta property="article:tag" content="运维">
+<meta property="article:tag" content="杂记">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://www.ha0zi.com/2020/12/23/study-notes/linux/20201223-linux-apt-reinstall-app/">
+<link rel="canonical" href="http://www.ha0zi.com/2021/01/01/other/210101-win-activation-by-kms/">
 
 
 <script id="page-configurations">
@@ -47,7 +46,7 @@
   };
 </script>
 
-  <title>apt 中断后重装软件 | ha0zi的个人博客</title>
+  <title>部分 Windows 利用 KMS 激活[水] | ha0zi的个人博客</title>
   
 
 
@@ -158,7 +157,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://www.ha0zi.com/2020/12/23/study-notes/linux/20201223-linux-apt-reinstall-app/">
+    <link itemprop="mainEntityOfPage" href="http://www.ha0zi.com/2021/01/01/other/210101-win-activation-by-kms/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -171,7 +170,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          apt 中断后重装软件
+          部分 Windows 利用 KMS 激活[水]
         </h1>
 
         <div class="post-meta">
@@ -180,16 +179,10 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2020-12-23 13:56:41" itemprop="dateCreated datePublished" datetime="2020-12-23T13:56:41+08:00">2020-12-23</time>
+              <time title="创建时间：2021-01-01 18:53:54 / 修改时间：19:45:55" itemprop="dateCreated datePublished" datetime="2021-01-01T18:53:54+08:00">2021-01-01</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-12-31 16:36:05" itemprop="dateModified" datetime="2020-12-31T16:36:05+08:00">2020-12-31</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -211,16 +204,27 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h3><ul>
-<li>Debian 10 [amd64]</li>
+        <h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><ul>
+<li>修改激活服务器地址</li>
+<li>添加/修改激活密钥</li>
+<li>执行激活操作</li>
 </ul>
-<h3 id="具体操作"><a href="#具体操作" class="headerlink" title="具体操作"></a>具体操作</h3><h4 id="查询具体的中断操作"><a href="#查询具体的中断操作" class="headerlink" title="查询具体的中断操作"></a>查询具体的中断操作</h4><p>中断了 <code>apt</code> 操作之后假设你并不清楚具体在哪里中断的,可以先在 <em>/var/log/apt/term.log</em> 中进行查询之前具体的操作.例如:</p>
+<p><dev color="red">PS: 该教程需要使用的 <em>Windows</em> 系统需要是 <em><a target="_blank" rel="noopener" href="https://zhidao.baidu.com/question/1951162734047407788.html" title="vol 是 volume licensing for organizations 的简称，中文即&#39;团体批量许可证&#39;。根据这个许可，当企业或者政内府需要大量购买容一软件时可以获得优惠。这种产品的光盘的卷标都带有 vol 字样，就取 volume 前3个字母，以表明是批量。">VL</a></em> 版本的</dev></p>
 <a id="more"></a>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Start-Date: 2020-12-23  13:42:08</span><br><span class="line">Commandline: apt upgrade</span><br><span class="line">Requested-By: hz (1000)</span><br><span class="line">Upgrade: libwebkit2gtk-4.0-37:amd64 (2.30.3-1~deb10u1, 2.30.4-1~deb10u1), gir1.2-webkit2-4.0:amd64 (2.30.3-1~deb10u1, 2.30.4-1~deb10u1), libjavascriptcoregtk-4.0-18:amd64 (2.30.3-1~deb10u1, 2.30.4-1~deb10u1), gir1.2-javascriptcoregtk-4.0:amd64 (2.30.3-1~deb10u1, 2.30.4-1~deb10u1)</span><br><span class="line">End-Date: 2020-12-23  13:42:16</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>这个就是我之前的操作,我们可以看到当时我正在进行系统更新操作,更新的软件分别是 <code>libwebkit2gtk-4.0-37</code>, <code>gir1.2-webkit2-4.0</code>, <code>libjavascriptcoregtk-4.0-18</code>, <code>gir1.2-javascriptcoregtk-4.0</code>.<a target="_blank" rel="noopener" href="https://qastack.cn/unix/79050/can-i-rollback-an-apt-get-upgrade-if-something-goes-wrong">查询资料信息来源</a></p>
-<h4 id="重装软件"><a href="#重装软件" class="headerlink" title="重装软件"></a>重装软件</h4><p>我们已经知道了之前安装的操作步骤了,那么我们就可以重新安装之前的软件,避免因为中断导致的系统文件缺失错误.</p>
-<p><code>sudo apt-get --reinstall install libwebkit2gtk-4.0-37 gir1.2-webkit2-4.0 libjavascriptcoregtk-4.0-18 gir1.2-javascriptcoregtk-4.0</code></p>
-<p>正常的安装软件运行执行完成.</p>
+
+<p>该教程来源于 Window7 贴吧, 目前已经删除, 以前逛的贴吧还是获取过很多的资源的.</p>
+<h3 id="修改激活服务器"><a href="#修改激活服务器" class="headerlink" title="修改激活服务器"></a>修改激活服务器</h3><p>首先如果是 <em>Windows10</em> 系统的话其实可以考虑去淘宝找一下, 可以购买永久激活版本的,也就是花费 <em>15</em> 元左右并不会很贵, 这种的激活码会把你的电脑硬件数据提交到中国的微软服务器, 如果意外重装了系统并不需要再次激活, 之所以提这个是因为 <em>KMS</em> 系统本身或许是没有问题的, 但并不代表提供这个服务的系统所有者的系统是”干净”的. 以下我所举例的 <em>KMS</em> 系统仅是我所知的, 并不保证它是”干净”的.</p>
+<p>点击 <em>Windows</em> 系统的开始菜单输入 <code>cmd</code> 右键单击选择 <em>管理员模式运行</em>, 在黑窗口中输入 <code>slmgr /skms kms.03k.org</code></p>
+<h3 id="输入对应的激活码"><a href="#输入对应的激活码" class="headerlink" title="输入对应的激活码"></a>输入对应的激活码</h3><p>请将下方的 <code>[code]</code> 替换成对应系统的激活码<br><code>slmgr /ipk [code]</code></p>
+<ul>
+<li><em>Windows Server</em> 系列:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">Windows Server 2019 Datacenter：WMDGN-G9PQG-XVVXX-R3X43-63DFG</span><br><span class="line">Windows Server 2019 Standard：N69G4-B89J2-4G8F4-WWYCC-J464C</span><br><span class="line">Windows Server 2016 Datacenter：CB7KF-BWN84-R7R2Y-793K2-8XDDG</span><br><span class="line">Windows Server 2016 Standard：WC2BQ-8NRM3-FDDYY-2BFGV-KHKQY</span><br><span class="line">Windows Server 2012 R2 Server Standard：D2N9P-3P6X9-2R39C-7RTCD-MDVJX</span><br><span class="line">WindowsServer 2012 R2 Datacenter：W3GGN-FT8W3-Y4M27-J84CP-Q3VJ9</span><br><span class="line">Windows Server 2012 Server Standard：XC9B7-NBPP2-83J2H-RHMBY-92BT4</span><br><span class="line">Windows Server 2012 Datacenter：48HP8-DN98B-MYWDG-T2DCC-8W83P-</span><br><span class="line">Windows Server 2008 R2 Standard：YC6KT-GKW9T-YTKYR-T4X34-R7VHC</span><br><span class="line">Windows Server 2008 R2 企业版：489J6-VHDMP-X63PK-3K798-CPX3Y</span><br><span class="line">Windows Server 2008 R2 Datacenter：74YFP-3QFB3-KQT8W-PMXWJ-7M648</span><br><span class="line">Windows Server 2008 Standard：TM24T-X9RMF-VWXK6-X8JC9-BFGM2</span><br><span class="line">不带 Hyper-V 的 Windows Server 2008 Standard：W7VD6-7JFBR-RX26B-YKQ3Y-6FFFJ</span><br><span class="line">Windows Server 2008 企业版：YQGMW-MPWTJ-34KDK-48M3W-X4Q6V</span><br><span class="line">不带 Hyper-V 的 Windows Server 2008 企业版：39BXF-X8Q23-P2WWT-38T2F-G3FPG</span><br><span class="line">Windows Server 2008 Datacenter：7M67G-PC374-GR742-YH8V4-TCBY3</span><br><span class="line">不带 Hyper-V 的 Windows Server 2008 Datacenter：22XQ2-VRXRG-P8D42-K34TD-G3QQC</span><br></pre></td></tr></table></figure></li>
+<li>个人 <em>Windows</em> 系列:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Windows 8.1 专业版：GCRJD-8NW9H-F2CDX-CCM8D-9D6T9</span><br><span class="line">Windows 8.1 企业版：MHF9N-XY6XB-WVXMC-BTDCT-MKKG7</span><br><span class="line">Windows 7 专业版：FJ82H-XT6CR-J8D7P-XQJJ2-GPDD4</span><br><span class="line">Windows 7 企业版：33PXH-7Y6KF-2VJC9-XBBR8-HVTHH</span><br><span class="line">*Windows XP，Windows Server 2003不支持KMS。Windows Vista，Windows 8等不常用的系统不会列出（如有需要，请在评论区找我）。家庭版，Windows 7旗舰版，Windows 8.1（无标识任何版本）不支持KMS激活</span><br><span class="line">错误代码原因请自行度娘</span><br><span class="line">我更新一下，cmd（命令提示符）要以管理员身份运行，WindowsKMS密钥：</span><br><span class="line">Windows 10 专业版：W269N-WFGWX-YVC9B-4J6C9-T83GX</span><br><span class="line">Windows 10 专业工作站：NRG8B-VKK3Q-CXVCJ-9G2XF-6Q84J</span><br><span class="line">Windows 10 企业版：NPPR9-FWDCX-D2C8J-H872K-2YT43</span><br><span class="line">Windows 10 教育版：NW6C2-QMPVW-D7KKK-3GKT6-VCFB2 </span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="执行激活"><a href="#执行激活" class="headerlink" title="执行激活"></a>执行激活</h3><p><code>slmgr /ato</code></p>
+<p>目前写该文的时候 <em>kms.03k.org</em> 是在运行的, 如果不确定服务器是否可用的话, 可以访问 <em>03k.org</em> 进行查看一下.</p>
+<p>水文完毕.</p>
 
     </div>
 
@@ -230,8 +234,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Linux/" rel="tag"># Linux</a>
-              <a href="/tags/%E8%BF%90%E7%BB%B4/" rel="tag"># 运维</a>
+              <a href="/tags/%E6%9D%82%E8%AE%B0/" rel="tag"># 杂记</a>
           </div>
 
         
@@ -240,13 +243,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/12/11/study-notes/linux/utils/20201211-linux-util-metasploit-base-use-hanler-win7-rightEscalation/" rel="prev" title="Metasploit 基础使用 handler 连接 win7 并提权清除日志">
-      <i class="fa fa-chevron-left"></i> Metasploit 基础使用 handler 连接 win7 并提权清除日志
+    <a href="/2020/12/23/study-notes/linux/20201223-linux-apt-reinstall-app/" rel="prev" title="apt 中断后重装软件">
+      <i class="fa fa-chevron-left"></i> apt 中断后重装软件
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2021/01/01/other/210101-win-activation-by-kms/" rel="next" title="部分 Windows 利用 KMS 激活[水]">
-      部分 Windows 利用 KMS 激活[水] <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -305,7 +305,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83"><span class="nav-number">1.</span> <span class="nav-text">环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B7%E4%BD%93%E6%93%8D%E4%BD%9C"><span class="nav-number">2.</span> <span class="nav-text">具体操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9F%A5%E8%AF%A2%E5%85%B7%E4%BD%93%E7%9A%84%E4%B8%AD%E6%96%AD%E6%93%8D%E4%BD%9C"><span class="nav-number">2.1.</span> <span class="nav-text">查询具体的中断操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%87%8D%E8%A3%85%E8%BD%AF%E4%BB%B6"><span class="nav-number">2.2.</span> <span class="nav-text">重装软件</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A5%E9%AA%A4"><span class="nav-number">1.</span> <span class="nav-text">步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E6%BF%80%E6%B4%BB%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="nav-number">2.</span> <span class="nav-text">修改激活服务器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E5%AF%B9%E5%BA%94%E7%9A%84%E6%BF%80%E6%B4%BB%E7%A0%81"><span class="nav-number">3.</span> <span class="nav-text">输入对应的激活码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%A7%E8%A1%8C%E6%BF%80%E6%B4%BB"><span class="nav-number">4.</span> <span class="nav-text">执行激活</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
