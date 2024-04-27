@@ -23,37 +23,6 @@
 安装好了 shellter 之后我们在终端输入 sudo shellter 会出现一个新的窗口, 这里会出现一些选择 (请参考下图), 目前我了解的 a 代表的是 auto 自动的意思. 而这里的 m 似乎代表的是 manual, 这里我们仅说明自动的操作.</description>
     </item>
     <item>
-      <title>Metasploit 基础使用 handler 连接 win7 并提权清除日志</title>
-      <link>https://www.ha0zi.com/study-notes/linux/utils/20201211-linux-util-metasploit-base-use-hanler-win7-rightescalation/</link>
-      <pubDate>Fri, 11 Dec 2020 15:55:33 +0800</pubDate>
-      <guid>https://www.ha0zi.com/study-notes/linux/utils/20201211-linux-util-metasploit-base-use-hanler-win7-rightescalation/</guid>
-      <description>简介 目前根据 i 春秋 进行学习,目前到利用 shellter 进行文件捆绑木马并达到免查杀的效果, 在使用 metasploit 对指定目标机进行监听获取权限.利用打包好的漏洞程序进行提权并清除日志信息.这里我们的步骤是根据这个 来源 学习进行的.
-操作环境 kali 2020.4 shellter 7.2-amd64 wine \ wine64 \ wine32 metasploit 6.0.18-dev win 7 企业版 注:请特别注意关闭 win7 的防火墙,不要说为什么我的没有用连接不上 具体操作 首先下载 putty.exe , 使用 shellter 进行木马封装,记住这些我们都是在 kali 虚拟机下完成的; kali 2020.4 并没有预安装 shellter 使用了 sudo apt-get install shellter 进行安装, 安装完了之后控制台返回了一个错误信息,希望我们添加 32 位的资源并且下载 wine32 (这里的具体命令我记得并不是很清晰了,请自行看控制台).
-安装好了 shellter 之后我们在终端输入 sudo shellter 会出现一个新的窗口, 这里会出现一些选择 (请参考下图), 目前我了解的 a 代表的是 auto 自动的意思. 而这里的 m 似乎代表的是 manual, 这里我们仅说明自动的操作.</description>
-    </item>
-    <item>
-      <title>白帽子讲 Web 安全</title>
-      <link>https://www.ha0zi.com/book/pc/190801-ia-1-bmzjwebaq-whq/</link>
-      <pubDate>Fri, 02 Aug 2019 04:14:29 +0800</pubDate>
-      <guid>https://www.ha0zi.com/book/pc/190801-ia-1-bmzjwebaq-whq/</guid>
-      <description>阅读本次缘由 从小对计算机有着浓厚的兴趣，十几岁时受到媒体报道的影响非常向往‘黑客’这个群体，认为在这个群体里的天才一定非常的多，网络解决了距离的困扰，能和他们沟通一定非常的酷。
-如何知道这本书的早已记不清了，作者吴翰清的微信公众号《道哥的黑板报》。顺便推荐另一个微信公众号《懒人在思考》，就我所知这个公众号现在（1564826398）应该是余弦的团队在维护。说道余弦就让我想起了 知道创宇研发技能表。
-读书笔记 本书结构（书中 &amp;lt;前言&amp;gt; 有详细介绍） 我的安全世界观
-此篇中先回顾了安全的历史，然后阐述了笔者对安全的看法与态度，并提出了一些思考问题的方式以及做事的方法。理解了本篇，就能明白全本中所涉及的解决方案在抉择时的取舍。 客户端脚本安全
-当网站的安全做到一定程度后，黑客可能难以再找到类似注入攻击、脚本执行等高风险的漏洞，从而可能将注意力转移到客户端脚本攻击上。 服务器端应用安全
-服务端应用问题进行阐述。这些问题往往能引起非常严重的后果，在网站的安全建设之初需要有限解决这些问题，避免留下任何隐患。 互联网公司安全运营
-提出大安全运营的思想。安全是一个持续的过程，最终仍然要由安全工程师来保证结果。 笔记 安全工程师的核心竞争力不在于他能拥有多少个 0day，掌握多少种安全技术，而是在于他对安全理解的深度，以及由此引申的看待安全问题的角度和高度。&amp;mdash;&amp;ndash; &amp;lt;前言.对互联网安全的思考&amp;gt;
-互联网本来是安全的，自从有了研究安全的人之后，互联网就变得不安全了。&amp;mdash;&amp;ndash; &amp;lt;1.序言&amp;gt;
-整个互联网笼罩在黑色产业的阴影之下，每年数十亿的经济损失和数千万的网民受害，以及黑客精神的死亡，使得我们没有理由不把此时称为黑暗时代。也许黑客精神所代表的 Open、Free、Share，真的一去不复返了！&amp;mdash;&amp;ndash; &amp;lt;1.1.1&amp;gt;
-在早期互联网中，Web 并非互联网的主流应用，相对来说，基于 SMTP、POP3、FTP、IRC 等协议的服务器拥有着绝大多数的用户。 &amp;mdash;&amp;ndash; &amp;lt;1.1.2&amp;gt;
-在早期互联网中。相对于那些攻击系统软件的 exploit 而言，基于 Web 的攻击，一般只能让黑客获得一个较低权限的账户，对黑客的吸引力远远不如直接攻击系统软件。 &amp;mdash;&amp;ndash; &amp;lt;1.1.2&amp;gt;
-防火墙技术的兴起改变了互联网安全的格局。尤其是以 Cisco、**华为**等为代表的网络设备厂商，开始在网络产品中更加重视网络安全，最终改变了互联网安全的走向。防火墙、ACL 技术的兴起，使得直接暴露在互联网上的系统得到了保护。 &amp;mdash;&amp;mdash; &amp;lt;1.1.2&amp;gt;
-2003 年的冲击波蠕虫是一个里程碑式的事件，这个针对 Windows 操作系统 RPC 服务（运行在 445 端口）的蠕虫，在很短的时间内席卷了全球，造成了数百万台机器被感染，损失难以估量。在此次事件后，网络运营商们很坚决地在骨干网络上屏蔽了 135、445 等端口的连接请求。 &amp;mdash;&amp;ndash; &amp;lt;1.1.2&amp;gt;
-在互联网安全领域所经历的这个阶段，还有另外一个重要的分支，即桌面安全，或者叫客户端软件安全。其代表是浏览器攻击。一个经典的攻击场景是，黑客构造一个恶意网页，诱使用户使用浏览器访问该网页，利用浏览器中存在的某些漏洞，比如一个缓冲区溢出漏洞，执行 shellcode，通常情况是下载一个木马并在用户机器里执行。常见的针对桌面软件的攻击目标，还包括 Office 系列、Adobe Acrobat Reader、多媒体播放软件、压缩软件等装载量大的流行软件
-Web 版本时期黑客们的主要关注点
-Web 1.0: 人们更多的是关注服务器端动态脚本的安全问题，比如将一个可执行脚本（俗称 webshell）上传到服务器上,从而获得权限. Web 2.0: XSS、CSRF 等攻击已经变得更为强大。Web 攻击的思路也从服务器端转向了客户端，转向了浏览器和用户。 动态脚本语言的普及，以及 Web 技术发展初期对安全问题认知的不足导致很多“血案”的发生，同时也遗留下很多历史问题，比如 PHP 语言至今仍然只能靠较好的代码规范来保证没有文件包含漏洞，而无法从语言本身杜绝此类安全问题的发生。(该书的出版时间为：2012年3月) &amp;mdash;&amp;ndash; &amp;lt;1.</description>
-    </item>
-    <item>
       <title>白帽子讲 Web 安全</title>
       <link>https://www.ha0zi.com/post/book/pc/190801-ia-1-bmzjwebaq-whq/</link>
       <pubDate>Fri, 02 Aug 2019 04:14:29 +0800</pubDate>

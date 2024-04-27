@@ -15,13 +15,6 @@
     <atom:link href="https://www.ha0zi.com/tags/%E4%BE%BF%E6%8D%B7%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>IDEA 使用</title>
-      <link>https://www.ha0zi.com/other/200317-notes-idea-skills-list/</link>
-      <pubDate>Tue, 17 Mar 2020 19:58:44 +0800</pubDate>
-      <guid>https://www.ha0zi.com/other/200317-notes-idea-skills-list/</guid>
-      <description>IDEA 使用 引用 项目打包 Jar https://blog.csdn.net/qq_37105358/article/details/79467401 </description>
-    </item>
-    <item>
-      <title>IDEA 使用</title>
       <link>https://www.ha0zi.com/post/other/200317-notes-idea-skills-list/</link>
       <pubDate>Tue, 17 Mar 2020 19:58:44 +0800</pubDate>
       <guid>https://www.ha0zi.com/post/other/200317-notes-idea-skills-list/</guid>
@@ -43,33 +36,10 @@ ENTRYPOINT Docker run 运行时的运行指令,里面的参数为定量.
 小技巧 CMD 中执行的命令中包含了星号等通配符,可以通过 /bin/sh 来执行命令 CMD [&amp;quot;/bin/sh&amp;quot;, &amp;quot;-c&amp;quot;, &amp;quot;java&amp;quot;, &amp;quot;-jar&amp;quot;, &amp;quot;*.jar&amp;quot;] </description>
     </item>
     <item>
-      <title>Dockerfile 基础语法</title>
-      <link>https://www.ha0zi.com/study-notes/200317-docker-dockerfile-base/</link>
-      <pubDate>Tue, 17 Mar 2020 19:39:33 +0800</pubDate>
-      <guid>https://www.ha0zi.com/study-notes/200317-docker-dockerfile-base/</guid>
-      <description>简介 Dockerfile 是构建 Docker 镜像的文件,可以自定义更适合应用场景的环境.
-指令 FROM 声明自定义镜像的基础镜像;后面的命令都是基于基础镜像环境使用的.
-RUN Docker build 运行时的运行指令;执行基于环境的命令.
-COPY 复制指令;默认复制当前上下文的文件/目录.
-WORKDIR 声明工作目录;声明镜像中的工作目录.
-EXPOSE 声明容器需要使用的端口.
-CMD Docker run 运行时的运行指令,里面的参数为变量.
-ENTRYPOINT Docker run 运行时的运行指令,里面的参数为定量.
-小技巧 CMD 中执行的命令中包含了星号等通配符,可以通过 /bin/sh 来执行命令 CMD [&amp;quot;/bin/sh&amp;quot;, &amp;quot;-c&amp;quot;, &amp;quot;java&amp;quot;, &amp;quot;-jar&amp;quot;, &amp;quot;*.jar&amp;quot;] </description>
-    </item>
-    <item>
       <title>重装 Debian9 系统之后的坑</title>
       <link>https://www.ha0zi.com/post/study-notes/linux/191229-system-debian-reload-problem/</link>
       <pubDate>Tue, 24 Dec 2019 00:44:11 +0800</pubDate>
       <guid>https://www.ha0zi.com/post/study-notes/linux/191229-system-debian-reload-problem/</guid>
-      <description>必装 添加 apt 源 修改 apt 源vi /etc/apt/source.list 注释第五行 #deb cdrom:[Debian GNU/Linux 10.2.0 _Buster_ - Official amd64 DVD Binary-1 20191116-09:57]/ buster contrib main 在末尾添加清华源
-# 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释 deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-free # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-free deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-updates main contrib non-free # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-updates main contrib non-free deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-backports main contrib non-free # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-backports main contrib non-free deb https://mirrors.tuna.tsinghua.edu.cn/debian-security buster/updates main contrib non-free # deb-src https://mirrors.</description>
-    </item>
-    <item>
-      <title>重装 Debian9 系统之后的坑</title>
-      <link>https://www.ha0zi.com/study-notes/linux/191229-system-debian-reload-problem/</link>
-      <pubDate>Tue, 24 Dec 2019 00:44:11 +0800</pubDate>
-      <guid>https://www.ha0zi.com/study-notes/linux/191229-system-debian-reload-problem/</guid>
       <description>必装 添加 apt 源 修改 apt 源vi /etc/apt/source.list 注释第五行 #deb cdrom:[Debian GNU/Linux 10.2.0 _Buster_ - Official amd64 DVD Binary-1 20191116-09:57]/ buster contrib main 在末尾添加清华源
 # 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释 deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-free # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-free deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-updates main contrib non-free # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-updates main contrib non-free deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-backports main contrib non-free # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-backports main contrib non-free deb https://mirrors.tuna.tsinghua.edu.cn/debian-security buster/updates main contrib non-free # deb-src https://mirrors.</description>
     </item>

@@ -22,36 +22,6 @@
 cd /opt/recon-ng ./recon-ng workspaces create SUCK db insert domains # 使用 Bing 查询域名 modules load recon/domains-hosts/bing_domain_web run # ..... 如上 #生成 html 报告页面 modules load reporting/html options set CREATOR HP2 options set CUSTOMER HP2 run </description>
     </item>
     <item>
-      <title>安全信息收集&#34;Recon-NG&#34;的使用</title>
-      <link>https://www.ha0zi.com/study-notes/linux/utils/202001-recon_ng-use/</link>
-      <pubDate>Thu, 30 Jan 2020 19:19:40 +0800</pubDate>
-      <guid>https://www.ha0zi.com/study-notes/linux/utils/202001-recon_ng-use/</guid>
-      <description>recon-ng 关于 recon-ng 的教程在网络上都是 v4 的版本,它们都是过时的! 为此浪费了很多时间.依据 &amp;lt;黑客秘籍&amp;ndash;渗透测试实用指南(第2版)&amp;gt; 教程过程的命令进行转换.另外特别说明 v5 版本中的模板需要使用 marketplace命令下载.本博文仅将书中的命令转换为 v5.1.1 版本命令.
-cd /opt/recon-ng ./recon-ng workspaces create SUCK db insert domains # 使用 Bing 查询域名 modules load recon/domains-hosts/bing_domain_web run # ..... 如上 #生成 html 报告页面 modules load reporting/html options set CREATOR HP2 options set CUSTOMER HP2 run </description>
-    </item>
-    <item>
-      <title>白帽子讲 Web 安全</title>
-      <link>https://www.ha0zi.com/book/pc/190801-ia-1-bmzjwebaq-whq/</link>
-      <pubDate>Fri, 02 Aug 2019 04:14:29 +0800</pubDate>
-      <guid>https://www.ha0zi.com/book/pc/190801-ia-1-bmzjwebaq-whq/</guid>
-      <description>阅读本次缘由 从小对计算机有着浓厚的兴趣，十几岁时受到媒体报道的影响非常向往‘黑客’这个群体，认为在这个群体里的天才一定非常的多，网络解决了距离的困扰，能和他们沟通一定非常的酷。
-如何知道这本书的早已记不清了，作者吴翰清的微信公众号《道哥的黑板报》。顺便推荐另一个微信公众号《懒人在思考》，就我所知这个公众号现在（1564826398）应该是余弦的团队在维护。说道余弦就让我想起了 知道创宇研发技能表。
-读书笔记 本书结构（书中 &amp;lt;前言&amp;gt; 有详细介绍） 我的安全世界观
-此篇中先回顾了安全的历史，然后阐述了笔者对安全的看法与态度，并提出了一些思考问题的方式以及做事的方法。理解了本篇，就能明白全本中所涉及的解决方案在抉择时的取舍。 客户端脚本安全
-当网站的安全做到一定程度后，黑客可能难以再找到类似注入攻击、脚本执行等高风险的漏洞，从而可能将注意力转移到客户端脚本攻击上。 服务器端应用安全
-服务端应用问题进行阐述。这些问题往往能引起非常严重的后果，在网站的安全建设之初需要有限解决这些问题，避免留下任何隐患。 互联网公司安全运营
-提出大安全运营的思想。安全是一个持续的过程，最终仍然要由安全工程师来保证结果。 笔记 安全工程师的核心竞争力不在于他能拥有多少个 0day，掌握多少种安全技术，而是在于他对安全理解的深度，以及由此引申的看待安全问题的角度和高度。&amp;mdash;&amp;ndash; &amp;lt;前言.对互联网安全的思考&amp;gt;
-互联网本来是安全的，自从有了研究安全的人之后，互联网就变得不安全了。&amp;mdash;&amp;ndash; &amp;lt;1.序言&amp;gt;
-整个互联网笼罩在黑色产业的阴影之下，每年数十亿的经济损失和数千万的网民受害，以及黑客精神的死亡，使得我们没有理由不把此时称为黑暗时代。也许黑客精神所代表的 Open、Free、Share，真的一去不复返了！&amp;mdash;&amp;ndash; &amp;lt;1.1.1&amp;gt;
-在早期互联网中，Web 并非互联网的主流应用，相对来说，基于 SMTP、POP3、FTP、IRC 等协议的服务器拥有着绝大多数的用户。 &amp;mdash;&amp;ndash; &amp;lt;1.1.2&amp;gt;
-在早期互联网中。相对于那些攻击系统软件的 exploit 而言，基于 Web 的攻击，一般只能让黑客获得一个较低权限的账户，对黑客的吸引力远远不如直接攻击系统软件。 &amp;mdash;&amp;ndash; &amp;lt;1.1.2&amp;gt;
-防火墙技术的兴起改变了互联网安全的格局。尤其是以 Cisco、**华为**等为代表的网络设备厂商，开始在网络产品中更加重视网络安全，最终改变了互联网安全的走向。防火墙、ACL 技术的兴起，使得直接暴露在互联网上的系统得到了保护。 &amp;mdash;&amp;mdash; &amp;lt;1.1.2&amp;gt;
-2003 年的冲击波蠕虫是一个里程碑式的事件，这个针对 Windows 操作系统 RPC 服务（运行在 445 端口）的蠕虫，在很短的时间内席卷了全球，造成了数百万台机器被感染，损失难以估量。在此次事件后，网络运营商们很坚决地在骨干网络上屏蔽了 135、445 等端口的连接请求。 &amp;mdash;&amp;ndash; &amp;lt;1.1.2&amp;gt;
-在互联网安全领域所经历的这个阶段，还有另外一个重要的分支，即桌面安全，或者叫客户端软件安全。其代表是浏览器攻击。一个经典的攻击场景是，黑客构造一个恶意网页，诱使用户使用浏览器访问该网页，利用浏览器中存在的某些漏洞，比如一个缓冲区溢出漏洞，执行 shellcode，通常情况是下载一个木马并在用户机器里执行。常见的针对桌面软件的攻击目标，还包括 Office 系列、Adobe Acrobat Reader、多媒体播放软件、压缩软件等装载量大的流行软件
-Web 版本时期黑客们的主要关注点
-Web 1.0: 人们更多的是关注服务器端动态脚本的安全问题，比如将一个可执行脚本（俗称 webshell）上传到服务器上,从而获得权限. Web 2.0: XSS、CSRF 等攻击已经变得更为强大。Web 攻击的思路也从服务器端转向了客户端，转向了浏览器和用户。 动态脚本语言的普及，以及 Web 技术发展初期对安全问题认知的不足导致很多“血案”的发生，同时也遗留下很多历史问题，比如 PHP 语言至今仍然只能靠较好的代码规范来保证没有文件包含漏洞，而无法从语言本身杜绝此类安全问题的发生。(该书的出版时间为：2012年3月) &amp;mdash;&amp;ndash; &amp;lt;1.</description>
-    </item>
-    <item>
       <title>白帽子讲 Web 安全</title>
       <link>https://www.ha0zi.com/post/book/pc/190801-ia-1-bmzjwebaq-whq/</link>
       <pubDate>Fri, 02 Aug 2019 04:14:29 +0800</pubDate>
@@ -87,19 +57,6 @@ button.addActionListener(event -&amp;gt; System.out.println(&amp;quot;button cli
 不可变值和函数 函数对一个值进行处理,映射成另外一个值 传入了一段代码块 Lambda 表达式的书写形式 空参传入 Runnable noArguments = () -&amp;gt; System.out.println(&amp;quot;Hello World&amp;quot;); 参数传入 ActionListener oneArgument = event -&amp;gt; System.out.println(&amp;quot;button clicked&amp;quot;); 代码块传入 Runnable multiStatement = () -&amp;gt; { System.out.print(&amp;#34;Hello&amp;#34;); System.out.println(&amp;#34; World&amp;#34;); }; 创建函数传入 BinaryOperator&amp;lt;Long&amp;gt; add = (x, y) -&amp;gt; x + y; 创建函数传入, 声明参数类型 BinaryOperator&amp;lt;Long&amp;gt; add = (Long x, Long y) -&amp;gt; x + y; Java 8 中重要的函数接口 接口 参数 返回类型 示例 Predicate T boolean 唱片是否发行 Consumer T void 输出一个值 Function&amp;lt;T, R&amp;gt; T R 获得 Artist 对象的名字 Supplier None T 工厂方法 UnaryOperator T T 逻辑非(!</description>
     </item>
     <item>
-      <title>Java8 Lambda 杂记</title>
-      <link>https://www.ha0zi.com/study-notes/190311-lambad-java8-study/</link>
-      <pubDate>Mon, 11 Mar 2019 19:00:00 +0800</pubDate>
-      <guid>https://www.ha0zi.com/study-notes/190311-lambad-java8-study/</guid>
-      <description>ps: 目前阅读学习《Java 8 函数式编程》,本博文是阅读笔记,有意者可自行通过互联网进行资源获取,或者通过京东等购物网站进行正版购买;
-概念 听说了很多函数式编程的 牛A、牛B、牛C 之处,说实话并不清楚函数式编程的本质是什么;百度看了百度百科也是云里雾里,引用一下书中的两处介绍
-&amp;quot; 但其核心是:在思考问题时,使用不可变值和函数,函数对一个值进行处理,映射成另外一个值. &amp;quot;
-&amp;quot; 和传入一个实现某接口的对象不同,我们传入了一段代码块&amp;mdash;一个没有名字的函数.&amp;quot;
-button.addActionListener(event -&amp;gt; System.out.println(&amp;quot;button clicked&amp;quot;));
-在引用正确的前提下,在我看来重点是以下三点:
-不可变值和函数 函数对一个值进行处理,映射成另外一个值 传入了一段代码块 Lambda 表达式的书写形式 空参传入 Runnable noArguments = () -&amp;gt; System.out.println(&amp;quot;Hello World&amp;quot;); 参数传入 ActionListener oneArgument = event -&amp;gt; System.out.println(&amp;quot;button clicked&amp;quot;); 代码块传入 Runnable multiStatement = () -&amp;gt; { System.out.print(&amp;#34;Hello&amp;#34;); System.out.println(&amp;#34; World&amp;#34;); }; 创建函数传入 BinaryOperator&amp;lt;Long&amp;gt; add = (x, y) -&amp;gt; x + y; 创建函数传入, 声明参数类型 BinaryOperator&amp;lt;Long&amp;gt; add = (Long x, Long y) -&amp;gt; x + y; Java 8 中重要的函数接口 接口 参数 返回类型 示例 Predicate T boolean 唱片是否发行 Consumer T void 输出一个值 Function&amp;lt;T, R&amp;gt; T R 获得 Artist 对象的名字 Supplier None T 工厂方法 UnaryOperator T T 逻辑非(!</description>
-    </item>
-    <item>
       <title>Java中关于&#34;this&#34;的概念测试</title>
       <link>https://www.ha0zi.com/post/study-notes/190222-java-this-concept-demo/</link>
       <pubDate>Fri, 22 Feb 2019 16:52:00 +0800</pubDate>
@@ -111,31 +68,10 @@ class TestClass Super class TestClass class TestClass 我们可以看出来所�
 由此我们可以暂时性的将this的概念理解为执行者,直至出现反驳以及更好的说明</description>
     </item>
     <item>
-      <title>Java中关于&#34;this&#34;的概念测试</title>
-      <link>https://www.ha0zi.com/study-notes/190222-java-this-concept-demo/</link>
-      <pubDate>Fri, 22 Feb 2019 16:52:00 +0800</pubDate>
-      <guid>https://www.ha0zi.com/study-notes/190222-java-this-concept-demo/</guid>
-      <description>一直以来我对this关键字的理解都是当前类,然后今天在查看一个教程的时候因为这个观念,我因为这个观念产生了不一样的观点,然后被人告知this代表的是&amp;rsquo;执行者&amp;rsquo;,对此我使用代码进行demo 测试;
-直接上代码
-public class SuperClass { public void test(){ System.out.println(&amp;#34;Super&amp;#34;); System.out.println(this.getClass().toString()); } public void ceshi(){ System.out.println(this.getClass().toString()); } } class TestClass extends SuperClass{ @Override public void test() { System.out.println(this.getClass().toString()); super.test(); super.ceshi(); } public static void main(String[] args) { TestClass testClass = new TestClass(); testClass.test(); } } 可以看出TestClass继承SuperClass并且重写了test()方法,那么我们运行main()方法,查询一下结果
-class TestClass Super class TestClass class TestClass 我们可以看出来所有的this在控制台中打印的结果是我们的子类,因为继承的关系,在父类的ceshi()方法中会被继承到子类中,所以这里打印的super.ceshi()方法打印的结果是TestClass我认为很合理,但是在子类重写的test()方法中,调用父类的被重写的test()方法确仍然打印出TestClass,那么就可以判断处我之前的观念确实是存在问题,那么在将他人讲解的执行者概念套上在理解,确实可以解释的通的;那么至少说明我之前理解的概念是不完全正确的
-由此我们可以暂时性的将this的概念理解为执行者,直至出现反驳以及更好的说明</description>
-    </item>
-    <item>
       <title>SpringBoot 拦截器学习</title>
       <link>https://www.ha0zi.com/post/study-notes/190222-java-spring_boot-interceptor/</link>
       <pubDate>Fri, 22 Feb 2019 14:11:00 +0800</pubDate>
       <guid>https://www.ha0zi.com/post/study-notes/190222-java-spring_boot-interceptor/</guid>
-      <description>阅读《Java EE 开发的颠覆者 Spring Boot 实战》时，在 第二部分-&amp;gt;第四章 SpringMVC 基础 中介绍到拦截器的使用，这里介绍拦截器的配置可让普通Bean 实现HandlerInterceptor 接口或者继承HandlerInterceptorAdapter 类来实现自定义拦截器.
-因为抽象类HandlerInterceptorAdapter 会多提供一个afterConcurrentHandlingStarted 方法,所以我们先根据继承HandlerInterceptorAdapter 的自定义拦截器类进行深入研究.这里我们先将相关的源码看一看.
-HandlerInterceptorAdapter
-package org.springframework.web.servlet.handler; import javax.servlet.http.HttpServletRequest; import javax.servlet.http.HttpServletResponse; import org.springframework.lang.Nullable; import org.springframework.web.servlet.AsyncHandlerInterceptor; import org.springframework.web.servlet.ModelAndView; public abstract class HandlerInterceptorAdapter implements AsyncHandlerInterceptor { public HandlerInterceptorAdapter() { } public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception { return true; } public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, @Nullable ModelAndView modelAndView) throws Exception { } public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, @Nullable Exception ex) throws Exception { } public void afterConcurrentHandlingStarted(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception { } } AsyncHandlerInterceptor</description>
-    </item>
-    <item>
-      <title>SpringBoot 拦截器学习</title>
-      <link>https://www.ha0zi.com/study-notes/190222-java-spring_boot-interceptor/</link>
-      <pubDate>Fri, 22 Feb 2019 14:11:00 +0800</pubDate>
-      <guid>https://www.ha0zi.com/study-notes/190222-java-spring_boot-interceptor/</guid>
       <description>阅读《Java EE 开发的颠覆者 Spring Boot 实战》时，在 第二部分-&amp;gt;第四章 SpringMVC 基础 中介绍到拦截器的使用，这里介绍拦截器的配置可让普通Bean 实现HandlerInterceptor 接口或者继承HandlerInterceptorAdapter 类来实现自定义拦截器.
 因为抽象类HandlerInterceptorAdapter 会多提供一个afterConcurrentHandlingStarted 方法,所以我们先根据继承HandlerInterceptorAdapter 的自定义拦截器类进行深入研究.这里我们先将相关的源码看一看.
 HandlerInterceptorAdapter

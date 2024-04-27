@@ -22,32 +22,10 @@
 Basic Keybindings to help you get started: ( mod = windows key) Open Terminal Window (Kitty): mod + enter Launch Program Launcher (rofi): mod + d Close Any Window: mod + shift + x Open/Edit Config file: vim ~/.</description>
     </item>
     <item>
-      <title>记录一次不一样的 Arch Linux 安装</title>
-      <link>https://www.ha0zi.com/study-notes/linux/20220710-linux-arch-install-special-md/</link>
-      <pubDate>Sun, 10 Jul 2022 11:02:41 +0800</pubDate>
-      <guid>https://www.ha0zi.com/study-notes/linux/20220710-linux-arch-install-special-md/</guid>
-      <description>前言 Arch Linux 的安装和其他傻瓜式的安装程序相比，显得那么与众不同，但更让人心动的是它的 AUR 仓库的丰富性。在此之前我曾安装并体验过一段时间，结果错误的更新配置导致系统的崩溃。这当然是我极不愿意忍受的，为此我准备使用 Debian 来作为我台式电脑的系统。但 Debian 的稳健让它的自带驱动不能很好的满足我的新设备，又意外的在 清华源 发现了 Arch Linux GUI 中我垂涎已久的 i3wm。 Arch Linux GUI 没有很好的处理 LVM 分区 的缘故，让我花费了大量的时间进行这次安装。我的处理方法是先使用本地正常分区安装，然后将已安装好的系统移到配置号的 LVM 分区。 我不认为傻瓜式的 GUI 安装需要再次说明，唯一值的一提的是我使用的是 archlinux-gui-i3-2022.05-x86_64.iso, 以往没有使用过 i3wm 导致我花费了很久的是指摸索，最后在 Arch Linux GUI 中找到相关说明这里备份一份
-Basic Keybindings to help you get started: ( mod = windows key) Open Terminal Window (Kitty): mod + enter Launch Program Launcher (rofi): mod + d Close Any Window: mod + shift + x Open/Edit Config file: vim ~/.</description>
-    </item>
-    <item>
       <title>Java rotateLeft 和 rotateRight 方法</title>
       <link>https://www.ha0zi.com/post/reprint/211223-reprint-java-base-integer-rotateleft-parsing/</link>
       <pubDate>Thu, 23 Dec 2021 14:08:19 +0800</pubDate>
       <guid>https://www.ha0zi.com/post/reprint/211223-reprint-java-base-integer-rotateleft-parsing/</guid>
-      <description>这篇博客很清楚的解答了我对 Integer.rotateLeft() 方法的理解，在这之前我花费了好几个小时找了多篇博客都没有说到重点。 博客原文
-正文 这两个方法实现的思想是循环左移和循环右移。首先来理解这两个概念
-循环移位就是把数值变成二进制，然后循环移动的过程；换句话说，循环移位就是将移出的低位放到该数的高位（循环右移）或把移出的高位放到该数的低位（循环左移），左移，和右移动都是对整数进行的操作，在Win32控制台应用程序中，整形占4Byte节32bit。
-循环左移的过程： 循环左移的过程可以分为3步：
-将x左端的n位先移动到y的低n位中，x&amp;gt;&amp;gt;(32-n); 将x左移n位，其右面低位补0，x&amp;lt; 进行按位或运算(x &amp;gt;&amp;gt; (32 - n) | (x &amp;lt;&amp;lt; n)); 循环右移的过程：
-循环右移的过程可以分为3步： 1. 将x的左端的低n位先移动到y的高n位中 x&amp;lt;&amp;lt;(32-n) 2. 将x右移n位，其左面高n位补 0x&amp;gt;&amp;gt;n; 3. 进行按位或操作 (x &amp;lt;&amp;lt; (32 - n) | (x &amp;gt;&amp;gt; n));
-上代码:
-public static long rotateLeft(long i, int distance) { return (i &amp;lt;&amp;lt; distance) | (i &amp;gt;&amp;gt;&amp;gt; -distance); } public static long rotateRight(long i, int distance) { return (i &amp;gt;&amp;gt;&amp;gt; distance) | (i &amp;lt;&amp;lt; -distance); } 实现的代码量可以说已经精简到最少了，有一点要注意的是，循环移位时，参数distance可以接受负数，当 distance 为负数时，这个等式是成立的，rotateLeft(i, distance) = rotateRight(i, -distance)。这个方法中有两点值得借鉴的，第一从整体上讲循环移位的实现方式；第二是 distance 与 -distance 的巧妙运用。</description>
-    </item>
-    <item>
-      <title>Java rotateLeft 和 rotateRight 方法</title>
-      <link>https://www.ha0zi.com/reprint/211223-reprint-java-base-integer-rotateleft-parsing/</link>
-      <pubDate>Thu, 23 Dec 2021 14:08:19 +0800</pubDate>
-      <guid>https://www.ha0zi.com/reprint/211223-reprint-java-base-integer-rotateleft-parsing/</guid>
       <description>这篇博客很清楚的解答了我对 Integer.rotateLeft() 方法的理解，在这之前我花费了好几个小时找了多篇博客都没有说到重点。 博客原文
 正文 这两个方法实现的思想是循环左移和循环右移。首先来理解这两个概念
 循环移位就是把数值变成二进制，然后循环移动的过程；换句话说，循环移位就是将移出的低位放到该数的高位（循环右移）或把移出的高位放到该数的低位（循环左移），左移，和右移动都是对整数进行的操作，在Win32控制台应用程序中，整形占4Byte节32bit。
@@ -68,26 +46,6 @@ public static long rotateLeft(long i, int distance) { return (i &amp;lt;&amp;lt;
 // 计算 432843 / 10^3 int a = 432843; String aStr = String.valueOf(a); Strint aLen = aStr.subtring(0, 3) String aReg = aStr.subtring(3, 7); return Integer.valueOf(aLen + &amp;#34;.&amp;#34; + aReg); </description>
     </item>
     <item>
-      <title>计算小技巧</title>
-      <link>https://www.ha0zi.com/study-notes/java/211023-number-compute-artice/</link>
-      <pubDate>Sat, 23 Oct 2021 18:36:18 +0800</pubDate>
-      <guid>https://www.ha0zi.com/study-notes/java/211023-number-compute-artice/</guid>
-      <description>说明 本文准备长期更新，以记录工作、学习中发现的一些关于计算的小技巧。
-目前仅掌握了 JAVA，以后的案例随着掌握的语言可能不限于 JAVA
-当除数为 10 的 n 次幂; 提防精度丢失，可以考虑使用字符串分割然后拼接的方式获取结果
-// 计算 432843 / 10^3 int a = 432843; String aStr = String.valueOf(a); Strint aLen = aStr.subtring(0, 3) String aReg = aStr.subtring(3, 7); return Integer.valueOf(aLen + &amp;#34;.&amp;#34; + aReg); </description>
-    </item>
-    <item>
-      <title>KVM 使用 virsh 的 console 连接配置</title>
-      <link>https://www.ha0zi.com/other/210214-kvm_console_config-reprint/</link>
-      <pubDate>Sun, 14 Feb 2021 19:35:20 +0800</pubDate>
-      <guid>https://www.ha0zi.com/other/210214-kvm_console_config-reprint/</guid>
-      <description>原文地址 现象是连接时卡在这里就不动了
-virsh console centos7.0 Connected to domain centos7.0 Escape character is ^]
-解决方法（在虚拟机中做如下操作）
-修改 /etc/securetty 到最后添加 ttyS0 echo ttyS0 &amp;gt;&amp;gt; /etc/securetty 修改/etc/inittab 到最后添加 S0:12345:respawn:/sbin/agetty/ ttyS0 115200 echo &#39;S0:12345:respawn:/sbin/agetty/ ttyS0 115200&#39; &amp;gt;&amp;gt; /etc/inittab 修改/etc/grub.conf 或者/etc/grub2.cfg 在系统配置添加console=ttyS0 我的是/etc/grub2.cfg，修改后的配置如下： 之后重启虚拟机就可以</description>
-    </item>
-    <item>
       <title>KVM 使用 virsh 的 console 连接配置</title>
       <link>https://www.ha0zi.com/post/other/210214-kvm_console_config-reprint/</link>
       <pubDate>Sun, 14 Feb 2021 19:35:20 +0800</pubDate>
@@ -96,18 +54,6 @@ virsh console centos7.0 Connected to domain centos7.0 Escape character is ^]
 virsh console centos7.0 Connected to domain centos7.0 Escape character is ^]
 解决方法（在虚拟机中做如下操作）
 修改 /etc/securetty 到最后添加 ttyS0 echo ttyS0 &amp;gt;&amp;gt; /etc/securetty 修改/etc/inittab 到最后添加 S0:12345:respawn:/sbin/agetty/ ttyS0 115200 echo &#39;S0:12345:respawn:/sbin/agetty/ ttyS0 115200&#39; &amp;gt;&amp;gt; /etc/inittab 修改/etc/grub.conf 或者/etc/grub2.cfg 在系统配置添加console=ttyS0 我的是/etc/grub2.cfg，修改后的配置如下： 之后重启虚拟机就可以</description>
-    </item>
-    <item>
-      <title>部分 Windows 利用 KMS 激活</title>
-      <link>https://www.ha0zi.com/other/210101-win-activation-by-kms/</link>
-      <pubDate>Fri, 01 Jan 2021 18:53:54 +0800</pubDate>
-      <guid>https://www.ha0zi.com/other/210101-win-activation-by-kms/</guid>
-      <description>步骤 修改激活服务器地址 添加/修改激活密钥 执行激活操作 PS: 该教程需要使用的 Windows 系统需要是 VL 版本的
-KMS 该教程来源于 Window7 贴吧, 目前已经删除, 以前逛的贴吧还是获取过很多的资源的.
-修改激活服务器 首先如果是 Windows10 系统的话其实可以考虑去淘宝找一下, 可以购买永久激活版本的,也就是花费 15 元左右并不会很贵, 这种的激活码会把你的电脑硬件数据提交到中国的微软服务器, 如果意外重装了系统并不需要再次激活, 之所以提这个是因为 KMS 系统本身或许是没有问题的, 但并不代表提供这个服务的系统所有者的系统是&amp;quot;干净&amp;quot;的. 以下我所举例的 KMS 系统仅是我所知的, 并不保证它是&amp;quot;干净&amp;quot;的.
-点击 Windows 系统的开始菜单输入 cmd 右键单击选择 管理员模式运行, 在黑窗口中输入 slmgr /skms kms.03k.org
-输入对应的激活码 请将下方的 [code] 替换成对应系统的激活码 slmgr /ipk [code]
-Windows Server 系列: Windows Server 2019 Datacenter：WMDGN-G9PQG-XVVXX-R3X43-63DFG Windows Server 2019 Standard：N69G4-B89J2-4G8F4-WWYCC-J464C Windows Server 2016 Datacenter：CB7KF-BWN84-R7R2Y-793K2-8XDDG Windows Server 2016 Standard：WC2BQ-8NRM3-FDDYY-2BFGV-KHKQY Windows Server 2012 R2 Server Standard：D2N9P-3P6X9-2R39C-7RTCD-MDVJX WindowsServer 2012 R2 Datacenter：W3GGN-FT8W3-Y4M27-J84CP-Q3VJ9 Windows Server 2012 Server Standard：XC9B7-NBPP2-83J2H-RHMBY-92BT4 Windows Server 2012 Datacenter：48HP8-DN98B-MYWDG-T2DCC-8W83P- Windows Server 2008 R2 Standard：YC6KT-GKW9T-YTKYR-T4X34-R7VHC Windows Server 2008 R2 企业版：489J6-VHDMP-X63PK-3K798-CPX3Y Windows Server 2008 R2 Datacenter：74YFP-3QFB3-KQT8W-PMXWJ-7M648 Windows Server 2008 Standard：TM24T-X9RMF-VWXK6-X8JC9-BFGM2 不带 Hyper-V 的 Windows Server 2008 Standard：W7VD6-7JFBR-RX26B-YKQ3Y-6FFFJ Windows Server 2008 企业版：YQGMW-MPWTJ-34KDK-48M3W-X4Q6V 不带 Hyper-V 的 Windows Server 2008 企业版：39BXF-X8Q23-P2WWT-38T2F-G3FPG Windows Server 2008 Datacenter：7M67G-PC374-GR742-YH8V4-TCBY3 不带 Hyper-V 的 Windows Server 2008 Datacenter：22XQ2-VRXRG-P8D42-K34TD-G3QQC 个人 Windows 系列: Windows 8.</description>
     </item>
     <item>
       <title>部分 Windows 利用 KMS 激活</title>
@@ -133,17 +79,6 @@ sudo apt-get --reinstall install libwebkit2gtk-4.0-37 gir1.2-webkit2-4.0 libjava
 正常的安装软件运行执行完成.</description>
     </item>
     <item>
-      <title>apt 中断后重装软件</title>
-      <link>https://www.ha0zi.com/study-notes/linux/20201223-linux-apt-reinstall-app/</link>
-      <pubDate>Wed, 23 Dec 2020 13:56:41 +0800</pubDate>
-      <guid>https://www.ha0zi.com/study-notes/linux/20201223-linux-apt-reinstall-app/</guid>
-      <description>环境 Debian 10 [amd64] 具体操作 查询具体的中断操作 中断了 apt 操作之后假设你并不清楚具体在哪里中断的,可以先在 /var/log/apt/term.log 中进行查询之前具体的操作.例如:
-Start-Date: 2020-12-23 13:42:08 Commandline: apt upgrade Requested-By: hz (1000) Upgrade: libwebkit2gtk-4.0-37:amd64 (2.30.3-1~deb10u1, 2.30.4-1~deb10u1), gir1.2-webkit2-4.0:amd64 (2.30.3-1~deb10u1, 2.30.4-1~deb10u1), libjavascriptcoregtk-4.0-18:amd64 (2.30.3-1~deb10u1, 2.30.4-1~deb10u1), gir1.2-javascriptcoregtk-4.0:amd64 (2.30.3-1~deb10u1, 2.30.4-1~deb10u1) End-Date: 2020-12-23 13:42:16 这个就是我之前的操作,我们可以看到当时我正在进行系统更新操作,更新的软件分别是 libwebkit2gtk-4.0-37, gir1.2-webkit2-4.0, libjavascriptcoregtk-4.0-18, gir1.2-javascriptcoregtk-4.0.查询资料信息来源
-重装软件 我们已经知道了之前安装的操作步骤了,那么我们就可以重新安装之前的软件,避免因为中断导致的系统文件缺失错误.
-sudo apt-get --reinstall install libwebkit2gtk-4.0-37 gir1.2-webkit2-4.0 libjavascriptcoregtk-4.0-18 gir1.2-javascriptcoregtk-4.0
-正常的安装软件运行执行完成.</description>
-    </item>
-    <item>
       <title>Metasploit 基础使用 handler 连接 win7 并提权清除日志</title>
       <link>https://www.ha0zi.com/post/study-notes/linux/utils/20201211-linux-util-metasploit-base-use-hanler-win7-rightescalation/</link>
       <pubDate>Fri, 11 Dec 2020 15:55:33 +0800</pubDate>
@@ -153,32 +88,10 @@ sudo apt-get --reinstall install libwebkit2gtk-4.0-37 gir1.2-webkit2-4.0 libjava
 安装好了 shellter 之后我们在终端输入 sudo shellter 会出现一个新的窗口, 这里会出现一些选择 (请参考下图), 目前我了解的 a 代表的是 auto 自动的意思. 而这里的 m 似乎代表的是 manual, 这里我们仅说明自动的操作.</description>
     </item>
     <item>
-      <title>Metasploit 基础使用 handler 连接 win7 并提权清除日志</title>
-      <link>https://www.ha0zi.com/study-notes/linux/utils/20201211-linux-util-metasploit-base-use-hanler-win7-rightescalation/</link>
-      <pubDate>Fri, 11 Dec 2020 15:55:33 +0800</pubDate>
-      <guid>https://www.ha0zi.com/study-notes/linux/utils/20201211-linux-util-metasploit-base-use-hanler-win7-rightescalation/</guid>
-      <description>简介 目前根据 i 春秋 进行学习,目前到利用 shellter 进行文件捆绑木马并达到免查杀的效果, 在使用 metasploit 对指定目标机进行监听获取权限.利用打包好的漏洞程序进行提权并清除日志信息.这里我们的步骤是根据这个 来源 学习进行的.
-操作环境 kali 2020.4 shellter 7.2-amd64 wine \ wine64 \ wine32 metasploit 6.0.18-dev win 7 企业版 注:请特别注意关闭 win7 的防火墙,不要说为什么我的没有用连接不上 具体操作 首先下载 putty.exe , 使用 shellter 进行木马封装,记住这些我们都是在 kali 虚拟机下完成的; kali 2020.4 并没有预安装 shellter 使用了 sudo apt-get install shellter 进行安装, 安装完了之后控制台返回了一个错误信息,希望我们添加 32 位的资源并且下载 wine32 (这里的具体命令我记得并不是很清晰了,请自行看控制台).
-安装好了 shellter 之后我们在终端输入 sudo shellter 会出现一个新的窗口, 这里会出现一些选择 (请参考下图), 目前我了解的 a 代表的是 auto 自动的意思. 而这里的 m 似乎代表的是 manual, 这里我们仅说明自动的操作.</description>
-    </item>
-    <item>
       <title>Linux 环境下使用 dd 创建 U盘 启动盘</title>
       <link>https://www.ha0zi.com/post/study-notes/linux/200722-system-linux-u-disk-boot-create-to-dd/</link>
       <pubDate>Wed, 22 Jul 2020 20:17:42 +0800</pubDate>
       <guid>https://www.ha0zi.com/post/study-notes/linux/200722-system-linux-u-disk-boot-create-to-dd/</guid>
-      <description>步骤简介 卸载 U盘 格式化 执行启动盘制作并同步 具体实现 卸载 U盘 鉴于目前我们常见的我所知的系统镜像文件大多在 10GiB 以内,所以这边建议大家准备一个 16GB 的移动硬盘来制作系统安装启动盘.
-将移动硬盘插入电脑 USB 接口中,我们可以在文档管理器中看到一个移动硬盘的显示识别到一个移动硬盘,这个时候我们可以关闭文档管理器,打开我们的终端进行操作. 我们可以使用sudo fdisk -l查看当前系统所识别到的档案系统并判断哪一个是你的 U盘.譬如我的电脑中显示的/dev/sdc1就是我的 U盘 判断依据的话,首先可以看哪一个档案系统的存储容量和你的移动硬盘最接近,其次如果还是无法判断,那么可以先拔掉移动硬盘查询一次,那么少的那个档案系统就是你的移动硬盘无疑了.(如果硬盘过多,可以使用sudo lsblk又或者sudo blkid进行档案系统查询) 使用sudo umount /dev/sdc*(ps:umount 命令后接的路径以你实际的移动硬盘路径为准),执行卸载命令.这个时候有的朋友会遇到umount: /dev/sdc1: not mounted.这个提示时不用慌,它只是告诉你 /dev/sdc1 并没有挂载,所以你可以直接进行下一步格式话操作即可.
-格式化 现在我们已经卸载了我们的移动硬盘,这个时候我们再次输入sudo umount /dev/sdc*会提示我们并没有这个档案系统挂载,那么我们可以进行 sudo mkfs.vfat -I /dev/sdc1这个时候它会显示mkfs.fat 4.1 (2017-01-24)这个提示信息,我们只需要等待它格式化完成即可.
-如果你在格式化的时候收到提示的是
-mkfs.fat 4.1 (2017-01-24) mkfs.vfat: /dev/sdc1 contains a mounted filesystem. 那么恭喜你,你并没有卸载 /dev/sdc1 这个档案系统,这里就建议你再确认一遍你所卸载的是否就是你准备作为启动盘的移动硬盘,并正确的使用上面提到的卸载 U盘 的内容进行卸载.
-执行启动盘制作并同步 这个需要准备一个系统镜像文件一般一*.iso结尾的文件,具体的获取方式可以参考UEFI引导-物理机安装CentOS8.1 中的下载镜像文件说明.
-在此这些操作的过程中我们都没有使用过任何其他的工具对移动硬盘进行过操作,(如果出现类似&amp;rsquo;不存在这个挂载&amp;rsquo;或则&amp;rsquo;该挂载被其他工具所占用&amp;rsquo;,那么你就需要判断你所操作的档案系统是否是你的移动硬盘,以及判断是否存在什么应用一直在访问你的移动硬盘里面的文件.遇到此类情况可以联系我一起进行学习探讨 xthcs1994@163.com)那么使用dd命令进行系统安装启动盘制作. dd if=/home/${USER}/Downloads/*.iso of=/dev/sdc1 bs=4M &amp;amp;&amp;amp; sudo sync</description>
-    </item>
-    <item>
-      <title>Linux 环境下使用 dd 创建 U盘 启动盘</title>
-      <link>https://www.ha0zi.com/study-notes/linux/200722-system-linux-u-disk-boot-create-to-dd/</link>
-      <pubDate>Wed, 22 Jul 2020 20:17:42 +0800</pubDate>
-      <guid>https://www.ha0zi.com/study-notes/linux/200722-system-linux-u-disk-boot-create-to-dd/</guid>
       <description>步骤简介 卸载 U盘 格式化 执行启动盘制作并同步 具体实现 卸载 U盘 鉴于目前我们常见的我所知的系统镜像文件大多在 10GiB 以内,所以这边建议大家准备一个 16GB 的移动硬盘来制作系统安装启动盘.
 将移动硬盘插入电脑 USB 接口中,我们可以在文档管理器中看到一个移动硬盘的显示识别到一个移动硬盘,这个时候我们可以关闭文档管理器,打开我们的终端进行操作. 我们可以使用sudo fdisk -l查看当前系统所识别到的档案系统并判断哪一个是你的 U盘.譬如我的电脑中显示的/dev/sdc1就是我的 U盘 判断依据的话,首先可以看哪一个档案系统的存储容量和你的移动硬盘最接近,其次如果还是无法判断,那么可以先拔掉移动硬盘查询一次,那么少的那个档案系统就是你的移动硬盘无疑了.(如果硬盘过多,可以使用sudo lsblk又或者sudo blkid进行档案系统查询) 使用sudo umount /dev/sdc*(ps:umount 命令后接的路径以你实际的移动硬盘路径为准),执行卸载命令.这个时候有的朋友会遇到umount: /dev/sdc1: not mounted.这个提示时不用慌,它只是告诉你 /dev/sdc1 并没有挂载,所以你可以直接进行下一步格式话操作即可.
 格式化 现在我们已经卸载了我们的移动硬盘,这个时候我们再次输入sudo umount /dev/sdc*会提示我们并没有这个档案系统挂载,那么我们可以进行 sudo mkfs.vfat -I /dev/sdc1这个时候它会显示mkfs.fat 4.1 (2017-01-24)这个提示信息,我们只需要等待它格式化完成即可.
@@ -200,41 +113,11 @@ mkfs.fat 4.1 (2017-01-24) mkfs.vfat: /dev/sdc1 contains a mounted filesystem. �
 U盘 无法识别 使用 win 键输入 PowerShell 在 Windows PowerShell右键管理员运行 输入diskpart 使用该软件 获取列表并选中 U盘,先清除它在进行格式化.</description>
     </item>
     <item>
-      <title>UEFI引导-物理机安装CentOS8.1</title>
-      <link>https://www.ha0zi.com/study-notes/200601-system-install-for-uefi/</link>
-      <pubDate>Thu, 28 May 2020 18:17:16 +0800</pubDate>
-      <guid>https://www.ha0zi.com/study-notes/200601-system-install-for-uefi/</guid>
-      <description>步骤简介 下载镜像文件 下载 U盘 制作工具 制作系统镜像引导 U盘 使用引导盘安装系统 具体操作 下载镜像文件(信息存在时效性, 该信息最后修改时间: 2020年05月28日18:12:40) 个人的建议是通过官网进行下载系统镜像,当然会遇到一些官网无法访问或者下载缓慢的情况.具体的下载步骤就不一一说明了,自行百度,一抓一大把.
-无法访问官网,那么可以利用国内各大公司或者教育机构提供的镜像站进行下载;(以下列举几个,还有很多优秀的镜像网站未列出) 公司开源镜像 https://mirrors.163.com/ https://mirrors.aliyun.com https://mirrors.cloud.tencent.com/ 教育机构开源镜像 https://mirrors.tuna.tsinghua.edu.cn/ 下载缓慢的情况,这种情况普遍常见,建议在官网中镜像列表中找到适合离自己最近的镜像站点. CentOS Ubuntu(在官网搜索到以下两个地址,目的是安装系统,具体的区别就不细究,都可以下载镜像文件的目的) https://launchpad.net/ubuntu/+cdmirrors https://launchpad.net/ubuntu/+archivemirrors 下载 U盘 制作工具 Windows Rufus Win32 Disk Imager UltraISO(软碟通) Linux(暂无,目前使用 KVM 做 Win 镜像使用软件) SOURCEFORGE 制作镜像引导 U盘 说明 操作的系统是 Windows 7 企业版,具体的软件使用就不累述了,太过简单化,如遇问题可以自行百度之后在互相沟通.
-需要提醒的是,Rufus 是需要联网的,如果你是在无网的环境下,请使用其他 镜像U盘制作工具.UltraISO(软碟通)在使用过程中偶尔会出现一些&amp;rsquo;出乎意料&amp;rsquo;的错误.
-本次使用的镜像为&amp;rsquo;CentOS-8.1.1911-x86_64-boot.iso&amp;rsquo;使用Rufus 现在(2020年05月30日)是无法支持的,所以本次使用 Win32 Disk Imager 进行镜像引导盘的制作.
-使用 Win32 Disk Imager 出现 U盘 无法也无法设置盘符等问题,这里可以参考 Win32 Disk Imager U 盘恢复 的方法,进行操作可以完美解决你的问题.
-U盘 无法识别 使用 win 键输入 PowerShell 在 Windows PowerShell右键管理员运行 输入diskpart 使用该软件 获取列表并选中 U盘,先清除它在进行格式化.</description>
-    </item>
-    <item>
-      <title>IDEA 使用</title>
-      <link>https://www.ha0zi.com/other/200317-notes-idea-skills-list/</link>
-      <pubDate>Tue, 17 Mar 2020 19:58:44 +0800</pubDate>
-      <guid>https://www.ha0zi.com/other/200317-notes-idea-skills-list/</guid>
-      <description>IDEA 使用 引用 项目打包 Jar https://blog.csdn.net/qq_37105358/article/details/79467401 </description>
-    </item>
-    <item>
       <title>IDEA 使用</title>
       <link>https://www.ha0zi.com/post/other/200317-notes-idea-skills-list/</link>
       <pubDate>Tue, 17 Mar 2020 19:58:44 +0800</pubDate>
       <guid>https://www.ha0zi.com/post/other/200317-notes-idea-skills-list/</guid>
       <description>IDEA 使用 引用 项目打包 Jar https://blog.csdn.net/qq_37105358/article/details/79467401 </description>
-    </item>
-    <item>
-      <title>记录下各种奇怪的东西</title>
-      <link>https://www.ha0zi.com/other/200317-other-interesting-recording/</link>
-      <pubDate>Tue, 17 Mar 2020 19:51:36 +0800</pubDate>
-      <guid>https://www.ha0zi.com/other/200317-other-interesting-recording/</guid>
-      <description>这个是一个临时记录好奇的东西的,有时间有可能会去研究具体的原由,也可能后一直无视
-随机.套图.网址在网址栏解析出 https://xn--nqvo76h.xn--wcs97c.xn--ses554g/,无视网站的内容就说它的转换.
-图数据库
-如果您想使用 MySQL，请确保不要使用 5.6.4 之前的版本，这是一个众所周知的时间戳问题 (抱歉，在此之前，我并不知道，但是确实有发现导入数据库有问题)来源
-gdm3(3.36.3) 修改配置文件可隐藏登陆列表的指定用户: 修改 /var/lib/AccountsService/users/&amp;lt;username&amp;gt;, 在 [User] 下添加 SystemAccount=true 来源</description>
     </item>
     <item>
       <title>记录下各种奇怪的东西</title>
@@ -263,33 +146,10 @@ ENTRYPOINT Docker run 运行时的运行指令,里面的参数为定量.
 小技巧 CMD 中执行的命令中包含了星号等通配符,可以通过 /bin/sh 来执行命令 CMD [&amp;quot;/bin/sh&amp;quot;, &amp;quot;-c&amp;quot;, &amp;quot;java&amp;quot;, &amp;quot;-jar&amp;quot;, &amp;quot;*.jar&amp;quot;] </description>
     </item>
     <item>
-      <title>Dockerfile 基础语法</title>
-      <link>https://www.ha0zi.com/study-notes/200317-docker-dockerfile-base/</link>
-      <pubDate>Tue, 17 Mar 2020 19:39:33 +0800</pubDate>
-      <guid>https://www.ha0zi.com/study-notes/200317-docker-dockerfile-base/</guid>
-      <description>简介 Dockerfile 是构建 Docker 镜像的文件,可以自定义更适合应用场景的环境.
-指令 FROM 声明自定义镜像的基础镜像;后面的命令都是基于基础镜像环境使用的.
-RUN Docker build 运行时的运行指令;执行基于环境的命令.
-COPY 复制指令;默认复制当前上下文的文件/目录.
-WORKDIR 声明工作目录;声明镜像中的工作目录.
-EXPOSE 声明容器需要使用的端口.
-CMD Docker run 运行时的运行指令,里面的参数为变量.
-ENTRYPOINT Docker run 运行时的运行指令,里面的参数为定量.
-小技巧 CMD 中执行的命令中包含了星号等通配符,可以通过 /bin/sh 来执行命令 CMD [&amp;quot;/bin/sh&amp;quot;, &amp;quot;-c&amp;quot;, &amp;quot;java&amp;quot;, &amp;quot;-jar&amp;quot;, &amp;quot;*.jar&amp;quot;] </description>
-    </item>
-    <item>
       <title>安全_信息收集_&#39;Recon-NG&#39;的使用</title>
       <link>https://www.ha0zi.com/post/study-notes/linux/utils/202001-recon_ng-use/</link>
       <pubDate>Thu, 30 Jan 2020 19:19:40 +0000</pubDate>
       <guid>https://www.ha0zi.com/post/study-notes/linux/utils/202001-recon_ng-use/</guid>
-      <description>recon-ng 关于 recon-ng 的教程在网络上都是 v4 的版本,它们都是过时的! 为此浪费了很多时间.依据 &amp;lt;黑客秘籍&amp;ndash;渗透测试实用指南(第2版)&amp;gt; 教程过程的命令进行转换.另外特别说明 v5 版本中的模板需要使用 marketplace命令下载.本博文仅将书中的命令转换为 v5.1.1 版本命令.
-cd /opt/recon-ng ./recon-ng workspaces create SUCK db insert domains # 使用 Bing 查询域名 modules load recon/domains-hosts/bing_domain_web run # ..... 如上 #生成 html 报告页面 modules load reporting/html options set CREATOR HP2 options set CUSTOMER HP2 run </description>
-    </item>
-    <item>
-      <title>安全信息收集&#34;Recon-NG&#34;的使用</title>
-      <link>https://www.ha0zi.com/study-notes/linux/utils/202001-recon_ng-use/</link>
-      <pubDate>Thu, 30 Jan 2020 19:19:40 +0800</pubDate>
-      <guid>https://www.ha0zi.com/study-notes/linux/utils/202001-recon_ng-use/</guid>
       <description>recon-ng 关于 recon-ng 的教程在网络上都是 v4 的版本,它们都是过时的! 为此浪费了很多时间.依据 &amp;lt;黑客秘籍&amp;ndash;渗透测试实用指南(第2版)&amp;gt; 教程过程的命令进行转换.另外特别说明 v5 版本中的模板需要使用 marketplace命令下载.本博文仅将书中的命令转换为 v5.1.1 版本命令.
 cd /opt/recon-ng ./recon-ng workspaces create SUCK db insert domains # 使用 Bing 查询域名 modules load recon/domains-hosts/bing_domain_web run # ..... 如上 #生成 html 报告页面 modules load reporting/html options set CREATOR HP2 options set CUSTOMER HP2 run </description>
     </item>
@@ -302,50 +162,12 @@ cd /opt/recon-ng ./recon-ng workspaces create SUCK db insert domains # 使用 Bi
 # 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释 deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-free # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-free deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-updates main contrib non-free # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-updates main contrib non-free deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-backports main contrib non-free # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-backports main contrib non-free deb https://mirrors.tuna.tsinghua.edu.cn/debian-security buster/updates main contrib non-free # deb-src https://mirrors.</description>
     </item>
     <item>
-      <title>重装 Debian9 系统之后的坑</title>
-      <link>https://www.ha0zi.com/study-notes/linux/191229-system-debian-reload-problem/</link>
-      <pubDate>Tue, 24 Dec 2019 00:44:11 +0800</pubDate>
-      <guid>https://www.ha0zi.com/study-notes/linux/191229-system-debian-reload-problem/</guid>
-      <description>必装 添加 apt 源 修改 apt 源vi /etc/apt/source.list 注释第五行 #deb cdrom:[Debian GNU/Linux 10.2.0 _Buster_ - Official amd64 DVD Binary-1 20191116-09:57]/ buster contrib main 在末尾添加清华源
-# 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释 deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-free # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-free deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-updates main contrib non-free # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-updates main contrib non-free deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-backports main contrib non-free # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-backports main contrib non-free deb https://mirrors.tuna.tsinghua.edu.cn/debian-security buster/updates main contrib non-free # deb-src https://mirrors.</description>
-    </item>
-    <item>
       <title>Shell(md5sum\sha1sum\sha256sum) 编程杂记</title>
       <link>https://www.ha0zi.com/post/study-notes/linux/191205-shell-get_md5-customize/</link>
       <pubDate>Thu, 05 Dec 2019 20:40:09 +0800</pubDate>
       <guid>https://www.ha0zi.com/post/study-notes/linux/191205-shell-get_md5-customize/</guid>
       <description>发现三个 Shell 命令 md5sum、sha1sum、sha256sum，发现用于文件下载辨别还是很有用处的。网络上充斥着许许多多魔改的程序，有些改动可能是善意、玩闹的，同时也包含一些改动是恶意的！我们无法保证所下载的资源没有被修改，更不敢保证他们都没有恶意。因此可以使用 md5 、 sha1、sha256 等一系列密码散列函数进行验证。 这里我们不过多的介绍 Shell 命令的具体使用方法，感兴趣的朋友可以自行搜索或者* -help。预期的效果类似与 mkdir -p /opt/demo/demo 简单的花了半个小时进行查找资料发现了有三种方式可以在执行命令的时候动态的改变参数。
 在执行 Shell 脚本的后面直接添加字符，例如创建一个&amp;rsquo;demo.sh&#39; #!/bin/bash echo $1 echo $2$3 $ chmod +x demo.sh $ ./demo.sh $ ./demo.sh 4 5 6 4 56 $ ./demo.sh 14 5 14 5 $ ./demo.sh 14 14 $ ./demo.sh 14 4 14 14 14 414 使用 getopts 命令（获知途径） #!/bin/bash while getopts &amp;#34;:a:b:c:&amp;#34; opt do case $opt in a) echo &amp;#34;参数a的值$OPTARG&amp;#34; ;; b) echo &amp;#34;参数b的值$OPTARG&amp;#34; ;; c) echo &amp;#34;参数c的值$OPTARG&amp;#34; ;; ?</description>
-    </item>
-    <item>
-      <title>Shell(md5sum\sha1sum\sha256sum) 编程杂记</title>
-      <link>https://www.ha0zi.com/study-notes/linux/191205-shell-get_md5-customize/</link>
-      <pubDate>Thu, 05 Dec 2019 20:40:09 +0800</pubDate>
-      <guid>https://www.ha0zi.com/study-notes/linux/191205-shell-get_md5-customize/</guid>
-      <description>发现三个 Shell 命令 md5sum、sha1sum、sha256sum，发现用于文件下载辨别还是很有用处的。网络上充斥着许许多多魔改的程序，有些改动可能是善意、玩闹的，同时也包含一些改动是恶意的！我们无法保证所下载的资源没有被修改，更不敢保证他们都没有恶意。因此可以使用 md5 、 sha1、sha256 等一系列密码散列函数进行验证。 这里我们不过多的介绍 Shell 命令的具体使用方法，感兴趣的朋友可以自行搜索或者* -help。预期的效果类似与 mkdir -p /opt/demo/demo 简单的花了半个小时进行查找资料发现了有三种方式可以在执行命令的时候动态的改变参数。
-在执行 Shell 脚本的后面直接添加字符，例如创建一个&amp;rsquo;demo.sh&#39; #!/bin/bash echo $1 echo $2$3 $ chmod +x demo.sh $ ./demo.sh $ ./demo.sh 4 5 6 4 56 $ ./demo.sh 14 5 14 5 $ ./demo.sh 14 14 $ ./demo.sh 14 4 14 14 14 414 使用 getopts 命令（获知途径） #!/bin/bash while getopts &amp;#34;:a:b:c:&amp;#34; opt do case $opt in a) echo &amp;#34;参数a的值$OPTARG&amp;#34; ;; b) echo &amp;#34;参数b的值$OPTARG&amp;#34; ;; c) echo &amp;#34;参数c的值$OPTARG&amp;#34; ;; ?</description>
-    </item>
-    <item>
-      <title>白帽子讲 Web 安全</title>
-      <link>https://www.ha0zi.com/book/pc/190801-ia-1-bmzjwebaq-whq/</link>
-      <pubDate>Fri, 02 Aug 2019 04:14:29 +0800</pubDate>
-      <guid>https://www.ha0zi.com/book/pc/190801-ia-1-bmzjwebaq-whq/</guid>
-      <description>阅读本次缘由 从小对计算机有着浓厚的兴趣，十几岁时受到媒体报道的影响非常向往‘黑客’这个群体，认为在这个群体里的天才一定非常的多，网络解决了距离的困扰，能和他们沟通一定非常的酷。
-如何知道这本书的早已记不清了，作者吴翰清的微信公众号《道哥的黑板报》。顺便推荐另一个微信公众号《懒人在思考》，就我所知这个公众号现在（1564826398）应该是余弦的团队在维护。说道余弦就让我想起了 知道创宇研发技能表。
-读书笔记 本书结构（书中 &amp;lt;前言&amp;gt; 有详细介绍） 我的安全世界观
-此篇中先回顾了安全的历史，然后阐述了笔者对安全的看法与态度，并提出了一些思考问题的方式以及做事的方法。理解了本篇，就能明白全本中所涉及的解决方案在抉择时的取舍。 客户端脚本安全
-当网站的安全做到一定程度后，黑客可能难以再找到类似注入攻击、脚本执行等高风险的漏洞，从而可能将注意力转移到客户端脚本攻击上。 服务器端应用安全
-服务端应用问题进行阐述。这些问题往往能引起非常严重的后果，在网站的安全建设之初需要有限解决这些问题，避免留下任何隐患。 互联网公司安全运营
-提出大安全运营的思想。安全是一个持续的过程，最终仍然要由安全工程师来保证结果。 笔记 安全工程师的核心竞争力不在于他能拥有多少个 0day，掌握多少种安全技术，而是在于他对安全理解的深度，以及由此引申的看待安全问题的角度和高度。&amp;mdash;&amp;ndash; &amp;lt;前言.对互联网安全的思考&amp;gt;
-互联网本来是安全的，自从有了研究安全的人之后，互联网就变得不安全了。&amp;mdash;&amp;ndash; &amp;lt;1.序言&amp;gt;
-整个互联网笼罩在黑色产业的阴影之下，每年数十亿的经济损失和数千万的网民受害，以及黑客精神的死亡，使得我们没有理由不把此时称为黑暗时代。也许黑客精神所代表的 Open、Free、Share，真的一去不复返了！&amp;mdash;&amp;ndash; &amp;lt;1.1.1&amp;gt;
-在早期互联网中，Web 并非互联网的主流应用，相对来说，基于 SMTP、POP3、FTP、IRC 等协议的服务器拥有着绝大多数的用户。 &amp;mdash;&amp;ndash; &amp;lt;1.1.2&amp;gt;
-在早期互联网中。相对于那些攻击系统软件的 exploit 而言，基于 Web 的攻击，一般只能让黑客获得一个较低权限的账户，对黑客的吸引力远远不如直接攻击系统软件。 &amp;mdash;&amp;ndash; &amp;lt;1.1.2&amp;gt;
-防火墙技术的兴起改变了互联网安全的格局。尤其是以 Cisco、**华为**等为代表的网络设备厂商，开始在网络产品中更加重视网络安全，最终改变了互联网安全的走向。防火墙、ACL 技术的兴起，使得直接暴露在互联网上的系统得到了保护。 &amp;mdash;&amp;mdash; &amp;lt;1.1.2&amp;gt;
-2003 年的冲击波蠕虫是一个里程碑式的事件，这个针对 Windows 操作系统 RPC 服务（运行在 445 端口）的蠕虫，在很短的时间内席卷了全球，造成了数百万台机器被感染，损失难以估量。在此次事件后，网络运营商们很坚决地在骨干网络上屏蔽了 135、445 等端口的连接请求。 &amp;mdash;&amp;ndash; &amp;lt;1.1.2&amp;gt;
-在互联网安全领域所经历的这个阶段，还有另外一个重要的分支，即桌面安全，或者叫客户端软件安全。其代表是浏览器攻击。一个经典的攻击场景是，黑客构造一个恶意网页，诱使用户使用浏览器访问该网页，利用浏览器中存在的某些漏洞，比如一个缓冲区溢出漏洞，执行 shellcode，通常情况是下载一个木马并在用户机器里执行。常见的针对桌面软件的攻击目标，还包括 Office 系列、Adobe Acrobat Reader、多媒体播放软件、压缩软件等装载量大的流行软件
-Web 版本时期黑客们的主要关注点
-Web 1.0: 人们更多的是关注服务器端动态脚本的安全问题，比如将一个可执行脚本（俗称 webshell）上传到服务器上,从而获得权限. Web 2.0: XSS、CSRF 等攻击已经变得更为强大。Web 攻击的思路也从服务器端转向了客户端，转向了浏览器和用户。 动态脚本语言的普及，以及 Web 技术发展初期对安全问题认知的不足导致很多“血案”的发生，同时也遗留下很多历史问题，比如 PHP 语言至今仍然只能靠较好的代码规范来保证没有文件包含漏洞，而无法从语言本身杜绝此类安全问题的发生。(该书的出版时间为：2012年3月) &amp;mdash;&amp;ndash; &amp;lt;1.</description>
     </item>
     <item>
       <title>白帽子讲 Web 安全</title>
@@ -368,21 +190,6 @@ Web 1.0: 人们更多的是关注服务器端动态脚本的安全问题，比�
 在互联网安全领域所经历的这个阶段，还有另外一个重要的分支，即桌面安全，或者叫客户端软件安全。其代表是浏览器攻击。一个经典的攻击场景是，黑客构造一个恶意网页，诱使用户使用浏览器访问该网页，利用浏览器中存在的某些漏洞，比如一个缓冲区溢出漏洞，执行 shellcode，通常情况是下载一个木马并在用户机器里执行。常见的针对桌面软件的攻击目标，还包括 Office 系列、Adobe Acrobat Reader、多媒体播放软件、压缩软件等装载量大的流行软件
 Web 版本时期黑客们的主要关注点
 Web 1.0: 人们更多的是关注服务器端动态脚本的安全问题，比如将一个可执行脚本（俗称 webshell）上传到服务器上,从而获得权限. Web 2.0: XSS、CSRF 等攻击已经变得更为强大。Web 攻击的思路也从服务器端转向了客户端，转向了浏览器和用户。 动态脚本语言的普及，以及 Web 技术发展初期对安全问题认知的不足导致很多“血案”的发生，同时也遗留下很多历史问题，比如 PHP 语言至今仍然只能靠较好的代码规范来保证没有文件包含漏洞，而无法从语言本身杜绝此类安全问题的发生。(该书的出版时间为：2012年3月) &amp;mdash;&amp;ndash; &amp;lt;1.</description>
-    </item>
-    <item>
-      <title>长安十二时辰</title>
-      <link>https://www.ha0zi.com/book/fiction/190730-fiction-1-mby-casesc/</link>
-      <pubDate>Wed, 31 Jul 2019 03:21:17 +0800</pubDate>
-      <guid>https://www.ha0zi.com/book/fiction/190730-fiction-1-mby-casesc/</guid>
-      <description>阅读该书的缘由 希望通过多多阅读书籍来达到丰富知识储备的目的。而我又是看书就犯困的人，因此希望通过小说来养成阅读习惯。至于为何具体选择这本书，则是因为最近同名电视剧《长安十二时辰》。第一次写读书笔记，这篇后期应该需要修缮的
-书籍简介 《长安十二时辰》的作者是马伯庸,本书于 2016 年 12 月湖南文艺出版社出版,故事引用民间盛传天宝三载长安有神火降临（书中 &amp;lt;后记一&amp;gt; 有交代）的事件为故事背景，依据部分历史资料，构建了一群蒙受不公的军士们使用阙勒霍多发动恐袭的故事。
-读书笔记 推荐笔记一
-特别申明是读书笔记。
-人物 张小敬
-别称‘五尊阎罗’，旧历十三年从军，大唐第一批幕兵（第三十三折冲府第八团）;十年西域兵（出身报道（仅参考）），九年不良帅（万年县）。书中这个人物对朝廷颇有不满，却在意普通百姓死活，关于历史中张小敬这个人，在 &amp;lt;后记一&amp;gt; 中有说明，这个名字始于华阴县蔚姚汝能的《安禄山事迹》。 李泌
-字长源，唐朝中期著名政治家、谋臣、学者（百度百科中记录非常详细）。本书中的少年李泌稍显青涩，表现出的是一种想把事做好，在与朝堂之争的取舍选择前者的务实之人（相对片面）。 其他 在 &amp;lt;后记二&amp;gt; 有交代本书灵感源自一个知乎问题：如果你来给《刺客信条》写剧情，你会把背景设定在哪里？。
-关于书中反复出现的‘靖安司’这个机构是否真实存在于唐朝？个人认为这个报道是可以信任的，该文章指明小说中的靖安司是虚构的。
-&amp;lt;后记一&amp;gt; 中说明背景&amp;rsquo;尽管在民间盛传长安有神火降临,带走了许多人,可官方却讳莫如深.&amp;rsquo;,关于这个所谓的民间&amp;rsquo;盛传&amp;rsquo;目前并没有在互联网上找到相应的资料.(如有人知道对应信息,麻烦邮件告知xthcs1994@163.com)</description>
     </item>
     <item>
       <title>长安十二时辰</title>
@@ -413,19 +220,6 @@ button.addActionListener(event -&amp;gt; System.out.println(&amp;quot;button cli
 不可变值和函数 函数对一个值进行处理,映射成另外一个值 传入了一段代码块 Lambda 表达式的书写形式 空参传入 Runnable noArguments = () -&amp;gt; System.out.println(&amp;quot;Hello World&amp;quot;); 参数传入 ActionListener oneArgument = event -&amp;gt; System.out.println(&amp;quot;button clicked&amp;quot;); 代码块传入 Runnable multiStatement = () -&amp;gt; { System.out.print(&amp;#34;Hello&amp;#34;); System.out.println(&amp;#34; World&amp;#34;); }; 创建函数传入 BinaryOperator&amp;lt;Long&amp;gt; add = (x, y) -&amp;gt; x + y; 创建函数传入, 声明参数类型 BinaryOperator&amp;lt;Long&amp;gt; add = (Long x, Long y) -&amp;gt; x + y; Java 8 中重要的函数接口 接口 参数 返回类型 示例 Predicate T boolean 唱片是否发行 Consumer T void 输出一个值 Function&amp;lt;T, R&amp;gt; T R 获得 Artist 对象的名字 Supplier None T 工厂方法 UnaryOperator T T 逻辑非(!</description>
     </item>
     <item>
-      <title>Java8 Lambda 杂记</title>
-      <link>https://www.ha0zi.com/study-notes/190311-lambad-java8-study/</link>
-      <pubDate>Mon, 11 Mar 2019 19:00:00 +0800</pubDate>
-      <guid>https://www.ha0zi.com/study-notes/190311-lambad-java8-study/</guid>
-      <description>ps: 目前阅读学习《Java 8 函数式编程》,本博文是阅读笔记,有意者可自行通过互联网进行资源获取,或者通过京东等购物网站进行正版购买;
-概念 听说了很多函数式编程的 牛A、牛B、牛C 之处,说实话并不清楚函数式编程的本质是什么;百度看了百度百科也是云里雾里,引用一下书中的两处介绍
-&amp;quot; 但其核心是:在思考问题时,使用不可变值和函数,函数对一个值进行处理,映射成另外一个值. &amp;quot;
-&amp;quot; 和传入一个实现某接口的对象不同,我们传入了一段代码块&amp;mdash;一个没有名字的函数.&amp;quot;
-button.addActionListener(event -&amp;gt; System.out.println(&amp;quot;button clicked&amp;quot;));
-在引用正确的前提下,在我看来重点是以下三点:
-不可变值和函数 函数对一个值进行处理,映射成另外一个值 传入了一段代码块 Lambda 表达式的书写形式 空参传入 Runnable noArguments = () -&amp;gt; System.out.println(&amp;quot;Hello World&amp;quot;); 参数传入 ActionListener oneArgument = event -&amp;gt; System.out.println(&amp;quot;button clicked&amp;quot;); 代码块传入 Runnable multiStatement = () -&amp;gt; { System.out.print(&amp;#34;Hello&amp;#34;); System.out.println(&amp;#34; World&amp;#34;); }; 创建函数传入 BinaryOperator&amp;lt;Long&amp;gt; add = (x, y) -&amp;gt; x + y; 创建函数传入, 声明参数类型 BinaryOperator&amp;lt;Long&amp;gt; add = (Long x, Long y) -&amp;gt; x + y; Java 8 中重要的函数接口 接口 参数 返回类型 示例 Predicate T boolean 唱片是否发行 Consumer T void 输出一个值 Function&amp;lt;T, R&amp;gt; T R 获得 Artist 对象的名字 Supplier None T 工厂方法 UnaryOperator T T 逻辑非(!</description>
-    </item>
-    <item>
       <title>Java中关于&#34;this&#34;的概念测试</title>
       <link>https://www.ha0zi.com/post/study-notes/190222-java-this-concept-demo/</link>
       <pubDate>Fri, 22 Feb 2019 16:52:00 +0800</pubDate>
@@ -437,31 +231,10 @@ class TestClass Super class TestClass class TestClass 我们可以看出来所�
 由此我们可以暂时性的将this的概念理解为执行者,直至出现反驳以及更好的说明</description>
     </item>
     <item>
-      <title>Java中关于&#34;this&#34;的概念测试</title>
-      <link>https://www.ha0zi.com/study-notes/190222-java-this-concept-demo/</link>
-      <pubDate>Fri, 22 Feb 2019 16:52:00 +0800</pubDate>
-      <guid>https://www.ha0zi.com/study-notes/190222-java-this-concept-demo/</guid>
-      <description>一直以来我对this关键字的理解都是当前类,然后今天在查看一个教程的时候因为这个观念,我因为这个观念产生了不一样的观点,然后被人告知this代表的是&amp;rsquo;执行者&amp;rsquo;,对此我使用代码进行demo 测试;
-直接上代码
-public class SuperClass { public void test(){ System.out.println(&amp;#34;Super&amp;#34;); System.out.println(this.getClass().toString()); } public void ceshi(){ System.out.println(this.getClass().toString()); } } class TestClass extends SuperClass{ @Override public void test() { System.out.println(this.getClass().toString()); super.test(); super.ceshi(); } public static void main(String[] args) { TestClass testClass = new TestClass(); testClass.test(); } } 可以看出TestClass继承SuperClass并且重写了test()方法,那么我们运行main()方法,查询一下结果
-class TestClass Super class TestClass class TestClass 我们可以看出来所有的this在控制台中打印的结果是我们的子类,因为继承的关系,在父类的ceshi()方法中会被继承到子类中,所以这里打印的super.ceshi()方法打印的结果是TestClass我认为很合理,但是在子类重写的test()方法中,调用父类的被重写的test()方法确仍然打印出TestClass,那么就可以判断处我之前的观念确实是存在问题,那么在将他人讲解的执行者概念套上在理解,确实可以解释的通的;那么至少说明我之前理解的概念是不完全正确的
-由此我们可以暂时性的将this的概念理解为执行者,直至出现反驳以及更好的说明</description>
-    </item>
-    <item>
       <title>SpringBoot 拦截器学习</title>
       <link>https://www.ha0zi.com/post/study-notes/190222-java-spring_boot-interceptor/</link>
       <pubDate>Fri, 22 Feb 2019 14:11:00 +0800</pubDate>
       <guid>https://www.ha0zi.com/post/study-notes/190222-java-spring_boot-interceptor/</guid>
-      <description>阅读《Java EE 开发的颠覆者 Spring Boot 实战》时，在 第二部分-&amp;gt;第四章 SpringMVC 基础 中介绍到拦截器的使用，这里介绍拦截器的配置可让普通Bean 实现HandlerInterceptor 接口或者继承HandlerInterceptorAdapter 类来实现自定义拦截器.
-因为抽象类HandlerInterceptorAdapter 会多提供一个afterConcurrentHandlingStarted 方法,所以我们先根据继承HandlerInterceptorAdapter 的自定义拦截器类进行深入研究.这里我们先将相关的源码看一看.
-HandlerInterceptorAdapter
-package org.springframework.web.servlet.handler; import javax.servlet.http.HttpServletRequest; import javax.servlet.http.HttpServletResponse; import org.springframework.lang.Nullable; import org.springframework.web.servlet.AsyncHandlerInterceptor; import org.springframework.web.servlet.ModelAndView; public abstract class HandlerInterceptorAdapter implements AsyncHandlerInterceptor { public HandlerInterceptorAdapter() { } public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception { return true; } public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, @Nullable ModelAndView modelAndView) throws Exception { } public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, @Nullable Exception ex) throws Exception { } public void afterConcurrentHandlingStarted(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception { } } AsyncHandlerInterceptor</description>
-    </item>
-    <item>
-      <title>SpringBoot 拦截器学习</title>
-      <link>https://www.ha0zi.com/study-notes/190222-java-spring_boot-interceptor/</link>
-      <pubDate>Fri, 22 Feb 2019 14:11:00 +0800</pubDate>
-      <guid>https://www.ha0zi.com/study-notes/190222-java-spring_boot-interceptor/</guid>
       <description>阅读《Java EE 开发的颠覆者 Spring Boot 实战》时，在 第二部分-&amp;gt;第四章 SpringMVC 基础 中介绍到拦截器的使用，这里介绍拦截器的配置可让普通Bean 实现HandlerInterceptor 接口或者继承HandlerInterceptorAdapter 类来实现自定义拦截器.
 因为抽象类HandlerInterceptorAdapter 会多提供一个afterConcurrentHandlingStarted 方法,所以我们先根据继承HandlerInterceptorAdapter 的自定义拦截器类进行深入研究.这里我们先将相关的源码看一看.
 HandlerInterceptorAdapter

@@ -15,28 +15,10 @@
     <atom:link href="https://www.ha0zi.com/categories/%E9%9A%8F%E7%AC%94/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>IDEA 使用</title>
-      <link>https://www.ha0zi.com/other/200317-notes-idea-skills-list/</link>
-      <pubDate>Tue, 17 Mar 2020 19:58:44 +0800</pubDate>
-      <guid>https://www.ha0zi.com/other/200317-notes-idea-skills-list/</guid>
-      <description>IDEA 使用 引用 项目打包 Jar https://blog.csdn.net/qq_37105358/article/details/79467401 </description>
-    </item>
-    <item>
-      <title>IDEA 使用</title>
       <link>https://www.ha0zi.com/post/other/200317-notes-idea-skills-list/</link>
       <pubDate>Tue, 17 Mar 2020 19:58:44 +0800</pubDate>
       <guid>https://www.ha0zi.com/post/other/200317-notes-idea-skills-list/</guid>
       <description>IDEA 使用 引用 项目打包 Jar https://blog.csdn.net/qq_37105358/article/details/79467401 </description>
-    </item>
-    <item>
-      <title>记录下各种奇怪的东西</title>
-      <link>https://www.ha0zi.com/other/200317-other-interesting-recording/</link>
-      <pubDate>Tue, 17 Mar 2020 19:51:36 +0800</pubDate>
-      <guid>https://www.ha0zi.com/other/200317-other-interesting-recording/</guid>
-      <description>这个是一个临时记录好奇的东西的,有时间有可能会去研究具体的原由,也可能后一直无视
-随机.套图.网址在网址栏解析出 https://xn--nqvo76h.xn--wcs97c.xn--ses554g/,无视网站的内容就说它的转换.
-图数据库
-如果您想使用 MySQL，请确保不要使用 5.6.4 之前的版本，这是一个众所周知的时间戳问题 (抱歉，在此之前，我并不知道，但是确实有发现导入数据库有问题)来源
-gdm3(3.36.3) 修改配置文件可隐藏登陆列表的指定用户: 修改 /var/lib/AccountsService/users/&amp;lt;username&amp;gt;, 在 [User] 下添加 SystemAccount=true 来源</description>
     </item>
     <item>
       <title>记录下各种奇怪的东西</title>
@@ -58,26 +40,10 @@ gdm3(3.36.3) 修改配置文件可隐藏登陆列表的指定用户: 修改 /var
 # 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释 deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-free # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-free deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-updates main contrib non-free # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-updates main contrib non-free deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-backports main contrib non-free # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-backports main contrib non-free deb https://mirrors.tuna.tsinghua.edu.cn/debian-security buster/updates main contrib non-free # deb-src https://mirrors.</description>
     </item>
     <item>
-      <title>重装 Debian9 系统之后的坑</title>
-      <link>https://www.ha0zi.com/study-notes/linux/191229-system-debian-reload-problem/</link>
-      <pubDate>Tue, 24 Dec 2019 00:44:11 +0800</pubDate>
-      <guid>https://www.ha0zi.com/study-notes/linux/191229-system-debian-reload-problem/</guid>
-      <description>必装 添加 apt 源 修改 apt 源vi /etc/apt/source.list 注释第五行 #deb cdrom:[Debian GNU/Linux 10.2.0 _Buster_ - Official amd64 DVD Binary-1 20191116-09:57]/ buster contrib main 在末尾添加清华源
-# 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释 deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-free # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-free deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-updates main contrib non-free # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-updates main contrib non-free deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-backports main contrib non-free # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-backports main contrib non-free deb https://mirrors.tuna.tsinghua.edu.cn/debian-security buster/updates main contrib non-free # deb-src https://mirrors.</description>
-    </item>
-    <item>
       <title>Shell(md5sum\sha1sum\sha256sum) 编程杂记</title>
       <link>https://www.ha0zi.com/post/study-notes/linux/191205-shell-get_md5-customize/</link>
       <pubDate>Thu, 05 Dec 2019 20:40:09 +0800</pubDate>
       <guid>https://www.ha0zi.com/post/study-notes/linux/191205-shell-get_md5-customize/</guid>
-      <description>发现三个 Shell 命令 md5sum、sha1sum、sha256sum，发现用于文件下载辨别还是很有用处的。网络上充斥着许许多多魔改的程序，有些改动可能是善意、玩闹的，同时也包含一些改动是恶意的！我们无法保证所下载的资源没有被修改，更不敢保证他们都没有恶意。因此可以使用 md5 、 sha1、sha256 等一系列密码散列函数进行验证。 这里我们不过多的介绍 Shell 命令的具体使用方法，感兴趣的朋友可以自行搜索或者* -help。预期的效果类似与 mkdir -p /opt/demo/demo 简单的花了半个小时进行查找资料发现了有三种方式可以在执行命令的时候动态的改变参数。
-在执行 Shell 脚本的后面直接添加字符，例如创建一个&amp;rsquo;demo.sh&#39; #!/bin/bash echo $1 echo $2$3 $ chmod +x demo.sh $ ./demo.sh $ ./demo.sh 4 5 6 4 56 $ ./demo.sh 14 5 14 5 $ ./demo.sh 14 14 $ ./demo.sh 14 4 14 14 14 414 使用 getopts 命令（获知途径） #!/bin/bash while getopts &amp;#34;:a:b:c:&amp;#34; opt do case $opt in a) echo &amp;#34;参数a的值$OPTARG&amp;#34; ;; b) echo &amp;#34;参数b的值$OPTARG&amp;#34; ;; c) echo &amp;#34;参数c的值$OPTARG&amp;#34; ;; ?</description>
-    </item>
-    <item>
-      <title>Shell(md5sum\sha1sum\sha256sum) 编程杂记</title>
-      <link>https://www.ha0zi.com/study-notes/linux/191205-shell-get_md5-customize/</link>
-      <pubDate>Thu, 05 Dec 2019 20:40:09 +0800</pubDate>
-      <guid>https://www.ha0zi.com/study-notes/linux/191205-shell-get_md5-customize/</guid>
       <description>发现三个 Shell 命令 md5sum、sha1sum、sha256sum，发现用于文件下载辨别还是很有用处的。网络上充斥着许许多多魔改的程序，有些改动可能是善意、玩闹的，同时也包含一些改动是恶意的！我们无法保证所下载的资源没有被修改，更不敢保证他们都没有恶意。因此可以使用 md5 、 sha1、sha256 等一系列密码散列函数进行验证。 这里我们不过多的介绍 Shell 命令的具体使用方法，感兴趣的朋友可以自行搜索或者* -help。预期的效果类似与 mkdir -p /opt/demo/demo 简单的花了半个小时进行查找资料发现了有三种方式可以在执行命令的时候动态的改变参数。
 在执行 Shell 脚本的后面直接添加字符，例如创建一个&amp;rsquo;demo.sh&#39; #!/bin/bash echo $1 echo $2$3 $ chmod +x demo.sh $ ./demo.sh $ ./demo.sh 4 5 6 4 56 $ ./demo.sh 14 5 14 5 $ ./demo.sh 14 14 $ ./demo.sh 14 4 14 14 14 414 使用 getopts 命令（获知途径） #!/bin/bash while getopts &amp;#34;:a:b:c:&amp;#34; opt do case $opt in a) echo &amp;#34;参数a的值$OPTARG&amp;#34; ;; b) echo &amp;#34;参数b的值$OPTARG&amp;#34; ;; c) echo &amp;#34;参数c的值$OPTARG&amp;#34; ;; ?</description>
     </item>

@@ -24,32 +24,10 @@
 // 计算 432843 / 10^3 int a = 432843; String aStr = String.valueOf(a); Strint aLen = aStr.subtring(0, 3) String aReg = aStr.subtring(3, 7); return Integer.valueOf(aLen + &amp;#34;.&amp;#34; + aReg); </description>
     </item>
     <item>
-      <title>计算小技巧</title>
-      <link>https://www.ha0zi.com/study-notes/java/211023-number-compute-artice/</link>
-      <pubDate>Sat, 23 Oct 2021 18:36:18 +0800</pubDate>
-      <guid>https://www.ha0zi.com/study-notes/java/211023-number-compute-artice/</guid>
-      <description>说明 本文准备长期更新，以记录工作、学习中发现的一些关于计算的小技巧。
-目前仅掌握了 JAVA，以后的案例随着掌握的语言可能不限于 JAVA
-当除数为 10 的 n 次幂; 提防精度丢失，可以考虑使用字符串分割然后拼接的方式获取结果
-// 计算 432843 / 10^3 int a = 432843; String aStr = String.valueOf(a); Strint aLen = aStr.subtring(0, 3) String aReg = aStr.subtring(3, 7); return Integer.valueOf(aLen + &amp;#34;.&amp;#34; + aReg); </description>
-    </item>
-    <item>
       <title>UEFI引导-物理机安装CentOS8.1</title>
       <link>https://www.ha0zi.com/post/study-notes/200601-system-install-for-uefi/</link>
       <pubDate>Thu, 28 May 2020 18:17:16 +0800</pubDate>
       <guid>https://www.ha0zi.com/post/study-notes/200601-system-install-for-uefi/</guid>
-      <description>步骤简介 下载镜像文件 下载 U盘 制作工具 制作系统镜像引导 U盘 使用引导盘安装系统 具体操作 下载镜像文件(信息存在时效性, 该信息最后修改时间: 2020年05月28日18:12:40) 个人的建议是通过官网进行下载系统镜像,当然会遇到一些官网无法访问或者下载缓慢的情况.具体的下载步骤就不一一说明了,自行百度,一抓一大把.
-无法访问官网,那么可以利用国内各大公司或者教育机构提供的镜像站进行下载;(以下列举几个,还有很多优秀的镜像网站未列出) 公司开源镜像 https://mirrors.163.com/ https://mirrors.aliyun.com https://mirrors.cloud.tencent.com/ 教育机构开源镜像 https://mirrors.tuna.tsinghua.edu.cn/ 下载缓慢的情况,这种情况普遍常见,建议在官网中镜像列表中找到适合离自己最近的镜像站点. CentOS Ubuntu(在官网搜索到以下两个地址,目的是安装系统,具体的区别就不细究,都可以下载镜像文件的目的) https://launchpad.net/ubuntu/+cdmirrors https://launchpad.net/ubuntu/+archivemirrors 下载 U盘 制作工具 Windows Rufus Win32 Disk Imager UltraISO(软碟通) Linux(暂无,目前使用 KVM 做 Win 镜像使用软件) SOURCEFORGE 制作镜像引导 U盘 说明 操作的系统是 Windows 7 企业版,具体的软件使用就不累述了,太过简单化,如遇问题可以自行百度之后在互相沟通.
-需要提醒的是,Rufus 是需要联网的,如果你是在无网的环境下,请使用其他 镜像U盘制作工具.UltraISO(软碟通)在使用过程中偶尔会出现一些&amp;rsquo;出乎意料&amp;rsquo;的错误.
-本次使用的镜像为&amp;rsquo;CentOS-8.1.1911-x86_64-boot.iso&amp;rsquo;使用Rufus 现在(2020年05月30日)是无法支持的,所以本次使用 Win32 Disk Imager 进行镜像引导盘的制作.
-使用 Win32 Disk Imager 出现 U盘 无法也无法设置盘符等问题,这里可以参考 Win32 Disk Imager U 盘恢复 的方法,进行操作可以完美解决你的问题.
-U盘 无法识别 使用 win 键输入 PowerShell 在 Windows PowerShell右键管理员运行 输入diskpart 使用该软件 获取列表并选中 U盘,先清除它在进行格式化.</description>
-    </item>
-    <item>
-      <title>UEFI引导-物理机安装CentOS8.1</title>
-      <link>https://www.ha0zi.com/study-notes/200601-system-install-for-uefi/</link>
-      <pubDate>Thu, 28 May 2020 18:17:16 +0800</pubDate>
-      <guid>https://www.ha0zi.com/study-notes/200601-system-install-for-uefi/</guid>
       <description>步骤简介 下载镜像文件 下载 U盘 制作工具 制作系统镜像引导 U盘 使用引导盘安装系统 具体操作 下载镜像文件(信息存在时效性, 该信息最后修改时间: 2020年05月28日18:12:40) 个人的建议是通过官网进行下载系统镜像,当然会遇到一些官网无法访问或者下载缓慢的情况.具体的下载步骤就不一一说明了,自行百度,一抓一大把.
 无法访问官网,那么可以利用国内各大公司或者教育机构提供的镜像站进行下载;(以下列举几个,还有很多优秀的镜像网站未列出) 公司开源镜像 https://mirrors.163.com/ https://mirrors.aliyun.com https://mirrors.cloud.tencent.com/ 教育机构开源镜像 https://mirrors.tuna.tsinghua.edu.cn/ 下载缓慢的情况,这种情况普遍常见,建议在官网中镜像列表中找到适合离自己最近的镜像站点. CentOS Ubuntu(在官网搜索到以下两个地址,目的是安装系统,具体的区别就不细究,都可以下载镜像文件的目的) https://launchpad.net/ubuntu/+cdmirrors https://launchpad.net/ubuntu/+archivemirrors 下载 U盘 制作工具 Windows Rufus Win32 Disk Imager UltraISO(软碟通) Linux(暂无,目前使用 KVM 做 Win 镜像使用软件) SOURCEFORGE 制作镜像引导 U盘 说明 操作的系统是 Windows 7 企业版,具体的软件使用就不累述了,太过简单化,如遇问题可以自行百度之后在互相沟通.
 需要提醒的是,Rufus 是需要联网的,如果你是在无网的环境下,请使用其他 镜像U盘制作工具.UltraISO(软碟通)在使用过程中偶尔会出现一些&amp;rsquo;出乎意料&amp;rsquo;的错误.
