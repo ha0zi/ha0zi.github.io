@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://blog.ha0zi.com/</loc>
+    <lastmod>2022-07-10T11:02:41+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.ha0zi.com/study-notes/</loc>
+    <lastmod>2022-07-10T11:02:41+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.ha0zi.com/reprint/</loc>
+    <lastmod>2021-12-23T14:08:19+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.ha0zi.com/other/</loc>
+    <lastmod>2021-02-14T19:35:20+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.ha0zi.com/book/</loc>
+    <lastmod>2019-08-02T04:14:29+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.ha0zi.com/categories/</loc>
+  </url><url>
+    <loc>https://blog.ha0zi.com/tags/</loc>
+  </url>
+</urlset>
