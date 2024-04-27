@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>待分类 on ha0zi 的分享</title>
+    <link>https://www.ha0zi.com/tags/%E5%BE%85%E5%88%86%E7%B1%BB/</link>
+    <description>Recent content in 待分类 on ha0zi 的分享</description>
+    <image>
+      <title>ha0zi 的分享</title>
+      <url>https://www.ha0zi.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://www.ha0zi.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.125.4</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 30 Jan 2020 19:19:40 +0000</lastBuildDate>
+    <atom:link href="https://www.ha0zi.com/tags/%E5%BE%85%E5%88%86%E7%B1%BB/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>安全_信息收集_&#39;Recon-NG&#39;的使用</title>
+      <link>https://www.ha0zi.com/study-notes/linux/utils/202001-recon_ng-use/</link>
+      <pubDate>Thu, 30 Jan 2020 19:19:40 +0000</pubDate>
+      <guid>https://www.ha0zi.com/study-notes/linux/utils/202001-recon_ng-use/</guid>
+      <description>recon-ng 关于 recon-ng 的教程在网络上都是 v4 的版本,它们都是过时的! 为此浪费了很多时间.依据 &amp;lt;黑客秘籍&amp;ndash;渗透测试实用指南(第2版)&amp;gt; 教程过程的命令进行转换.另外特别说明 v5 版本中的模板需要使用 marketplace命令下载.本博文仅将书中的命令转换为 v5.1.1 版本命令.
+cd /opt/recon-ng ./recon-ng workspaces create SUCK db insert domains # 使用 Bing 查询域名 modules load recon/domains-hosts/bing_domain_web run # ..... 如上 #生成 html 报告页面 modules load reporting/html options set CREATOR HP2 options set CUSTOMER HP2 run </description>
+    </item>
+  </channel>
+</rss>

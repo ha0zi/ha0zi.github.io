@@ -1,0 +1,90 @@
+<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>Shell(md5sum\sha1sum\sha256sum) 编程杂记 | ha0zi 的分享</title>
+<meta name=keywords content="杂记,Shell"><meta name=description content='发现三个 Shell 命令 md5sum、sha1sum、sha256sum，发现用于文件下载辨别还是很有用处的。网络上充斥着许许多多魔改的程序，有些改动可能是善意、玩闹的，同时也包含一些改动是恶意的！我们无法保证所下载的资源没有被修改，更不敢保证他们都没有恶意。因此可以使用 md5 、 sha1、sha256 等一系列密码散列函数进行验证。 这里我们不过多的介绍 Shell 命令的具体使用方法，感兴趣的朋友可以自行搜索或者* -help。预期的效果类似与 mkdir -p /opt/demo/demo 简单的花了半个小时进行查找资料发现了有三种方式可以在执行命令的时候动态的改变参数。
+在执行 Shell 脚本的后面直接添加字符，例如创建一个&rsquo;demo.sh&#39; #!/bin/bash echo $1 echo $2$3 $ chmod +x demo.sh $ ./demo.sh $ ./demo.sh 4 5 6 4 56 $ ./demo.sh 14 5 14 5 $ ./demo.sh 14 14 $ ./demo.sh 14 4 14 14 14 414 使用 getopts 命令（获知途径） #!/bin/bash while getopts ":a:b:c:" opt do case $opt in a) echo "参数a的值$OPTARG" ;; b) echo "参数b的值$OPTARG" ;; c) echo "参数c的值$OPTARG" ;; ?'><meta name=author content="ha0zi"><link rel=canonical href=https://www.ha0zi.com/study-notes/linux/191205-shell-get_md5-customize/><meta name=google-site-verification content="XYZabc"><meta name=yandex-verification content="XYZabc"><meta name=msvalidate.01 content="XYZabc"><link crossorigin=anonymous href=/assets/css/stylesheet.b609c58d5c11bb90b1a54e04005d74ad1ddf22165eb79f5533967e57df9c3b50.css integrity="sha256-tgnFjVwRu5CxpU4EAF10rR3fIhZet59VM5Z+V9+cO1A=" rel="preload stylesheet" as=style><link rel=icon href=https://www.ha0zi.com/%3Clink%20/%20abs%20url%3E><link rel=icon type=image/png sizes=16x16 href=https://www.ha0zi.com/%3Clink%20/%20abs%20url%3E><link rel=icon type=image/png sizes=32x32 href=https://www.ha0zi.com/%3Clink%20/%20abs%20url%3E><link rel=apple-touch-icon href=https://www.ha0zi.com/%3Clink%20/%20abs%20url%3E><link rel=mask-icon href=https://www.ha0zi.com/%3Clink%20/%20abs%20url%3E><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=en href=https://www.ha0zi.com/study-notes/linux/191205-shell-get_md5-customize/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><meta property="og:title" content="Shell(md5sum\sha1sum\sha256sum) 编程杂记"><meta property="og:description" content='发现三个 Shell 命令 md5sum、sha1sum、sha256sum，发现用于文件下载辨别还是很有用处的。网络上充斥着许许多多魔改的程序，有些改动可能是善意、玩闹的，同时也包含一些改动是恶意的！我们无法保证所下载的资源没有被修改，更不敢保证他们都没有恶意。因此可以使用 md5 、 sha1、sha256 等一系列密码散列函数进行验证。 这里我们不过多的介绍 Shell 命令的具体使用方法，感兴趣的朋友可以自行搜索或者* -help。预期的效果类似与 mkdir -p /opt/demo/demo 简单的花了半个小时进行查找资料发现了有三种方式可以在执行命令的时候动态的改变参数。
+在执行 Shell 脚本的后面直接添加字符，例如创建一个&rsquo;demo.sh&#39; #!/bin/bash echo $1 echo $2$3 $ chmod +x demo.sh $ ./demo.sh $ ./demo.sh 4 5 6 4 56 $ ./demo.sh 14 5 14 5 $ ./demo.sh 14 14 $ ./demo.sh 14 4 14 14 14 414 使用 getopts 命令（获知途径） #!/bin/bash while getopts ":a:b:c:" opt do case $opt in a) echo "参数a的值$OPTARG" ;; b) echo "参数b的值$OPTARG" ;; c) echo "参数c的值$OPTARG" ;; ?'><meta property="og:type" content="article"><meta property="og:url" content="https://www.ha0zi.com/study-notes/linux/191205-shell-get_md5-customize/"><meta property="og:image" content="https://www.ha0zi.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta property="article:section" content="study-notes"><meta property="article:published_time" content="2019-12-05T20:40:09+08:00"><meta property="article:modified_time" content="2019-12-05T20:40:09+08:00"><meta property="og:site_name" content="ExampleSite"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://www.ha0zi.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta name=twitter:title content="Shell(md5sum\sha1sum\sha256sum) 编程杂记"><meta name=twitter:description content='发现三个 Shell 命令 md5sum、sha1sum、sha256sum，发现用于文件下载辨别还是很有用处的。网络上充斥着许许多多魔改的程序，有些改动可能是善意、玩闹的，同时也包含一些改动是恶意的！我们无法保证所下载的资源没有被修改，更不敢保证他们都没有恶意。因此可以使用 md5 、 sha1、sha256 等一系列密码散列函数进行验证。 这里我们不过多的介绍 Shell 命令的具体使用方法，感兴趣的朋友可以自行搜索或者* -help。预期的效果类似与 mkdir -p /opt/demo/demo 简单的花了半个小时进行查找资料发现了有三种方式可以在执行命令的时候动态的改变参数。
+在执行 Shell 脚本的后面直接添加字符，例如创建一个&rsquo;demo.sh&#39; #!/bin/bash echo $1 echo $2$3 $ chmod +x demo.sh $ ./demo.sh $ ./demo.sh 4 5 6 4 56 $ ./demo.sh 14 5 14 5 $ ./demo.sh 14 14 $ ./demo.sh 14 4 14 14 14 414 使用 getopts 命令（获知途径） #!/bin/bash while getopts ":a:b:c:" opt do case $opt in a) echo "参数a的值$OPTARG" ;; b) echo "参数b的值$OPTARG" ;; c) echo "参数c的值$OPTARG" ;; ?'><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Study-Notes","item":"https://www.ha0zi.com/study-notes/"},{"@type":"ListItem","position":2,"name":"Shell(md5sum\\sha1sum\\sha256sum) 编程杂记","item":"https://www.ha0zi.com/study-notes/linux/191205-shell-get_md5-customize/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Shell(md5sum\\sha1sum\\sha256sum) 编程杂记","name":"Shell(md5sum\\sha1sum\\sha256sum) 编程杂记","description":"发现三个 Shell 命令 md5sum、sha1sum、sha256sum，发现用于文件下载辨别还是很有用处的。网络上充斥着许许多多魔改的程序，有些改动可能是善意、玩闹的，同时也包含一些改动是恶意的！我们无法保证所下载的资源没有被修改，更不敢保证他们都没有恶意。因此可以使用 md5 、 sha1、sha256 等一系列密码散列函数进行验证。 这里我们不过多的介绍 Shell 命令的具体使用方法，感兴趣的朋友可以自行搜索或者* -help。预期的效果类似与 mkdir -p /opt/demo/demo 简单的花了半个小时进行查找资料发现了有三种方式可以在执行命令的时候动态的改变参数。\n在执行 Shell 脚本的后面直接添加字符，例如创建一个\u0026rsquo;demo.sh' #!/bin/bash echo $1 echo $2$3 $ chmod +x demo.sh $ ./demo.sh $ ./demo.sh 4 5 6 4 56 $ ./demo.sh 14 5 14 5 $ ./demo.sh 14 14 $ ./demo.sh 14 4 14 14 14 414 使用 getopts 命令（获知途径） #!/bin/bash while getopts \u0026#34;:a:b:c:\u0026#34; opt do case $opt in a) echo \u0026#34;参数a的值$OPTARG\u0026#34; ;; b) echo \u0026#34;参数b的值$OPTARG\u0026#34; ;; c) echo \u0026#34;参数c的值$OPTARG\u0026#34; ;; ?","keywords":["杂记","Shell"],"articleBody":" 发现三个 Shell 命令 md5sum、sha1sum、sha256sum，发现用于文件下载辨别还是很有用处的。网络上充斥着许许多多魔改的程序，有些改动可能是善意、玩闹的，同时也包含一些改动是恶意的！我们无法保证所下载的资源没有被修改，更不敢保证他们都没有恶意。因此可以使用 md5 、 sha1、sha256 等一系列密码散列函数进行验证。 这里我们不过多的介绍 Shell 命令的具体使用方法，感兴趣的朋友可以自行搜索或者* -help。预期的效果类似与 mkdir -p /opt/demo/demo 简单的花了半个小时进行查找资料发现了有三种方式可以在执行命令的时候动态的改变参数。\n在执行 Shell 脚本的后面直接添加字符，例如创建一个’demo.sh' #!/bin/bash echo $1 echo $2$3 $ chmod +x demo.sh $ ./demo.sh $ ./demo.sh 4 5 6 4 56 $ ./demo.sh 14 5 14 5 $ ./demo.sh 14 14 $ ./demo.sh 14 4 14 14 14 414 使用 getopts 命令（获知途径） #!/bin/bash while getopts \":a:b:c:\" opt do case $opt in a) echo \"参数a的值$OPTARG\" ;; b) echo \"参数b的值$OPTARG\" ;; c) echo \"参数c的值$OPTARG\" ;; ?) echo \"未知参数\" exit 1;; esac done $ ./demo.sh -a 1 -b 2 -c 3 参数a的值1 参数b的值2 参数c的值3 $ ./demo.sh -a 1 参数a的值1 $ ./demo.sh -a 11 -d 2 参数a的值11 未知参数 使用read命令（获知途径） #!/bin/bash echo \"请根据下面的提示输入你想要设置的值\" read -p \"var1= \" var1 read -p \"var2= \" var2 read -p \"你已经输入了所有的变量值，是否立即打印？y/n:\" print if [ ${print}x == yx ];then echo \"var1= $var1\" echo \"var2= $var2\" elif [ ${print}x == nx ];then echo \"complete\" else echo unknow command fi $ ./demo.sh 请根据下面的提示输入你想要设置的值 var1= 9 var2= 8 你已经输入了所有的变量值，是否立即打印？y/n:y var1= 9 var2= 8 ps: 出于惰性并没有详细的跟进以及解剖~~. 最后的阶段性偷懒方案\n#!/bin/bash Var1=$1 Var2=$2 FilePath=$Var1 # echo $FilePath md5=`md5sum \"$FilePath\"` #unset FilePath echo \"md5:${md5}\" #echo \"md5:$(md5sum \"${FilePath}\")\" echo \"sha1:$(sha1sum \"${FilePath}\")\" echo \"sha2:$(sha256sum \"${FilePath}\")\" ","wordCount":"190","inLanguage":"en","image":"https://www.ha0zi.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E","datePublished":"2019-12-05T20:40:09+08:00","dateModified":"2019-12-05T20:40:09+08:00","author":{"@type":"Person","name":"ha0zi"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.ha0zi.com/study-notes/linux/191205-shell-get_md5-customize/"},"publisher":{"@type":"Organization","name":"ha0zi 的分享","logo":{"@type":"ImageObject","url":"https://www.ha0zi.com/%3Clink%20/%20abs%20url%3E"}}}</script></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://www.ha0zi.com/ accesskey=h title="首页 (Alt + H)"><img src=https://www.ha0zi.com/ha0zi_1.png alt aria-label=logo height=35>首页</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://www.ha0zi.com/categories/ title=分类><span>分类</span></a></li><li><a href=https://www.ha0zi.com/tags/ title=标签><span>标签</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://www.ha0zi.com/>Home</a>&nbsp;»&nbsp;<a href=https://www.ha0zi.com/study-notes/>Study-Notes</a></div><h1 class="post-title entry-hint-parent">Shell(md5sum\sha1sum\sha256sum) 编程杂记
+<span class=entry-hint title=Draft><svg xmlns="http://www.w3.org/2000/svg" height="35" viewBox="0 -960 960 960" fill="currentcolor"><path d="M160-410v-60h3e2v60H160zm0-165v-60h470v60H160zm0-165v-60h470v60H160zm360 580v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q9 9 13 20t4 22-4.5 22.5T862.09-380L643-160H520zm3e2-263-37-37 37 37zM580-220h38l121-122-18-19-19-18-122 121v38zm141-141-19-18 37 37-18-19z"/></svg></span></h1><div class=post-meta><span title='2019-12-05 20:40:09 +0800 CST'>December 5, 2019</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;190 words&nbsp;·&nbsp;ha0zi</div></header><div class=post-content><p>  发现三个 Shell 命令 <code>md5sum</code>、<code>sha1sum</code>、<code>sha256sum</code>，发现用于文件下载辨别还是很有用处的。网络上充斥着许许多多魔改的程序，有些改动可能是善意、玩闹的，同时也包含一些改动是恶意的！我们无法保证所下载的资源没有被修改，更不敢保证他们都没有恶意。因此可以使用 <a href=https://baike.baidu.com/item/MD5/212708>md5</a> 、 <a href=https://baike.baidu.com/item/SHA-1/1699692>sha1</a>、<a href=https://baike.baidu.com/item/sha256/9726070>sha256</a> 等一系列<a href=https://baike.baidu.com/item/%E5%AF%86%E7%A0%81%E6%95%A3%E5%88%97%E5%87%BD%E6%95%B0>密码散列函数</a>进行验证。   这里我们不过多的介绍 Shell 命令的具体使用方法，感兴趣的朋友可以自行搜索或者<a href=https://baike.baidu.com/item/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/1700215 title=这里的‘*’是通配符，表示所有的字符，你要直接输入新手也就罢了，不是的话我管你叫大哥><code>* -help</code></a>。预期的效果类似与 <code>mkdir -p /opt/demo/demo</code> 简单的花了半个小时进行查找资料发现了有三种方式可以在执行命令的时候动态的改变参数。</p><ul><li>在执行 Shell 脚本的后面直接添加字符，例如创建一个&rsquo;demo.sh'</li></ul><pre tabindex=0><code class=language-shellcode data-lang=shellcode>#!/bin/bash
+echo $1
+echo $2$3
+</code></pre><pre tabindex=0><code>$ chmod +x demo.sh
+$ ./demo.sh
+
+
+$ ./demo.sh 4 5 6
+4
+56
+$ ./demo.sh 14 5
+14
+5
+$ ./demo.sh 14
+14
+
+$ ./demo.sh 14 4 14 14
+14
+414
+</code></pre><ul><li>使用 <code>getopts</code> 命令（<a href=https://blog.csdn.net/sinat_36521655/article/details/79296181>获知途径</a>）</li></ul><pre tabindex=0><code class=language-shellcode data-lang=shellcode>#!/bin/bash
+while getopts &#34;:a:b:c:&#34; opt
+do
+    case $opt in
+        a)
+        echo &#34;参数a的值$OPTARG&#34;
+        ;;
+        b)
+        echo &#34;参数b的值$OPTARG&#34;
+        ;;
+        c)
+        echo &#34;参数c的值$OPTARG&#34;
+        ;;
+        ?)
+        echo &#34;未知参数&#34;
+        exit 1;;
+    esac
+done
+</code></pre><pre tabindex=0><code>$ ./demo.sh -a 1 -b 2 -c 3
+参数a的值1
+参数b的值2
+参数c的值3
+$ ./demo.sh -a 1
+参数a的值1
+$ ./demo.sh -a 11 -d 2
+参数a的值11
+未知参数
+</code></pre><ul><li>使用<code>read</code>命令（<a href=https://rangaofei.github.io/2018/02/10/shell%E5%8F%98%E9%87%8F/>获知途径</a>）</li></ul><pre tabindex=0><code class=language-shellcode data-lang=shellcode>#!/bin/bash
+echo &#34;请根据下面的提示输入你想要设置的值&#34;
+read -p &#34;var1= &#34; var1
+read -p &#34;var2= &#34; var2
+read -p &#34;你已经输入了所有的变量值，是否立即打印？y/n:&#34; print
+if [ ${print}x == yx ];then
+    echo &#34;var1= $var1&#34;
+    echo &#34;var2= $var2&#34;
+elif [ ${print}x == nx ];then
+    echo &#34;complete&#34;
+else
+    echo unknow command
+fi
+</code></pre><pre tabindex=0><code>$ ./demo.sh
+请根据下面的提示输入你想要设置的值
+var1= 9
+var2= 8
+你已经输入了所有的变量值，是否立即打印？y/n:y
+var1= 9
+var2= 8
+</code></pre><p>ps: 出于惰性并没有详细的跟进以及解剖~~.
+最后的阶段性偷懒方案</p><pre tabindex=0><code class=language-shellcode data-lang=shellcode>#!/bin/bash
+Var1=$1
+Var2=$2
+FilePath=$Var1
+# echo $FilePath
+
+md5=`md5sum &#34;$FilePath&#34;`
+#unset FilePath
+echo &#34;md5:${md5}&#34;
+#echo &#34;md5:$(md5sum &#34;${FilePath}&#34;)&#34;
+echo &#34;sha1:$(sha1sum &#34;${FilePath}&#34;)&#34;
+echo &#34;sha2:$(sha256sum &#34;${FilePath}&#34;)&#34;
+</code></pre></div><footer class=post-footer><ul class=post-tags><li><a href=https://www.ha0zi.com/tags/%E6%9D%82%E8%AE%B0/>杂记</a></li><li><a href=https://www.ha0zi.com/tags/shell/>Shell</a></li></ul><nav class=paginav><a class=prev href=https://www.ha0zi.com/study-notes/linux/191229-system-debian-reload-problem/><span class=title>« Prev</span><br><span>重装 Debian9 系统之后的坑</span>
+</a><a class=next href=https://www.ha0zi.com/study-notes/190311-lambad-java8-study/><span class=title>Next »</span><br><span>Java8 Lambda 杂记</span></a></nav></footer></article></main><footer class=footer><span>&copy; 2024 <a href=https://www.ha0zi.com/>ha0zi 的分享</a></span> ·
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script></body></html>

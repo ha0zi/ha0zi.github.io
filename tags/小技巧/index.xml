@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>小技巧 on ha0zi 的分享</title>
+    <link>https://www.ha0zi.com/tags/%E5%B0%8F%E6%8A%80%E5%B7%A7/</link>
+    <description>Recent content in 小技巧 on ha0zi 的分享</description>
+    <image>
+      <title>ha0zi 的分享</title>
+      <url>https://www.ha0zi.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://www.ha0zi.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.125.4</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 23 Oct 2021 18:36:18 +0800</lastBuildDate>
+    <atom:link href="https://www.ha0zi.com/tags/%E5%B0%8F%E6%8A%80%E5%B7%A7/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>计算小技巧</title>
+      <link>https://www.ha0zi.com/study-notes/java/211023-number-compute-artice/</link>
+      <pubDate>Sat, 23 Oct 2021 18:36:18 +0800</pubDate>
+      <guid>https://www.ha0zi.com/study-notes/java/211023-number-compute-artice/</guid>
+      <description>说明 本文准备长期更新，以记录工作、学习中发现的一些关于计算的小技巧。
+目前仅掌握了 JAVA，以后的案例随着掌握的语言可能不限于 JAVA
+当除数为 10 的 n 次幂; 提防精度丢失，可以考虑使用字符串分割然后拼接的方式获取结果
+// 计算 432843 / 10^3 int a = 432843; String aStr = String.valueOf(a); Strint aLen = aStr.subtring(0, 3) String aReg = aStr.subtring(3, 7); return Integer.valueOf(aLen + &amp;#34;.&amp;#34; + aReg); </description>
+    </item>
+  </channel>
+</rss>

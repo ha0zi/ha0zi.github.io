@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>算法 on ha0zi 的分享</title>
+    <link>https://www.ha0zi.com/tags/%E7%AE%97%E6%B3%95/</link>
+    <description>Recent content in 算法 on ha0zi 的分享</description>
+    <image>
+      <title>ha0zi 的分享</title>
+      <url>https://www.ha0zi.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://www.ha0zi.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.125.4</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 23 Dec 2021 14:08:19 +0800</lastBuildDate>
+    <atom:link href="https://www.ha0zi.com/tags/%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Java rotateLeft 和 rotateRight 方法</title>
+      <link>https://www.ha0zi.com/reprint/211223-reprint-java-base-integer-rotateleft-parsing/</link>
+      <pubDate>Thu, 23 Dec 2021 14:08:19 +0800</pubDate>
+      <guid>https://www.ha0zi.com/reprint/211223-reprint-java-base-integer-rotateleft-parsing/</guid>
+      <description>这篇博客很清楚的解答了我对 Integer.rotateLeft() 方法的理解，在这之前我花费了好几个小时找了多篇博客都没有说到重点。 博客原文
+正文 这两个方法实现的思想是循环左移和循环右移。首先来理解这两个概念
+循环移位就是把数值变成二进制，然后循环移动的过程；换句话说，循环移位就是将移出的低位放到该数的高位（循环右移）或把移出的高位放到该数的低位（循环左移），左移，和右移动都是对整数进行的操作，在Win32控制台应用程序中，整形占4Byte节32bit。
+循环左移的过程： 循环左移的过程可以分为3步：
+将x左端的n位先移动到y的低n位中，x&amp;gt;&amp;gt;(32-n); 将x左移n位，其右面低位补0，x&amp;lt; 进行按位或运算(x &amp;gt;&amp;gt; (32 - n) | (x &amp;lt;&amp;lt; n)); 循环右移的过程：
+循环右移的过程可以分为3步： 1. 将x的左端的低n位先移动到y的高n位中 x&amp;lt;&amp;lt;(32-n) 2. 将x右移n位，其左面高n位补 0x&amp;gt;&amp;gt;n; 3. 进行按位或操作 (x &amp;lt;&amp;lt; (32 - n) | (x &amp;gt;&amp;gt; n));
+上代码:
+public static long rotateLeft(long i, int distance) { return (i &amp;lt;&amp;lt; distance) | (i &amp;gt;&amp;gt;&amp;gt; -distance); } public static long rotateRight(long i, int distance) { return (i &amp;gt;&amp;gt;&amp;gt; distance) | (i &amp;lt;&amp;lt; -distance); } 实现的代码量可以说已经精简到最少了，有一点要注意的是，循环移位时，参数distance可以接受负数，当 distance 为负数时，这个等式是成立的，rotateLeft(i, distance) = rotateRight(i, -distance)。这个方法中有两点值得借鉴的，第一从整体上讲循环移位的实现方式；第二是 distance 与 -distance 的巧妙运用。</description>
+    </item>
+  </channel>
+</rss>
