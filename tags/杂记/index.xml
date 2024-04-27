@@ -24,10 +24,32 @@ virsh console centos7.0 Connected to domain centos7.0 Escape character is ^]
 修改 /etc/securetty 到最后添加 ttyS0 echo ttyS0 &amp;gt;&amp;gt; /etc/securetty 修改/etc/inittab 到最后添加 S0:12345:respawn:/sbin/agetty/ ttyS0 115200 echo &#39;S0:12345:respawn:/sbin/agetty/ ttyS0 115200&#39; &amp;gt;&amp;gt; /etc/inittab 修改/etc/grub.conf 或者/etc/grub2.cfg 在系统配置添加console=ttyS0 我的是/etc/grub2.cfg，修改后的配置如下： 之后重启虚拟机就可以</description>
     </item>
     <item>
+      <title>KVM 使用 virsh 的 console 连接配置</title>
+      <link>https://www.ha0zi.com/post/other/210214-kvm_console_config-reprint/</link>
+      <pubDate>Sun, 14 Feb 2021 19:35:20 +0800</pubDate>
+      <guid>https://www.ha0zi.com/post/other/210214-kvm_console_config-reprint/</guid>
+      <description>原文地址 现象是连接时卡在这里就不动了
+virsh console centos7.0 Connected to domain centos7.0 Escape character is ^]
+解决方法（在虚拟机中做如下操作）
+修改 /etc/securetty 到最后添加 ttyS0 echo ttyS0 &amp;gt;&amp;gt; /etc/securetty 修改/etc/inittab 到最后添加 S0:12345:respawn:/sbin/agetty/ ttyS0 115200 echo &#39;S0:12345:respawn:/sbin/agetty/ ttyS0 115200&#39; &amp;gt;&amp;gt; /etc/inittab 修改/etc/grub.conf 或者/etc/grub2.cfg 在系统配置添加console=ttyS0 我的是/etc/grub2.cfg，修改后的配置如下： 之后重启虚拟机就可以</description>
+    </item>
+    <item>
       <title>部分 Windows 利用 KMS 激活</title>
       <link>https://www.ha0zi.com/other/210101-win-activation-by-kms/</link>
       <pubDate>Fri, 01 Jan 2021 18:53:54 +0800</pubDate>
       <guid>https://www.ha0zi.com/other/210101-win-activation-by-kms/</guid>
+      <description>步骤 修改激活服务器地址 添加/修改激活密钥 执行激活操作 PS: 该教程需要使用的 Windows 系统需要是 VL 版本的
+KMS 该教程来源于 Window7 贴吧, 目前已经删除, 以前逛的贴吧还是获取过很多的资源的.
+修改激活服务器 首先如果是 Windows10 系统的话其实可以考虑去淘宝找一下, 可以购买永久激活版本的,也就是花费 15 元左右并不会很贵, 这种的激活码会把你的电脑硬件数据提交到中国的微软服务器, 如果意外重装了系统并不需要再次激活, 之所以提这个是因为 KMS 系统本身或许是没有问题的, 但并不代表提供这个服务的系统所有者的系统是&amp;quot;干净&amp;quot;的. 以下我所举例的 KMS 系统仅是我所知的, 并不保证它是&amp;quot;干净&amp;quot;的.
+点击 Windows 系统的开始菜单输入 cmd 右键单击选择 管理员模式运行, 在黑窗口中输入 slmgr /skms kms.03k.org
+输入对应的激活码 请将下方的 [code] 替换成对应系统的激活码 slmgr /ipk [code]
+Windows Server 系列: Windows Server 2019 Datacenter：WMDGN-G9PQG-XVVXX-R3X43-63DFG Windows Server 2019 Standard：N69G4-B89J2-4G8F4-WWYCC-J464C Windows Server 2016 Datacenter：CB7KF-BWN84-R7R2Y-793K2-8XDDG Windows Server 2016 Standard：WC2BQ-8NRM3-FDDYY-2BFGV-KHKQY Windows Server 2012 R2 Server Standard：D2N9P-3P6X9-2R39C-7RTCD-MDVJX WindowsServer 2012 R2 Datacenter：W3GGN-FT8W3-Y4M27-J84CP-Q3VJ9 Windows Server 2012 Server Standard：XC9B7-NBPP2-83J2H-RHMBY-92BT4 Windows Server 2012 Datacenter：48HP8-DN98B-MYWDG-T2DCC-8W83P- Windows Server 2008 R2 Standard：YC6KT-GKW9T-YTKYR-T4X34-R7VHC Windows Server 2008 R2 企业版：489J6-VHDMP-X63PK-3K798-CPX3Y Windows Server 2008 R2 Datacenter：74YFP-3QFB3-KQT8W-PMXWJ-7M648 Windows Server 2008 Standard：TM24T-X9RMF-VWXK6-X8JC9-BFGM2 不带 Hyper-V 的 Windows Server 2008 Standard：W7VD6-7JFBR-RX26B-YKQ3Y-6FFFJ Windows Server 2008 企业版：YQGMW-MPWTJ-34KDK-48M3W-X4Q6V 不带 Hyper-V 的 Windows Server 2008 企业版：39BXF-X8Q23-P2WWT-38T2F-G3FPG Windows Server 2008 Datacenter：7M67G-PC374-GR742-YH8V4-TCBY3 不带 Hyper-V 的 Windows Server 2008 Datacenter：22XQ2-VRXRG-P8D42-K34TD-G3QQC 个人 Windows 系列: Windows 8.</description>
+    </item>
+    <item>
+      <title>部分 Windows 利用 KMS 激活</title>
+      <link>https://www.ha0zi.com/post/other/210101-win-activation-by-kms/</link>
+      <pubDate>Fri, 01 Jan 2021 18:53:54 +0800</pubDate>
+      <guid>https://www.ha0zi.com/post/other/210101-win-activation-by-kms/</guid>
       <description>步骤 修改激活服务器地址 添加/修改激活密钥 执行激活操作 PS: 该教程需要使用的 Windows 系统需要是 VL 版本的
 KMS 该教程来源于 Window7 贴吧, 目前已经删除, 以前逛的贴吧还是获取过很多的资源的.
 修改激活服务器 首先如果是 Windows10 系统的话其实可以考虑去淘宝找一下, 可以购买永久激活版本的,也就是花费 15 元左右并不会很贵, 这种的激活码会把你的电脑硬件数据提交到中国的微软服务器, 如果意外重装了系统并不需要再次激活, 之所以提这个是因为 KMS 系统本身或许是没有问题的, 但并不代表提供这个服务的系统所有者的系统是&amp;quot;干净&amp;quot;的. 以下我所举例的 KMS 系统仅是我所知的, 并不保证它是&amp;quot;干净&amp;quot;的.
@@ -43,6 +65,13 @@ Windows Server 系列: Windows Server 2019 Datacenter：WMDGN-G9PQG-XVVXX-R3X43-
       <description>IDEA 使用 引用 项目打包 Jar https://blog.csdn.net/qq_37105358/article/details/79467401 </description>
     </item>
     <item>
+      <title>IDEA 使用</title>
+      <link>https://www.ha0zi.com/post/other/200317-notes-idea-skills-list/</link>
+      <pubDate>Tue, 17 Mar 2020 19:58:44 +0800</pubDate>
+      <guid>https://www.ha0zi.com/post/other/200317-notes-idea-skills-list/</guid>
+      <description>IDEA 使用 引用 项目打包 Jar https://blog.csdn.net/qq_37105358/article/details/79467401 </description>
+    </item>
+    <item>
       <title>记录下各种奇怪的东西</title>
       <link>https://www.ha0zi.com/other/200317-other-interesting-recording/</link>
       <pubDate>Tue, 17 Mar 2020 19:51:36 +0800</pubDate>
@@ -52,6 +81,25 @@ Windows Server 系列: Windows Server 2019 Datacenter：WMDGN-G9PQG-XVVXX-R3X43-
 图数据库
 如果您想使用 MySQL，请确保不要使用 5.6.4 之前的版本，这是一个众所周知的时间戳问题 (抱歉，在此之前，我并不知道，但是确实有发现导入数据库有问题)来源
 gdm3(3.36.3) 修改配置文件可隐藏登陆列表的指定用户: 修改 /var/lib/AccountsService/users/&amp;lt;username&amp;gt;, 在 [User] 下添加 SystemAccount=true 来源</description>
+    </item>
+    <item>
+      <title>记录下各种奇怪的东西</title>
+      <link>https://www.ha0zi.com/post/other/200317-other-interesting-recording/</link>
+      <pubDate>Tue, 17 Mar 2020 19:51:36 +0800</pubDate>
+      <guid>https://www.ha0zi.com/post/other/200317-other-interesting-recording/</guid>
+      <description>这个是一个临时记录好奇的东西的,有时间有可能会去研究具体的原由,也可能后一直无视
+随机.套图.网址在网址栏解析出 https://xn--nqvo76h.xn--wcs97c.xn--ses554g/,无视网站的内容就说它的转换.
+图数据库
+如果您想使用 MySQL，请确保不要使用 5.6.4 之前的版本，这是一个众所周知的时间戳问题 (抱歉，在此之前，我并不知道，但是确实有发现导入数据库有问题)来源
+gdm3(3.36.3) 修改配置文件可隐藏登陆列表的指定用户: 修改 /var/lib/AccountsService/users/&amp;lt;username&amp;gt;, 在 [User] 下添加 SystemAccount=true 来源</description>
+    </item>
+    <item>
+      <title>Shell(md5sum\sha1sum\sha256sum) 编程杂记</title>
+      <link>https://www.ha0zi.com/post/study-notes/linux/191205-shell-get_md5-customize/</link>
+      <pubDate>Thu, 05 Dec 2019 20:40:09 +0800</pubDate>
+      <guid>https://www.ha0zi.com/post/study-notes/linux/191205-shell-get_md5-customize/</guid>
+      <description>发现三个 Shell 命令 md5sum、sha1sum、sha256sum，发现用于文件下载辨别还是很有用处的。网络上充斥着许许多多魔改的程序，有些改动可能是善意、玩闹的，同时也包含一些改动是恶意的！我们无法保证所下载的资源没有被修改，更不敢保证他们都没有恶意。因此可以使用 md5 、 sha1、sha256 等一系列密码散列函数进行验证。 这里我们不过多的介绍 Shell 命令的具体使用方法，感兴趣的朋友可以自行搜索或者* -help。预期的效果类似与 mkdir -p /opt/demo/demo 简单的花了半个小时进行查找资料发现了有三种方式可以在执行命令的时候动态的改变参数。
+在执行 Shell 脚本的后面直接添加字符，例如创建一个&amp;rsquo;demo.sh&#39; #!/bin/bash echo $1 echo $2$3 $ chmod +x demo.sh $ ./demo.sh $ ./demo.sh 4 5 6 4 56 $ ./demo.sh 14 5 14 5 $ ./demo.sh 14 14 $ ./demo.sh 14 4 14 14 14 414 使用 getopts 命令（获知途径） #!/bin/bash while getopts &amp;#34;:a:b:c:&amp;#34; opt do case $opt in a) echo &amp;#34;参数a的值$OPTARG&amp;#34; ;; b) echo &amp;#34;参数b的值$OPTARG&amp;#34; ;; c) echo &amp;#34;参数c的值$OPTARG&amp;#34; ;; ?</description>
     </item>
     <item>
       <title>Shell(md5sum\sha1sum\sha256sum) 编程杂记</title>

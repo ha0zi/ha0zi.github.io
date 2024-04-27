@@ -15,6 +15,16 @@
     <atom:link href="https://www.ha0zi.com/tags/springboot/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>SpringBoot 拦截器学习</title>
+      <link>https://www.ha0zi.com/post/study-notes/190222-java-spring_boot-interceptor/</link>
+      <pubDate>Fri, 22 Feb 2019 14:11:00 +0800</pubDate>
+      <guid>https://www.ha0zi.com/post/study-notes/190222-java-spring_boot-interceptor/</guid>
+      <description>阅读《Java EE 开发的颠覆者 Spring Boot 实战》时，在 第二部分-&amp;gt;第四章 SpringMVC 基础 中介绍到拦截器的使用，这里介绍拦截器的配置可让普通Bean 实现HandlerInterceptor 接口或者继承HandlerInterceptorAdapter 类来实现自定义拦截器.
+因为抽象类HandlerInterceptorAdapter 会多提供一个afterConcurrentHandlingStarted 方法,所以我们先根据继承HandlerInterceptorAdapter 的自定义拦截器类进行深入研究.这里我们先将相关的源码看一看.
+HandlerInterceptorAdapter
+package org.springframework.web.servlet.handler; import javax.servlet.http.HttpServletRequest; import javax.servlet.http.HttpServletResponse; import org.springframework.lang.Nullable; import org.springframework.web.servlet.AsyncHandlerInterceptor; import org.springframework.web.servlet.ModelAndView; public abstract class HandlerInterceptorAdapter implements AsyncHandlerInterceptor { public HandlerInterceptorAdapter() { } public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception { return true; } public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, @Nullable ModelAndView modelAndView) throws Exception { } public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, @Nullable Exception ex) throws Exception { } public void afterConcurrentHandlingStarted(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception { } } AsyncHandlerInterceptor</description>
+    </item>
+    <item>
+      <title>SpringBoot 拦截器学习</title>
       <link>https://www.ha0zi.com/study-notes/190222-java-spring_boot-interceptor/</link>
       <pubDate>Fri, 22 Feb 2019 14:11:00 +0800</pubDate>
       <guid>https://www.ha0zi.com/study-notes/190222-java-spring_boot-interceptor/</guid>

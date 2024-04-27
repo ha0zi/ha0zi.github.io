@@ -15,6 +15,20 @@
     <atom:link href="https://www.ha0zi.com/tags/java/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Java rotateLeft 和 rotateRight 方法</title>
+      <link>https://www.ha0zi.com/post/reprint/211223-reprint-java-base-integer-rotateleft-parsing/</link>
+      <pubDate>Thu, 23 Dec 2021 14:08:19 +0800</pubDate>
+      <guid>https://www.ha0zi.com/post/reprint/211223-reprint-java-base-integer-rotateleft-parsing/</guid>
+      <description>这篇博客很清楚的解答了我对 Integer.rotateLeft() 方法的理解，在这之前我花费了好几个小时找了多篇博客都没有说到重点。 博客原文
+正文 这两个方法实现的思想是循环左移和循环右移。首先来理解这两个概念
+循环移位就是把数值变成二进制，然后循环移动的过程；换句话说，循环移位就是将移出的低位放到该数的高位（循环右移）或把移出的高位放到该数的低位（循环左移），左移，和右移动都是对整数进行的操作，在Win32控制台应用程序中，整形占4Byte节32bit。
+循环左移的过程： 循环左移的过程可以分为3步：
+将x左端的n位先移动到y的低n位中，x&amp;gt;&amp;gt;(32-n); 将x左移n位，其右面低位补0，x&amp;lt; 进行按位或运算(x &amp;gt;&amp;gt; (32 - n) | (x &amp;lt;&amp;lt; n)); 循环右移的过程：
+循环右移的过程可以分为3步： 1. 将x的左端的低n位先移动到y的高n位中 x&amp;lt;&amp;lt;(32-n) 2. 将x右移n位，其左面高n位补 0x&amp;gt;&amp;gt;n; 3. 进行按位或操作 (x &amp;lt;&amp;lt; (32 - n) | (x &amp;gt;&amp;gt; n));
+上代码:
+public static long rotateLeft(long i, int distance) { return (i &amp;lt;&amp;lt; distance) | (i &amp;gt;&amp;gt;&amp;gt; -distance); } public static long rotateRight(long i, int distance) { return (i &amp;gt;&amp;gt;&amp;gt; distance) | (i &amp;lt;&amp;lt; -distance); } 实现的代码量可以说已经精简到最少了，有一点要注意的是，循环移位时，参数distance可以接受负数，当 distance 为负数时，这个等式是成立的，rotateLeft(i, distance) = rotateRight(i, -distance)。这个方法中有两点值得借鉴的，第一从整体上讲循环移位的实现方式；第二是 distance 与 -distance 的巧妙运用。</description>
+    </item>
+    <item>
+      <title>Java rotateLeft 和 rotateRight 方法</title>
       <link>https://www.ha0zi.com/reprint/211223-reprint-java-base-integer-rotateleft-parsing/</link>
       <pubDate>Thu, 23 Dec 2021 14:08:19 +0800</pubDate>
       <guid>https://www.ha0zi.com/reprint/211223-reprint-java-base-integer-rotateleft-parsing/</guid>
@@ -26,6 +40,19 @@
 循环右移的过程可以分为3步： 1. 将x的左端的低n位先移动到y的高n位中 x&amp;lt;&amp;lt;(32-n) 2. 将x右移n位，其左面高n位补 0x&amp;gt;&amp;gt;n; 3. 进行按位或操作 (x &amp;lt;&amp;lt; (32 - n) | (x &amp;gt;&amp;gt; n));
 上代码:
 public static long rotateLeft(long i, int distance) { return (i &amp;lt;&amp;lt; distance) | (i &amp;gt;&amp;gt;&amp;gt; -distance); } public static long rotateRight(long i, int distance) { return (i &amp;gt;&amp;gt;&amp;gt; distance) | (i &amp;lt;&amp;lt; -distance); } 实现的代码量可以说已经精简到最少了，有一点要注意的是，循环移位时，参数distance可以接受负数，当 distance 为负数时，这个等式是成立的，rotateLeft(i, distance) = rotateRight(i, -distance)。这个方法中有两点值得借鉴的，第一从整体上讲循环移位的实现方式；第二是 distance 与 -distance 的巧妙运用。</description>
+    </item>
+    <item>
+      <title>Java8 Lambda 杂记</title>
+      <link>https://www.ha0zi.com/post/study-notes/190311-lambad-java8-study/</link>
+      <pubDate>Mon, 11 Mar 2019 19:00:00 +0800</pubDate>
+      <guid>https://www.ha0zi.com/post/study-notes/190311-lambad-java8-study/</guid>
+      <description>ps: 目前阅读学习《Java 8 函数式编程》,本博文是阅读笔记,有意者可自行通过互联网进行资源获取,或者通过京东等购物网站进行正版购买;
+概念 听说了很多函数式编程的 牛A、牛B、牛C 之处,说实话并不清楚函数式编程的本质是什么;百度看了百度百科也是云里雾里,引用一下书中的两处介绍
+&amp;quot; 但其核心是:在思考问题时,使用不可变值和函数,函数对一个值进行处理,映射成另外一个值. &amp;quot;
+&amp;quot; 和传入一个实现某接口的对象不同,我们传入了一段代码块&amp;mdash;一个没有名字的函数.&amp;quot;
+button.addActionListener(event -&amp;gt; System.out.println(&amp;quot;button clicked&amp;quot;));
+在引用正确的前提下,在我看来重点是以下三点:
+不可变值和函数 函数对一个值进行处理,映射成另外一个值 传入了一段代码块 Lambda 表达式的书写形式 空参传入 Runnable noArguments = () -&amp;gt; System.out.println(&amp;quot;Hello World&amp;quot;); 参数传入 ActionListener oneArgument = event -&amp;gt; System.out.println(&amp;quot;button clicked&amp;quot;); 代码块传入 Runnable multiStatement = () -&amp;gt; { System.out.print(&amp;#34;Hello&amp;#34;); System.out.println(&amp;#34; World&amp;#34;); }; 创建函数传入 BinaryOperator&amp;lt;Long&amp;gt; add = (x, y) -&amp;gt; x + y; 创建函数传入, 声明参数类型 BinaryOperator&amp;lt;Long&amp;gt; add = (Long x, Long y) -&amp;gt; x + y; Java 8 中重要的函数接口 接口 参数 返回类型 示例 Predicate T boolean 唱片是否发行 Consumer T void 输出一个值 Function&amp;lt;T, R&amp;gt; T R 获得 Artist 对象的名字 Supplier None T 工厂方法 UnaryOperator T T 逻辑非(!</description>
     </item>
     <item>
       <title>Java8 Lambda 杂记</title>
@@ -42,6 +69,17 @@ button.addActionListener(event -&amp;gt; System.out.println(&amp;quot;button cli
     </item>
     <item>
       <title>Java中关于&#34;this&#34;的概念测试</title>
+      <link>https://www.ha0zi.com/post/study-notes/190222-java-this-concept-demo/</link>
+      <pubDate>Fri, 22 Feb 2019 16:52:00 +0800</pubDate>
+      <guid>https://www.ha0zi.com/post/study-notes/190222-java-this-concept-demo/</guid>
+      <description>一直以来我对this关键字的理解都是当前类,然后今天在查看一个教程的时候因为这个观念,我因为这个观念产生了不一样的观点,然后被人告知this代表的是&amp;rsquo;执行者&amp;rsquo;,对此我使用代码进行demo 测试;
+直接上代码
+public class SuperClass { public void test(){ System.out.println(&amp;#34;Super&amp;#34;); System.out.println(this.getClass().toString()); } public void ceshi(){ System.out.println(this.getClass().toString()); } } class TestClass extends SuperClass{ @Override public void test() { System.out.println(this.getClass().toString()); super.test(); super.ceshi(); } public static void main(String[] args) { TestClass testClass = new TestClass(); testClass.test(); } } 可以看出TestClass继承SuperClass并且重写了test()方法,那么我们运行main()方法,查询一下结果
+class TestClass Super class TestClass class TestClass 我们可以看出来所有的this在控制台中打印的结果是我们的子类,因为继承的关系,在父类的ceshi()方法中会被继承到子类中,所以这里打印的super.ceshi()方法打印的结果是TestClass我认为很合理,但是在子类重写的test()方法中,调用父类的被重写的test()方法确仍然打印出TestClass,那么就可以判断处我之前的观念确实是存在问题,那么在将他人讲解的执行者概念套上在理解,确实可以解释的通的;那么至少说明我之前理解的概念是不完全正确的
+由此我们可以暂时性的将this的概念理解为执行者,直至出现反驳以及更好的说明</description>
+    </item>
+    <item>
+      <title>Java中关于&#34;this&#34;的概念测试</title>
       <link>https://www.ha0zi.com/study-notes/190222-java-this-concept-demo/</link>
       <pubDate>Fri, 22 Feb 2019 16:52:00 +0800</pubDate>
       <guid>https://www.ha0zi.com/study-notes/190222-java-this-concept-demo/</guid>
@@ -50,6 +88,16 @@ button.addActionListener(event -&amp;gt; System.out.println(&amp;quot;button cli
 public class SuperClass { public void test(){ System.out.println(&amp;#34;Super&amp;#34;); System.out.println(this.getClass().toString()); } public void ceshi(){ System.out.println(this.getClass().toString()); } } class TestClass extends SuperClass{ @Override public void test() { System.out.println(this.getClass().toString()); super.test(); super.ceshi(); } public static void main(String[] args) { TestClass testClass = new TestClass(); testClass.test(); } } 可以看出TestClass继承SuperClass并且重写了test()方法,那么我们运行main()方法,查询一下结果
 class TestClass Super class TestClass class TestClass 我们可以看出来所有的this在控制台中打印的结果是我们的子类,因为继承的关系,在父类的ceshi()方法中会被继承到子类中,所以这里打印的super.ceshi()方法打印的结果是TestClass我认为很合理,但是在子类重写的test()方法中,调用父类的被重写的test()方法确仍然打印出TestClass,那么就可以判断处我之前的观念确实是存在问题,那么在将他人讲解的执行者概念套上在理解,确实可以解释的通的;那么至少说明我之前理解的概念是不完全正确的
 由此我们可以暂时性的将this的概念理解为执行者,直至出现反驳以及更好的说明</description>
+    </item>
+    <item>
+      <title>SpringBoot 拦截器学习</title>
+      <link>https://www.ha0zi.com/post/study-notes/190222-java-spring_boot-interceptor/</link>
+      <pubDate>Fri, 22 Feb 2019 14:11:00 +0800</pubDate>
+      <guid>https://www.ha0zi.com/post/study-notes/190222-java-spring_boot-interceptor/</guid>
+      <description>阅读《Java EE 开发的颠覆者 Spring Boot 实战》时，在 第二部分-&amp;gt;第四章 SpringMVC 基础 中介绍到拦截器的使用，这里介绍拦截器的配置可让普通Bean 实现HandlerInterceptor 接口或者继承HandlerInterceptorAdapter 类来实现自定义拦截器.
+因为抽象类HandlerInterceptorAdapter 会多提供一个afterConcurrentHandlingStarted 方法,所以我们先根据继承HandlerInterceptorAdapter 的自定义拦截器类进行深入研究.这里我们先将相关的源码看一看.
+HandlerInterceptorAdapter
+package org.springframework.web.servlet.handler; import javax.servlet.http.HttpServletRequest; import javax.servlet.http.HttpServletResponse; import org.springframework.lang.Nullable; import org.springframework.web.servlet.AsyncHandlerInterceptor; import org.springframework.web.servlet.ModelAndView; public abstract class HandlerInterceptorAdapter implements AsyncHandlerInterceptor { public HandlerInterceptorAdapter() { } public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception { return true; } public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, @Nullable ModelAndView modelAndView) throws Exception { } public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, @Nullable Exception ex) throws Exception { } public void afterConcurrentHandlingStarted(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception { } } AsyncHandlerInterceptor</description>
     </item>
     <item>
       <title>SpringBoot 拦截器学习</title>

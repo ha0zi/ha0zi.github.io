@@ -24,6 +24,16 @@ virsh console centos7.0 Connected to domain centos7.0 Escape character is ^]
 修改 /etc/securetty 到最后添加 ttyS0 echo ttyS0 &amp;gt;&amp;gt; /etc/securetty 修改/etc/inittab 到最后添加 S0:12345:respawn:/sbin/agetty/ ttyS0 115200 echo &#39;S0:12345:respawn:/sbin/agetty/ ttyS0 115200&#39; &amp;gt;&amp;gt; /etc/inittab 修改/etc/grub.conf 或者/etc/grub2.cfg 在系统配置添加console=ttyS0 我的是/etc/grub2.cfg，修改后的配置如下： 之后重启虚拟机就可以</description>
     </item>
     <item>
+      <title>KVM 使用 virsh 的 console 连接配置</title>
+      <link>https://www.ha0zi.com/post/other/210214-kvm_console_config-reprint/</link>
+      <pubDate>Sun, 14 Feb 2021 19:35:20 +0800</pubDate>
+      <guid>https://www.ha0zi.com/post/other/210214-kvm_console_config-reprint/</guid>
+      <description>原文地址 现象是连接时卡在这里就不动了
+virsh console centos7.0 Connected to domain centos7.0 Escape character is ^]
+解决方法（在虚拟机中做如下操作）
+修改 /etc/securetty 到最后添加 ttyS0 echo ttyS0 &amp;gt;&amp;gt; /etc/securetty 修改/etc/inittab 到最后添加 S0:12345:respawn:/sbin/agetty/ ttyS0 115200 echo &#39;S0:12345:respawn:/sbin/agetty/ ttyS0 115200&#39; &amp;gt;&amp;gt; /etc/inittab 修改/etc/grub.conf 或者/etc/grub2.cfg 在系统配置添加console=ttyS0 我的是/etc/grub2.cfg，修改后的配置如下： 之后重启虚拟机就可以</description>
+    </item>
+    <item>
       <title>部分 Windows 利用 KMS 激活</title>
       <link>https://www.ha0zi.com/other/210101-win-activation-by-kms/</link>
       <pubDate>Fri, 01 Jan 2021 18:53:54 +0800</pubDate>
@@ -34,6 +44,29 @@ KMS 该教程来源于 Window7 贴吧, 目前已经删除, 以前逛的贴吧还
 点击 Windows 系统的开始菜单输入 cmd 右键单击选择 管理员模式运行, 在黑窗口中输入 slmgr /skms kms.03k.org
 输入对应的激活码 请将下方的 [code] 替换成对应系统的激活码 slmgr /ipk [code]
 Windows Server 系列: Windows Server 2019 Datacenter：WMDGN-G9PQG-XVVXX-R3X43-63DFG Windows Server 2019 Standard：N69G4-B89J2-4G8F4-WWYCC-J464C Windows Server 2016 Datacenter：CB7KF-BWN84-R7R2Y-793K2-8XDDG Windows Server 2016 Standard：WC2BQ-8NRM3-FDDYY-2BFGV-KHKQY Windows Server 2012 R2 Server Standard：D2N9P-3P6X9-2R39C-7RTCD-MDVJX WindowsServer 2012 R2 Datacenter：W3GGN-FT8W3-Y4M27-J84CP-Q3VJ9 Windows Server 2012 Server Standard：XC9B7-NBPP2-83J2H-RHMBY-92BT4 Windows Server 2012 Datacenter：48HP8-DN98B-MYWDG-T2DCC-8W83P- Windows Server 2008 R2 Standard：YC6KT-GKW9T-YTKYR-T4X34-R7VHC Windows Server 2008 R2 企业版：489J6-VHDMP-X63PK-3K798-CPX3Y Windows Server 2008 R2 Datacenter：74YFP-3QFB3-KQT8W-PMXWJ-7M648 Windows Server 2008 Standard：TM24T-X9RMF-VWXK6-X8JC9-BFGM2 不带 Hyper-V 的 Windows Server 2008 Standard：W7VD6-7JFBR-RX26B-YKQ3Y-6FFFJ Windows Server 2008 企业版：YQGMW-MPWTJ-34KDK-48M3W-X4Q6V 不带 Hyper-V 的 Windows Server 2008 企业版：39BXF-X8Q23-P2WWT-38T2F-G3FPG Windows Server 2008 Datacenter：7M67G-PC374-GR742-YH8V4-TCBY3 不带 Hyper-V 的 Windows Server 2008 Datacenter：22XQ2-VRXRG-P8D42-K34TD-G3QQC 个人 Windows 系列: Windows 8.</description>
+    </item>
+    <item>
+      <title>部分 Windows 利用 KMS 激活</title>
+      <link>https://www.ha0zi.com/post/other/210101-win-activation-by-kms/</link>
+      <pubDate>Fri, 01 Jan 2021 18:53:54 +0800</pubDate>
+      <guid>https://www.ha0zi.com/post/other/210101-win-activation-by-kms/</guid>
+      <description>步骤 修改激活服务器地址 添加/修改激活密钥 执行激活操作 PS: 该教程需要使用的 Windows 系统需要是 VL 版本的
+KMS 该教程来源于 Window7 贴吧, 目前已经删除, 以前逛的贴吧还是获取过很多的资源的.
+修改激活服务器 首先如果是 Windows10 系统的话其实可以考虑去淘宝找一下, 可以购买永久激活版本的,也就是花费 15 元左右并不会很贵, 这种的激活码会把你的电脑硬件数据提交到中国的微软服务器, 如果意外重装了系统并不需要再次激活, 之所以提这个是因为 KMS 系统本身或许是没有问题的, 但并不代表提供这个服务的系统所有者的系统是&amp;quot;干净&amp;quot;的. 以下我所举例的 KMS 系统仅是我所知的, 并不保证它是&amp;quot;干净&amp;quot;的.
+点击 Windows 系统的开始菜单输入 cmd 右键单击选择 管理员模式运行, 在黑窗口中输入 slmgr /skms kms.03k.org
+输入对应的激活码 请将下方的 [code] 替换成对应系统的激活码 slmgr /ipk [code]
+Windows Server 系列: Windows Server 2019 Datacenter：WMDGN-G9PQG-XVVXX-R3X43-63DFG Windows Server 2019 Standard：N69G4-B89J2-4G8F4-WWYCC-J464C Windows Server 2016 Datacenter：CB7KF-BWN84-R7R2Y-793K2-8XDDG Windows Server 2016 Standard：WC2BQ-8NRM3-FDDYY-2BFGV-KHKQY Windows Server 2012 R2 Server Standard：D2N9P-3P6X9-2R39C-7RTCD-MDVJX WindowsServer 2012 R2 Datacenter：W3GGN-FT8W3-Y4M27-J84CP-Q3VJ9 Windows Server 2012 Server Standard：XC9B7-NBPP2-83J2H-RHMBY-92BT4 Windows Server 2012 Datacenter：48HP8-DN98B-MYWDG-T2DCC-8W83P- Windows Server 2008 R2 Standard：YC6KT-GKW9T-YTKYR-T4X34-R7VHC Windows Server 2008 R2 企业版：489J6-VHDMP-X63PK-3K798-CPX3Y Windows Server 2008 R2 Datacenter：74YFP-3QFB3-KQT8W-PMXWJ-7M648 Windows Server 2008 Standard：TM24T-X9RMF-VWXK6-X8JC9-BFGM2 不带 Hyper-V 的 Windows Server 2008 Standard：W7VD6-7JFBR-RX26B-YKQ3Y-6FFFJ Windows Server 2008 企业版：YQGMW-MPWTJ-34KDK-48M3W-X4Q6V 不带 Hyper-V 的 Windows Server 2008 企业版：39BXF-X8Q23-P2WWT-38T2F-G3FPG Windows Server 2008 Datacenter：7M67G-PC374-GR742-YH8V4-TCBY3 不带 Hyper-V 的 Windows Server 2008 Datacenter：22XQ2-VRXRG-P8D42-K34TD-G3QQC 个人 Windows 系列: Windows 8.</description>
+    </item>
+    <item>
+      <title>apt 中断后重装软件</title>
+      <link>https://www.ha0zi.com/post/study-notes/linux/20201223-linux-apt-reinstall-app/</link>
+      <pubDate>Wed, 23 Dec 2020 13:56:41 +0800</pubDate>
+      <guid>https://www.ha0zi.com/post/study-notes/linux/20201223-linux-apt-reinstall-app/</guid>
+      <description>环境 Debian 10 [amd64] 具体操作 查询具体的中断操作 中断了 apt 操作之后假设你并不清楚具体在哪里中断的,可以先在 /var/log/apt/term.log 中进行查询之前具体的操作.例如:
+Start-Date: 2020-12-23 13:42:08 Commandline: apt upgrade Requested-By: hz (1000) Upgrade: libwebkit2gtk-4.0-37:amd64 (2.30.3-1~deb10u1, 2.30.4-1~deb10u1), gir1.2-webkit2-4.0:amd64 (2.30.3-1~deb10u1, 2.30.4-1~deb10u1), libjavascriptcoregtk-4.0-18:amd64 (2.30.3-1~deb10u1, 2.30.4-1~deb10u1), gir1.2-javascriptcoregtk-4.0:amd64 (2.30.3-1~deb10u1, 2.30.4-1~deb10u1) End-Date: 2020-12-23 13:42:16 这个就是我之前的操作,我们可以看到当时我正在进行系统更新操作,更新的软件分别是 libwebkit2gtk-4.0-37, gir1.2-webkit2-4.0, libjavascriptcoregtk-4.0-18, gir1.2-javascriptcoregtk-4.0.查询资料信息来源
+重装软件 我们已经知道了之前安装的操作步骤了,那么我们就可以重新安装之前的软件,避免因为中断导致的系统文件缺失错误.
+sudo apt-get --reinstall install libwebkit2gtk-4.0-37 gir1.2-webkit2-4.0 libjavascriptcoregtk-4.0-18 gir1.2-javascriptcoregtk-4.0
+正常的安装软件运行执行完成.</description>
     </item>
     <item>
       <title>apt 中断后重装软件</title>
@@ -48,12 +81,34 @@ sudo apt-get --reinstall install libwebkit2gtk-4.0-37 gir1.2-webkit2-4.0 libjava
     </item>
     <item>
       <title>Metasploit 基础使用 handler 连接 win7 并提权清除日志</title>
+      <link>https://www.ha0zi.com/post/study-notes/linux/utils/20201211-linux-util-metasploit-base-use-hanler-win7-rightescalation/</link>
+      <pubDate>Fri, 11 Dec 2020 15:55:33 +0800</pubDate>
+      <guid>https://www.ha0zi.com/post/study-notes/linux/utils/20201211-linux-util-metasploit-base-use-hanler-win7-rightescalation/</guid>
+      <description>简介 目前根据 i 春秋 进行学习,目前到利用 shellter 进行文件捆绑木马并达到免查杀的效果, 在使用 metasploit 对指定目标机进行监听获取权限.利用打包好的漏洞程序进行提权并清除日志信息.这里我们的步骤是根据这个 来源 学习进行的.
+操作环境 kali 2020.4 shellter 7.2-amd64 wine \ wine64 \ wine32 metasploit 6.0.18-dev win 7 企业版 注:请特别注意关闭 win7 的防火墙,不要说为什么我的没有用连接不上 具体操作 首先下载 putty.exe , 使用 shellter 进行木马封装,记住这些我们都是在 kali 虚拟机下完成的; kali 2020.4 并没有预安装 shellter 使用了 sudo apt-get install shellter 进行安装, 安装完了之后控制台返回了一个错误信息,希望我们添加 32 位的资源并且下载 wine32 (这里的具体命令我记得并不是很清晰了,请自行看控制台).
+安装好了 shellter 之后我们在终端输入 sudo shellter 会出现一个新的窗口, 这里会出现一些选择 (请参考下图), 目前我了解的 a 代表的是 auto 自动的意思. 而这里的 m 似乎代表的是 manual, 这里我们仅说明自动的操作.</description>
+    </item>
+    <item>
+      <title>Metasploit 基础使用 handler 连接 win7 并提权清除日志</title>
       <link>https://www.ha0zi.com/study-notes/linux/utils/20201211-linux-util-metasploit-base-use-hanler-win7-rightescalation/</link>
       <pubDate>Fri, 11 Dec 2020 15:55:33 +0800</pubDate>
       <guid>https://www.ha0zi.com/study-notes/linux/utils/20201211-linux-util-metasploit-base-use-hanler-win7-rightescalation/</guid>
       <description>简介 目前根据 i 春秋 进行学习,目前到利用 shellter 进行文件捆绑木马并达到免查杀的效果, 在使用 metasploit 对指定目标机进行监听获取权限.利用打包好的漏洞程序进行提权并清除日志信息.这里我们的步骤是根据这个 来源 学习进行的.
 操作环境 kali 2020.4 shellter 7.2-amd64 wine \ wine64 \ wine32 metasploit 6.0.18-dev win 7 企业版 注:请特别注意关闭 win7 的防火墙,不要说为什么我的没有用连接不上 具体操作 首先下载 putty.exe , 使用 shellter 进行木马封装,记住这些我们都是在 kali 虚拟机下完成的; kali 2020.4 并没有预安装 shellter 使用了 sudo apt-get install shellter 进行安装, 安装完了之后控制台返回了一个错误信息,希望我们添加 32 位的资源并且下载 wine32 (这里的具体命令我记得并不是很清晰了,请自行看控制台).
 安装好了 shellter 之后我们在终端输入 sudo shellter 会出现一个新的窗口, 这里会出现一些选择 (请参考下图), 目前我了解的 a 代表的是 auto 自动的意思. 而这里的 m 似乎代表的是 manual, 这里我们仅说明自动的操作.</description>
+    </item>
+    <item>
+      <title>Linux 环境下使用 dd 创建 U盘 启动盘</title>
+      <link>https://www.ha0zi.com/post/study-notes/linux/200722-system-linux-u-disk-boot-create-to-dd/</link>
+      <pubDate>Wed, 22 Jul 2020 20:17:42 +0800</pubDate>
+      <guid>https://www.ha0zi.com/post/study-notes/linux/200722-system-linux-u-disk-boot-create-to-dd/</guid>
+      <description>步骤简介 卸载 U盘 格式化 执行启动盘制作并同步 具体实现 卸载 U盘 鉴于目前我们常见的我所知的系统镜像文件大多在 10GiB 以内,所以这边建议大家准备一个 16GB 的移动硬盘来制作系统安装启动盘.
+将移动硬盘插入电脑 USB 接口中,我们可以在文档管理器中看到一个移动硬盘的显示识别到一个移动硬盘,这个时候我们可以关闭文档管理器,打开我们的终端进行操作. 我们可以使用sudo fdisk -l查看当前系统所识别到的档案系统并判断哪一个是你的 U盘.譬如我的电脑中显示的/dev/sdc1就是我的 U盘 判断依据的话,首先可以看哪一个档案系统的存储容量和你的移动硬盘最接近,其次如果还是无法判断,那么可以先拔掉移动硬盘查询一次,那么少的那个档案系统就是你的移动硬盘无疑了.(如果硬盘过多,可以使用sudo lsblk又或者sudo blkid进行档案系统查询) 使用sudo umount /dev/sdc*(ps:umount 命令后接的路径以你实际的移动硬盘路径为准),执行卸载命令.这个时候有的朋友会遇到umount: /dev/sdc1: not mounted.这个提示时不用慌,它只是告诉你 /dev/sdc1 并没有挂载,所以你可以直接进行下一步格式话操作即可.
+格式化 现在我们已经卸载了我们的移动硬盘,这个时候我们再次输入sudo umount /dev/sdc*会提示我们并没有这个档案系统挂载,那么我们可以进行 sudo mkfs.vfat -I /dev/sdc1这个时候它会显示mkfs.fat 4.1 (2017-01-24)这个提示信息,我们只需要等待它格式化完成即可.
+如果你在格式化的时候收到提示的是
+mkfs.fat 4.1 (2017-01-24) mkfs.vfat: /dev/sdc1 contains a mounted filesystem. 那么恭喜你,你并没有卸载 /dev/sdc1 这个档案系统,这里就建议你再确认一遍你所卸载的是否就是你准备作为启动盘的移动硬盘,并正确的使用上面提到的卸载 U盘 的内容进行卸载.
+执行启动盘制作并同步 这个需要准备一个系统镜像文件一般一*.iso结尾的文件,具体的获取方式可以参考UEFI引导-物理机安装CentOS8.1 中的下载镜像文件说明.
+在此这些操作的过程中我们都没有使用过任何其他的工具对移动硬盘进行过操作,(如果出现类似&amp;rsquo;不存在这个挂载&amp;rsquo;或则&amp;rsquo;该挂载被其他工具所占用&amp;rsquo;,那么你就需要判断你所操作的档案系统是否是你的移动硬盘,以及判断是否存在什么应用一直在访问你的移动硬盘里面的文件.遇到此类情况可以联系我一起进行学习探讨 xthcs1994@163.com)那么使用dd命令进行系统安装启动盘制作. dd if=/home/${USER}/Downloads/*.iso of=/dev/sdc1 bs=4M &amp;amp;&amp;amp; sudo sync</description>
     </item>
     <item>
       <title>Linux 环境下使用 dd 创建 U盘 启动盘</title>
@@ -70,6 +125,18 @@ mkfs.fat 4.1 (2017-01-24) mkfs.vfat: /dev/sdc1 contains a mounted filesystem. �
     </item>
     <item>
       <title>UEFI引导-物理机安装CentOS8.1</title>
+      <link>https://www.ha0zi.com/post/study-notes/200601-system-install-for-uefi/</link>
+      <pubDate>Thu, 28 May 2020 18:17:16 +0800</pubDate>
+      <guid>https://www.ha0zi.com/post/study-notes/200601-system-install-for-uefi/</guid>
+      <description>步骤简介 下载镜像文件 下载 U盘 制作工具 制作系统镜像引导 U盘 使用引导盘安装系统 具体操作 下载镜像文件(信息存在时效性, 该信息最后修改时间: 2020年05月28日18:12:40) 个人的建议是通过官网进行下载系统镜像,当然会遇到一些官网无法访问或者下载缓慢的情况.具体的下载步骤就不一一说明了,自行百度,一抓一大把.
+无法访问官网,那么可以利用国内各大公司或者教育机构提供的镜像站进行下载;(以下列举几个,还有很多优秀的镜像网站未列出) 公司开源镜像 https://mirrors.163.com/ https://mirrors.aliyun.com https://mirrors.cloud.tencent.com/ 教育机构开源镜像 https://mirrors.tuna.tsinghua.edu.cn/ 下载缓慢的情况,这种情况普遍常见,建议在官网中镜像列表中找到适合离自己最近的镜像站点. CentOS Ubuntu(在官网搜索到以下两个地址,目的是安装系统,具体的区别就不细究,都可以下载镜像文件的目的) https://launchpad.net/ubuntu/+cdmirrors https://launchpad.net/ubuntu/+archivemirrors 下载 U盘 制作工具 Windows Rufus Win32 Disk Imager UltraISO(软碟通) Linux(暂无,目前使用 KVM 做 Win 镜像使用软件) SOURCEFORGE 制作镜像引导 U盘 说明 操作的系统是 Windows 7 企业版,具体的软件使用就不累述了,太过简单化,如遇问题可以自行百度之后在互相沟通.
+需要提醒的是,Rufus 是需要联网的,如果你是在无网的环境下,请使用其他 镜像U盘制作工具.UltraISO(软碟通)在使用过程中偶尔会出现一些&amp;rsquo;出乎意料&amp;rsquo;的错误.
+本次使用的镜像为&amp;rsquo;CentOS-8.1.1911-x86_64-boot.iso&amp;rsquo;使用Rufus 现在(2020年05月30日)是无法支持的,所以本次使用 Win32 Disk Imager 进行镜像引导盘的制作.
+使用 Win32 Disk Imager 出现 U盘 无法也无法设置盘符等问题,这里可以参考 Win32 Disk Imager U 盘恢复 的方法,进行操作可以完美解决你的问题.
+U盘 无法识别 使用 win 键输入 PowerShell 在 Windows PowerShell右键管理员运行 输入diskpart 使用该软件 获取列表并选中 U盘,先清除它在进行格式化.</description>
+    </item>
+    <item>
+      <title>UEFI引导-物理机安装CentOS8.1</title>
       <link>https://www.ha0zi.com/study-notes/200601-system-install-for-uefi/</link>
       <pubDate>Thu, 28 May 2020 18:17:16 +0800</pubDate>
       <guid>https://www.ha0zi.com/study-notes/200601-system-install-for-uefi/</guid>
@@ -79,6 +146,21 @@ mkfs.fat 4.1 (2017-01-24) mkfs.vfat: /dev/sdc1 contains a mounted filesystem. �
 本次使用的镜像为&amp;rsquo;CentOS-8.1.1911-x86_64-boot.iso&amp;rsquo;使用Rufus 现在(2020年05月30日)是无法支持的,所以本次使用 Win32 Disk Imager 进行镜像引导盘的制作.
 使用 Win32 Disk Imager 出现 U盘 无法也无法设置盘符等问题,这里可以参考 Win32 Disk Imager U 盘恢复 的方法,进行操作可以完美解决你的问题.
 U盘 无法识别 使用 win 键输入 PowerShell 在 Windows PowerShell右键管理员运行 输入diskpart 使用该软件 获取列表并选中 U盘,先清除它在进行格式化.</description>
+    </item>
+    <item>
+      <title>Dockerfile 基础语法</title>
+      <link>https://www.ha0zi.com/post/study-notes/200317-docker-dockerfile-base/</link>
+      <pubDate>Tue, 17 Mar 2020 19:39:33 +0800</pubDate>
+      <guid>https://www.ha0zi.com/post/study-notes/200317-docker-dockerfile-base/</guid>
+      <description>简介 Dockerfile 是构建 Docker 镜像的文件,可以自定义更适合应用场景的环境.
+指令 FROM 声明自定义镜像的基础镜像;后面的命令都是基于基础镜像环境使用的.
+RUN Docker build 运行时的运行指令;执行基于环境的命令.
+COPY 复制指令;默认复制当前上下文的文件/目录.
+WORKDIR 声明工作目录;声明镜像中的工作目录.
+EXPOSE 声明容器需要使用的端口.
+CMD Docker run 运行时的运行指令,里面的参数为变量.
+ENTRYPOINT Docker run 运行时的运行指令,里面的参数为定量.
+小技巧 CMD 中执行的命令中包含了星号等通配符,可以通过 /bin/sh 来执行命令 CMD [&amp;quot;/bin/sh&amp;quot;, &amp;quot;-c&amp;quot;, &amp;quot;java&amp;quot;, &amp;quot;-jar&amp;quot;, &amp;quot;*.jar&amp;quot;] </description>
     </item>
     <item>
       <title>Dockerfile 基础语法</title>

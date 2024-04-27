@@ -57,8 +57,7 @@ xrandr --auto
 xrandr --dpi 96
 </code></pre><ul><li>根据 DM 的类型对配置文件进行修改(本次使用测试的为 lightdm),修改<code>/etc/lightdm/lightdm.conf</code>并去掉<code>#displaysetupscript=</code>前面的&rsquo;#&lsquo;修改为:<code>display-setup-script=/usr/local/bin/nvidia_switch.sh</code>,保存之后重启 lightdm.<code>systemctl restart lightdm.service</code></li></ul></li><li>设置双屏扩展屏设置</li></ul><pre tabindex=0><code>xrandr --output eDP-1-1 --auto --primary
 xrandr --output HDMI-0 --right-of eDP-1-1 --auto
-</code></pre></div><footer class=post-footer><ul class=post-tags><li><a href=https://www.ha0zi.com/tags/%E4%BE%BF%E6%8D%B7%E7%AC%94%E8%AE%B0/>便捷笔记</a></li></ul><nav class=paginav><a class=prev href=https://www.ha0zi.com/study-notes/linux/utils/202001-recon_ng-use/><span class=title>« Prev</span><br><span>安全_信息收集_'Recon-NG'的使用</span>
-</a><a class=next href=https://www.ha0zi.com/study-notes/linux/191205-shell-get_md5-customize/><span class=title>Next »</span><br><span>Shell(md5sum\sha1sum\sha256sum) 编程杂记</span></a></nav></footer></article></main><footer class=footer><span>&copy; 2024 <a href=https://www.ha0zi.com/>ha0zi 的分享</a></span> ·
+</code></pre></div><footer class=post-footer><ul class=post-tags><li><a href=https://www.ha0zi.com/tags/%E4%BE%BF%E6%8D%B7%E7%AC%94%E8%AE%B0/>便捷笔记</a></li><li><a href=https://www.ha0zi.com/tags/%E4%BE%BF%E6%8D%B7%E7%AC%94%E8%AE%B0/>便捷笔记</a></li></ul></footer></article></main><footer class=footer><span>&copy; 2024 <a href=https://www.ha0zi.com/>ha0zi 的分享</a></span> ·
 <span>Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
         <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
