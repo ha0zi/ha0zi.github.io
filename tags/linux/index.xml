@@ -19,7 +19,10 @@
       <pubDate>Sun, 10 Jul 2022 11:02:41 +0800</pubDate>
       <guid>https://www.ha0zi.com/post/study-notes/linux/20220710-linux-arch-install-special-md/</guid>
       <description>前言 Arch Linux 的安装和其他傻瓜式的安装程序相比，显得那么与众不同，但更让人心动的是它的 AUR 仓库的丰富性。在此之前我曾安装并体验过一段时间，结果错误的更新配置导致系统的崩溃。这当然是我极不愿意忍受的，为此我准备使用 Debian 来作为我台式电脑的系统。但 Debian 的稳健让它的自带驱动不能很好的满足我的新设备，又意外的在 清华源 发现了 Arch Linux GUI 中我垂涎已久的 i3wm。 Arch Linux GUI 没有很好的处理 LVM 分区 的缘故，让我花费了大量的时间进行这次安装。我的处理方法是先使用本地正常分区安装，然后将已安装好的系统移到配置号的 LVM 分区。 我不认为傻瓜式的 GUI 安装需要再次说明，唯一值的一提的是我使用的是 archlinux-gui-i3-2022.05-x86_64.iso, 以往没有使用过 i3wm 导致我花费了很久的是指摸索，最后在 Arch Linux GUI 中找到相关说明这里备份一份
-Basic Keybindings to help you get started: ( mod = windows key) Open Terminal Window (Kitty): mod + enter Launch Program Launcher (rofi): mod + d Close Any Window: mod + shift + x Open/Edit Config file: vim ~/.</description>
+Basic Keybindings to help you get started: ( mod = windows key)
+Open Terminal Window (Kitty): mod + enter
+Launch Program Launcher (rofi): mod + d
+Close Any Window: mod + shift + x</description>
     </item>
     <item>
       <title>apt 中断后重装软件</title>
