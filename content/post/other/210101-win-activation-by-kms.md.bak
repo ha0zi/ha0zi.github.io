@@ -1,11 +1,11 @@
----
++++
 title: '部分 Windows 利用 KMS 激活'
 date: 2021-01-01T18:53:54+08:00
 draft: false
 categories: ["运维"]
 tags: ["杂记"]
 
----
++++
 ### 步骤
 
 - 修改激活服务器地址

@@ -1,10 +1,10 @@
----
++++
 title: 'SpringBoot 拦截器学习'
 date: 2019-02-22T14:11:00+08:00
 draft: false
 categories: ["学习笔记"]
 tags: ["JAVA","SpringBoot"]
----
++++
 阅读《Java EE 开发的颠覆者 Spring Boot 实战》时，在 第二部分->第四章 SpringMVC 基础 中介绍到拦截器的使用，这里介绍拦截器的配置可让普通Bean 实现`HandlerInterceptor` 接口或者继承`HandlerInterceptorAdapter` 类来实现自定义拦截器.
 
 因为抽象类`HandlerInterceptorAdapter` 会多提供一个`afterConcurrentHandlingStarted` 方法,所以我们先根据继承`HandlerInterceptorAdapter` 的自定义拦截器类进行深入研究.这里我们先将相关的源码看一看.

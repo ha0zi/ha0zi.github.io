@@ -1,10 +1,10 @@
----
++++
 title: 'Java8 Lambda 杂记'
 date: 2019-03-11T19:00:00+08:00
 draft: false
 categories: ["学习笔记"]
 tags: ["JAVA"]
----
++++
 *ps: 目前阅读学习《Java 8 函数式编程》,本博文是阅读笔记,有意者可自行通过互联网进行资源获取,或者通过[京东](https://www.jd.com)等购物网站进行正版购买;*
 
 #### 概念
