@@ -29,4 +29,4 @@ Escape character is ^]
 
 
 
-[image_1]: https://images.ha0zi.com/note/2024/04/27/image-20240427223543779.png
+[image_1]: https://blog.ha0zi.com/images/2024/04/27/image-20240427223543779.png

@@ -128,19 +128,19 @@ tags: ["Linux","基础"]
 [UEFI]: https://baike.baidu.com/item/%E7%BB%9F%E4%B8%80%E5%8F%AF%E6%89%A9%E5%B1%95%E5%9B%BA%E4%BB%B6%E6%8E%A5%E5%8F%A3/22786233?fromtitle=UEFI&fromid=3556240&fr=aladdin
 
 
-[Rufus Error]: https://images.ha0zi.com/note/2024/04/27/image-20240427215035613.png
-[Diskpart Use]: https://images.ha0zi.com/note/2024/04/27/image-20240427215255136.png
-[BIOS Select]: https://images.ha0zi.com/note/2024/04/27/image-20240427215421587.png
-[System Install Select]: https://images.ha0zi.com/note/2024/04/27/image-20240427215634153.png
-[System Install Language]: https://images.ha0zi.com/note/2024/04/27/image-20240427215720325.png
-[System Install Keyboard]: https://images.ha0zi.com/note/2024/04/27/image-20240427215839071.png
-[System Install Language II]: https://images.ha0zi.com/note/2024/04/27/image-20240427215927404.png
-[System Install Network]: https://images.ha0zi.com/note/2024/04/27/image-20240427220004110.png
-[System Install Disk Home]: https://images.ha0zi.com/note/2024/04/27/image-20240427220052426.png
-[System Install Disk I]: https://images.ha0zi.com/note/2024/04/27/image-20240427220130946.png
-[System Install Disk II]: https://images.ha0zi.com/note/2024/04/27/image-20240427220209264.png
-[System Install Disk III]: https://images.ha0zi.com/note/2024/04/27/image-20240427220306831.png
-[System Install Disk VI]: https://images.ha0zi.com/note/2024/04/27/image-20240427220403860.png
-[System Install OS Network Install]: https://images.ha0zi.com/note/2024/04/27/image-20240427220439107.png
-[System Install App Select]: https://images.ha0zi.com/note/2024/04/27/image-20240427220512886.png
-[System Installed]: https://images.ha0zi.com/note/2024/04/27/image-20240427220538978.png
+[Rufus Error]: https://blog.ha0zi.com/images/2024/04/27/image-20240427215035613.png
+[Diskpart Use]: https://blog.ha0zi.com/images/2024/04/27/image-20240427215255136.png
+[BIOS Select]: https://blog.ha0zi.com/images/2024/04/27/image-20240427215421587.png
+[System Install Select]: https://blog.ha0zi.com/images/2024/04/27/image-20240427215634153.png
+[System Install Language]: https://blog.ha0zi.com/images/2024/04/27/image-20240427215720325.png
+[System Install Keyboard]: https://blog.ha0zi.com/images/2024/04/27/image-20240427215839071.png
+[System Install Language II]: https://blog.ha0zi.com/images/2024/04/27/image-20240427215927404.png
+[System Install Network]: https://blog.ha0zi.com/images/2024/04/27/image-20240427220004110.png
+[System Install Disk Home]: https://blog.ha0zi.com/images/2024/04/27/image-20240427220052426.png
+[System Install Disk I]: https://blog.ha0zi.com/images/2024/04/27/image-20240427220130946.png
+[System Install Disk II]: https://blog.ha0zi.com/images/2024/04/27/image-20240427220209264.png
+[System Install Disk III]: https://blog.ha0zi.com/images/2024/04/27/image-20240427220306831.png
+[System Install Disk VI]: https://blog.ha0zi.com/images/2024/04/27/image-20240427220403860.png
+[System Install OS Network Install]: https://blog.ha0zi.com/images/2024/04/27/image-20240427220439107.png
+[System Install App Select]: https://blog.ha0zi.com/images/2024/04/27/image-20240427220512886.png
+[System Installed]: https://blog.ha0zi.com/images/2024/04/27/image-20240427220538978.png

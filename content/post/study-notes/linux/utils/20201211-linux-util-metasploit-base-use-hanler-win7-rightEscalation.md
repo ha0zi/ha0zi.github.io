@@ -95,9 +95,9 @@ meterpreter > getsystem
 
 
 
-[shellter-1]: https://images.ha0zi.com/note/2024/04/27/image-20240427214157637.png
-[shellter-2]: https://images.ha0zi.com/note/2024/04/27/image-20240427214034077.png
-[shellter-3]: https://images.ha0zi.com/note/2024/04/27/image-20240427213932554.png
-[msfconsole-1]:  https://images.ha0zi.com/note/2024/04/27/image-20240427213834790.png
-[msfconsole-2]: https://images.ha0zi.com/note/2024/04/27/image-20240427213414117.png
-[msfconsole-3]: https://images.ha0zi.com/note/2024/04/27/image-20240427213617060.png
+[shellter-1]: https://blog.ha0zi.com/images/2024/04/27/image-20240427214157637.png
+[shellter-2]: https://blog.ha0zi.com/images/2024/04/27/image-20240427214034077.png
+[shellter-3]: https://blog.ha0zi.com/images/2024/04/27/image-20240427213932554.png
+[msfconsole-1]:  https://blog.ha0zi.com/images/2024/04/27/image-20240427213834790.png
+[msfconsole-2]: https://blog.ha0zi.com/images/2024/04/27/image-20240427213414117.png
+[msfconsole-3]: https://blog.ha0zi.com/images/2024/04/27/image-20240427213617060.png

@@ -47,8 +47,8 @@ Block大小,笔者这里也是一知半解,就不做过多的误导了,如果有
 经过一段时间的等待,重新出现光标,大功告成,我们重新拔插一下 U盘 发现了 U盘 名字被修改,里面也添加了很多其他的内容.使用完后,有朋友需要重新将这个 U盘 作文存储容器,重复 1\2 步操作即可.
 
 
-[show USB flash disk]: https://images.ha0zi.com/note/2024/04/27/image-20240427214711530.png
-[show fdisk -f]: https://images.ha0zi.com/note/2024/04/27/image-20240427214757487.png
+[show USB flash disk]: https://blog.ha0zi.com/images/2024/04/27/image-20240427214711530.png
+[show fdisk -f]: https://blog.ha0zi.com/images/2024/04/27/image-20240427214757487.png
 [档案系统]: https://linux.vbird.org/linux_basic/centos7/0230filesystem.php
 [权限问题]: https://linux.vbird.org/linux_basic/centos7/0210filepermission.php
 [计算机概念]: https://linux.vbird.org/linux_basic/centos7/0105computers.php

@@ -43,7 +43,7 @@ tags: ["小说"]
 
 
 [封面]: http://img.maipaokeji.com/images/vodpic/fm2020/202006111591835697ekqawrw4xp1.jpg
-[刺客信条知乎截图]: https://images.ha0zi.com/note/2024/04/27/image-20240427222940928.png
+[刺客信条知乎截图]: https://blog.ha0zi.com/images/2024/04/27/image-20240427222940928.png
 [给刺客信条写剧情]: https://www.zhihu.com/question/38287108/answer/84584704
 [靖安司是否存在]: http://ent.sina.com.cn/v/m/2019-07-19/doc-ihytcerm4703148.shtml
 [阙勒霍多]: https://zhuanlan.zhihu.com/p/72736383 "这里指猛火雷，在西域的艰苦战事中，唐军中的某位工匠别出心裁，将石脂用特别的秘法调制后，与碎木屑、白磷搅拌，加热后灌入一个密封陶罐，封口处捏制一团猛火，再把一截蓖麻油浸泡过的干藤顺罐口引到外侧。使用时，先把干藤点燃，烧至陶罐口便会引出猛火。猛火极炽热，与掺了易燃物的调制石脂一碰，势成龙虎相斗之势，威力惊人。因为它爆裂时声若惊雷，因此得名'猛火雷'(书中第六章 申初)"
