@@ -1,9 +1,9 @@
 +++
-title: 'KVM 使用 virsh 的 console 连接配置'
-date: 2021-02-14T19:35:20+08:00
-draft: false
-categories: ["运维"]
-tags: ["杂记","KVM"]
+title = 'KVM 使用 virsh 的 console 连接配置'
+date = 2021-02-14T19:35:20+08:00
+draft = false
+categories = ["运维"]
+tags = ["杂记","KVM"]
 +++
 
 [原文地址](https://blog.csdn.net/superbfly/category_1686089.html)
