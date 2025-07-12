@@ -1,7 +1,7 @@
 +++
 title = 'Linux 环境下使用 dd 创建 U盘 启动盘'
 date = 2020-07-22T20:17:42+08:00
-draft = true
+draft = false
 categories = ["运维"]
 tags = ["Linux","运维"]
 +++

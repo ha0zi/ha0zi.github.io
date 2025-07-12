@@ -1,7 +1,7 @@
 +++
 title = 'KVM 使用 virsh 的 console 连接配置'
 date = 2021-02-14T19:35:20+08:00
-draft = true
+draft = false
 categories = ["运维"]
 tags = ["杂记","KVM"]
 +++

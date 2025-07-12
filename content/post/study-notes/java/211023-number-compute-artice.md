@@ -1,7 +1,7 @@
 +++
 title = '计算小技巧'
 date = 2021-10-23T18:36:18+08:00
-draft = true
+draft = false
 categories = ["JAVA"]
 tags = ["基础","小技巧","计算"]
 +++

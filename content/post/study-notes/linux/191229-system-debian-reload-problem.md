@@ -1,7 +1,7 @@
 +++
 title = '重装 Debian9 系统之后的坑'
 date = 2019-12-24T00:44:11+08:00
-draft = true
+draft = false
 categories = ["随笔"]
 tags = ["便捷笔记"]
 +++

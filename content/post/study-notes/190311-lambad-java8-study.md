@@ -1,7 +1,7 @@
 +++
 title = 'Java8 Lambda 杂记'
 date = 2019-03-11T19:00:00+08:00
-draft = true
+draft = false
 categories = ["学习笔记"]
 tags = ["JAVA"]
 +++

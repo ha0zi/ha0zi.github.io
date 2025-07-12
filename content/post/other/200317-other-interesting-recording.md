@@ -1,7 +1,7 @@
 +++
 title = '记录下各种奇怪的东西'
 date = 2020-03-17T19:51:36+08:00
-draft = true
+draft = false
 categories = ["随笔"]
 tags = ["杂记"]
 +++

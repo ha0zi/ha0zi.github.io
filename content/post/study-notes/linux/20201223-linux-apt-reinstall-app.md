@@ -1,7 +1,7 @@
 +++
 title = 'apt 中断后重装软件'
 date = 2020-12-23T13:56:41+08:00
-draft = true
+draft = false
 categories = ["运维"]
 tags = ["Linux","运维"]
 +++

@@ -1,7 +1,7 @@
 +++
 title = 'UEFI引导-物理机安装CentOS8.1'
 date = 2020-05-28T18:17:16+08:00
-draft = true
+draft = false
 categories = ["运维"]
 tags = ["Linux","基础"]
 +++

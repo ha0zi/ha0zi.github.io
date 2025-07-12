@@ -1,7 +1,7 @@
 +++
 title = 'Shell(md5sum\sha1sum\sha256sum) 编程杂记'
 date = 2019-12-05T20:40:09+08:00
-draft = true
+draft = false
 categories = ["随笔"]
 tags = ["杂记","Shell"]
 +++

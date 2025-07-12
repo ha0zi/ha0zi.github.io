@@ -1,7 +1,7 @@
 +++
 title = '记录一次不一样的 Arch Linux 安装'
 date = 2022-07-10T11:02:41+08:00
-draft = true
+draft = false
 categories = ["Linux"]
 tags = ["Linux","base","install"]
 +++
