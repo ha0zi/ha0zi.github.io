@@ -37,7 +37,7 @@ wget -O -  https://get.acme.sh | sh -s email=my@example.com
 然而事实上在国内很难访问， 并且在 `https://get.acme.sh` 中也存在 `https://github.com/acmesh-official/acme.sh/wiki/Install-in-China` 这个地址的引导到 `https://gitee.com/neilpang/acme.sh`, 那么就通过获取 *git* 库在进行安装的方式
 
 ```shell
-git clone https://gitee.com/neilpang/acme.sh
+git clone https://gitee.com/neilpang/acme.sh.git
 cd acme.sh
 ./acme.sh --install -m my@example.com
 ```
