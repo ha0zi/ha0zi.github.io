@@ -76,6 +76,8 @@ acme.sh --issue --dns dns_ali -d my@example.com
 
 ##### [安装(复制)证书](https://github.com/acmesh-official/acme.sh/wiki/%E8%AF%B4%E6%98%8E#3-%E5%A4%8D%E5%88%B6%E8%AF%81%E4%B9%A6)
 
+![image-20250724013625208](https://blog.ha0zi.com/images/2025/07/24/image-20250724013625208.png)
+
 这里的输出的文件名和路径并没有严格的要求， 按照你实际管理的路径和文件名即可。例如使用 Nginx， 配合它的配置进行设置路径和文件名等，我用的是 Nginx。
 
 ```shell
